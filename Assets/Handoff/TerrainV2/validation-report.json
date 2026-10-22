@@ -1,0 +1,917 @@
+[
+  {
+    "filename": "terrain_forest_corner.usdz",
+    "triangles": 644,
+    "vertices": 324,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -1.5
+      ],
+      [
+        1.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "5ea4e4bbb5eb36871d0ad205de32476360c2650efc39a91680379cc66cfebc48",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_forest_pair.usdz",
+    "triangles": 428,
+    "vertices": 216,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -0.5
+      ],
+      [
+        1.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "8e0786b8a0e364a4ae9d76a43885bdc30acd5a3a89ce3f04fed771de9ddde225",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_forest_platform.usdz",
+    "triangles": 428,
+    "vertices": 216,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        4,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        1,
+        3,
+        0
+      ],
+      [
+        1,
+        4,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        2,
+        0
+      ],
+      [
+        2,
+        3,
+        0
+      ],
+      [
+        2,
+        4,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        3,
+        2,
+        0
+      ],
+      [
+        3,
+        3,
+        0
+      ],
+      [
+        3,
+        4,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        1,
+        0
+      ],
+      [
+        4,
+        2,
+        0
+      ],
+      [
+        4,
+        3,
+        0
+      ],
+      [
+        4,
+        4,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -4.5
+      ],
+      [
+        4.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "b0e3a6afbf37a57a494adca5d0b44e54a735878919eed14e4c43374db979c94f",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_forest_single.usdz",
+    "triangles": 428,
+    "vertices": 216,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -0.5
+      ],
+      [
+        0.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "52a2ea5b6f40ace3bda8142bb6a865c91ebe7cc526cf11289423289725ee12d4",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_forest_terrace.usdz",
+    "triangles": 644,
+    "vertices": 324,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -1.5
+      ],
+      [
+        2.5,
+        2.0,
+        0.5
+      ]
+    ],
+    "sha256": "cc786b14c245d868f3d6447f3388c7b5949473b8247ed3406a1f1f09e31127b1",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_golden_corner.usdz",
+    "triangles": 644,
+    "vertices": 324,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -1.5
+      ],
+      [
+        1.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "4502400f3851c7cca7a84d09a4d15b359fa4746c414e449cc8a1c71a82c2d922",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_golden_pair.usdz",
+    "triangles": 428,
+    "vertices": 216,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -0.5
+      ],
+      [
+        1.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "d374338b34e0ea1db415515134d08c871ac9d9e1c8aee00c7dfbaa0cd37889ee",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_golden_platform.usdz",
+    "triangles": 428,
+    "vertices": 216,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        4,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        1,
+        3,
+        0
+      ],
+      [
+        1,
+        4,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        2,
+        0
+      ],
+      [
+        2,
+        3,
+        0
+      ],
+      [
+        2,
+        4,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        3,
+        2,
+        0
+      ],
+      [
+        3,
+        3,
+        0
+      ],
+      [
+        3,
+        4,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        1,
+        0
+      ],
+      [
+        4,
+        2,
+        0
+      ],
+      [
+        4,
+        3,
+        0
+      ],
+      [
+        4,
+        4,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -4.5
+      ],
+      [
+        4.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "794b49cde6cec19541fcfebd8a8b5634e262b195e6b633c4a9fb5638daa0321a",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_golden_single.usdz",
+    "triangles": 428,
+    "vertices": 216,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -0.5
+      ],
+      [
+        0.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "769d060f6632bc1cc0921d4aabfa245af5d67795cbf14b83dcf7c97ebd6ede1b",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_golden_terrace.usdz",
+    "triangles": 644,
+    "vertices": 324,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -1.5
+      ],
+      [
+        2.5,
+        2.0,
+        0.5
+      ]
+    ],
+    "sha256": "6cfe924b70f4421949ccff1f6dd878d559b4a4c68cd7ca3a36f95637fc4821ef",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_lime_corner.usdz",
+    "triangles": 644,
+    "vertices": 324,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -1.5
+      ],
+      [
+        1.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "57e803a7facb64893fefe20ec2d0585e34e4f0f9739d26ec5ad68584bb1edb51",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_lime_pair.usdz",
+    "triangles": 428,
+    "vertices": 216,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -0.5
+      ],
+      [
+        1.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "2e5067671fc703736ba4e7040ce817b63dbee55de6d635dffb0a5eebb8bea89a",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_lime_platform.usdz",
+    "triangles": 428,
+    "vertices": 216,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        3,
+        0
+      ],
+      [
+        0,
+        4,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        1,
+        3,
+        0
+      ],
+      [
+        1,
+        4,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        2,
+        0
+      ],
+      [
+        2,
+        3,
+        0
+      ],
+      [
+        2,
+        4,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        3,
+        1,
+        0
+      ],
+      [
+        3,
+        2,
+        0
+      ],
+      [
+        3,
+        3,
+        0
+      ],
+      [
+        3,
+        4,
+        0
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        4,
+        1,
+        0
+      ],
+      [
+        4,
+        2,
+        0
+      ],
+      [
+        4,
+        3,
+        0
+      ],
+      [
+        4,
+        4,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -4.5
+      ],
+      [
+        4.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "8513e38640529511daa3d8f1e26f4c016c5144131909e52dd722e2761628f082",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_lime_single.usdz",
+    "triangles": 428,
+    "vertices": 216,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -0.5
+      ],
+      [
+        0.5,
+        1.0,
+        0.5
+      ]
+    ],
+    "sha256": "cb914c6794244e652e072ed9a5e0ecf973c2b8f10e43515831092474cd2b7967",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  },
+  {
+    "filename": "terrain_lime_terrace.usdz",
+    "triangles": 644,
+    "vertices": 324,
+    "cells": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        2,
+        1,
+        0
+      ],
+      [
+        2,
+        1,
+        1
+      ]
+    ],
+    "bounds_y_up_meters": [
+      [
+        -0.5,
+        0.0,
+        -1.5
+      ],
+      [
+        2.5,
+        2.0,
+        0.5
+      ]
+    ],
+    "sha256": "87ec14c08f0c303ba5903ab60cab26552ef48477ca289fabe1dc2ed234c35cd0",
+    "checks": "closed manifold, outward volume, UVs, normals, materials, packaged textures, 64-byte USDZ alignment"
+  }
+]

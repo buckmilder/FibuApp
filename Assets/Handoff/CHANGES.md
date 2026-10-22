@@ -1,3 +1,19 @@
+# Terrain V2 — three detailed variants
+
+New delivery: golden earth, forest turf over layered soil, and lime layered grass. Source: `Assets/Blender/TerrainV2/FibuTerrainV2.blend`; original packed and standalone color textures plus reproducible generation/export/validation scripts live beside it. Previews and per-asset validation manifest: `Assets/Handoff/TerrainV2/`.
+
+Runtime assets: `Assets/Models/terrain_{golden,forest,lime}_{single,pair,platform,corner,terrace}.usdz` (15 files). Each is self-contained with two 512px color textures, explicit normals, and matte USD Preview Surface materials. Single/pair/platform have 428 triangles each; corner/terrace have 644 each. Names are unique and existing models are preserved.
+
+The fused samples omit shared faces and coplanar tile boundaries before beveling exposed contours with a 0.085m radius. They demonstrate seamless joins on a pair, a 5×5 platform, an L-corner, and a stacked terrace. THESE ARE PRE-FUSED SAMPLES: placing independent single-cube assets next to each other will not connect them automatically. A future editable habitat requires local neighbor-aware mesh rebuilding or a complete set of connection variants. See source README for the boundary-mesh algorithm, placement dimensions, and limitations. Cross-material connections are not yet implemented.
+
+USDZ uses Y-up and meters, with the first cell bottom center as origin; occupancy and exact bounds are recorded in the manifest. Blocks extend toward +X / -Z; terraces rise +Y. Use a common scale to fit the existing island/Fibu. This is an art and asset handoff, not a gameplay change.
+
+Validation: all 15 closed meshes passed edge-manifold, signed-volume, triangle index/UV coverage, unit-normal, material binding, packaged-texture dependency, hash, and USDZ alignment checks. Blender overview and close-up renders were inspected. Xcode, SceneKit appearance, iPhone performance, and Watch conversion remain for local testing. No Swift, Xcode references, character files, or Watch assets changed.
+
+Suggested local pass: review the close-up first, add resource references for a representative single and fused platform, display them using the current SceneKit renderer, match scale to Fibu, check textures and smooth contours, then run both builds and existing tests. Keep habitat building/editor behavior separate until requested. Character Watch regeneration is unnecessary for this delivery.
+
+---
+
 # Habitat block kit — first delivery
 
 21 prototype modules: three palettes (meadow, stone, timber), each with cube, half, slab, ramp, steps, wall, and post. See HabitatKit-manifest.json for exact filenames and SHA-256 hashes; HabitatKit-preview.png shows the shapes and a sample 5×5 layout.
