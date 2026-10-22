@@ -1,3 +1,17 @@
+# Habitat expansion — nine terrain styles plus foliage
+
+Adds six terrain materials: meadow (lighter grass over soil), pale sand, limestone, cobblestone, timber planks, and dark porous volcanic rock. Together with golden/forest/lime from the previous delivery, there are now NINE detailed terrain styles. Each new style comes in five fused arrangements, adding 30 USDZ files. See `Assets/Handoff/HabitatExpansion/catalog.json` for names and file patterns.
+
+Also adds six static foliage props: round tree, young tree, shrub, small grass, fluffy grass, and tall grass. Source: `Assets/Blender/HabitatExpansion/HabitatExpansion.blend`, with reproducible scripts and twelve packed/standalone terrain textures. Preview, sample habitat render, and exact asset bounds/hashes live in `Assets/Handoff/HabitatExpansion/`.
+
+All 36 new USDZs are Y-up meters and have base pivots. Trees/shrubs use matte opaque colored geometry; grass is made from closed curved leaf solids. Tree/young-tree: 4,524 triangles each; shrub 1,344; grass 696–1,276. Terrain: 428–644 triangles per arrangement. Sources and static foliage are original designs informed by the user's visual references.
+
+Validation passed: closed manifold geometry, outward volume for every disconnected component, finite coordinates, triangle bounds, complete unit normals, material coverage, packaged textures and resolved dependencies, USDZ alignment, and copied-file hashes. Blender previews inspected. Xcode and SceneKit rendering/performance remain for local validation. No Swift code, project references, prior terrain, character, skins, or Watch assets changed.
+
+Integration: fetch the delivery, read source README, add representative new USDZs to Xcode resources, then show a garden habitat with meadow, a tree, shrub, and grass using existing SceneKit. Inspect scale, grounding, normals, colors and texture wrapping, then build both schemes and run current tests. Do not regenerate character/Watch assets or migrate renderers. The new modules do not auto-fuse when cloned: use prebuilt arrangements for the review, leaving arbitrary editor connection logic for a separate implementation. Cross-material fusion, wind, collision, LODs, and device performance are not provided or measured in this delivery.
+
+---
+
 # Terrain V2 — three detailed variants
 
 New delivery: golden earth, forest turf over layered soil, and lime layered grass. Source: `Assets/Blender/TerrainV2/FibuTerrainV2.blend`; original packed and standalone color textures plus reproducible generation/export/validation scripts live beside it. Previews and per-asset validation manifest: `Assets/Handoff/TerrainV2/`.

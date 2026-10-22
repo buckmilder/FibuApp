@@ -1,0 +1,35 @@
+{
+  "existing_styles": [
+    "golden",
+    "forest",
+    "lime"
+  ],
+  "new_styles": [
+    "meadow",
+    "sand",
+    "limestone",
+    "cobble",
+    "timber",
+    "volcanic"
+  ],
+  "layouts": [
+    "single",
+    "pair",
+    "platform",
+    "corner",
+    "terrace"
+  ],
+  "terrain_filename_pattern": "Assets/Models/terrain_{style}_{layout}.usdz",
+  "foliage": [
+    "foliage_grass_fluffy.usdz",
+    "foliage_grass_small.usdz",
+    "foliage_grass_tall.usdz",
+    "foliage_round_tree.usdz",
+    "foliage_shrub.usdz",
+    "foliage_young_tree.usdz"
+  ],
+  "grid_meters": 1,
+  "up_axis": "Y",
+  "automatic_joining": false,
+  "note": "Fused arrangements are prebuilt. Arbitrary habitat editing still needs local mesh connection logic."
+}
