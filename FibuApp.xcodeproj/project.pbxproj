@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+        F1B200000000000000000006 /* SkinPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B100000000000000000006; };
+        F1B200000000000000000005 /* FibuSkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B100000000000000000005; };
+        F1B200000000000000000003 /* WatchIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B100000000000000000003; };
+        F1B200000000000000000004 /* Fibu.Watch.scn in Watch Resources */ = {isa = PBXBuildFile; fileRef = F1B100000000000000000004; };
+        F1B200000000000000000002 /* IslandCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B100000000000000000002; };
+		F1B200000000000000000001 /* FibuWalker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B100000000000000000001; };
+		F1B200000000000000000000 /* IslandMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B100000000000000000000; };
+		F1B000000000000000000001 /* Fibu.Soft.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F1B000000000000000000002; };
+		000000000000000000000029 /* FibuWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 000000000000000000000015 /* FibuWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0000000000000000000000D2 /* FibuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000006E /* FibuApp.swift */; };
+		0000000000000000000000D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000006F /* ContentView.swift */; };
+		0000000000000000000000D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000070 /* Assets.xcassets */; };
+		0000000000000000000000DC /* FibuWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000078 /* FibuWatchApp.swift */; };
+		0000000000000000000000DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000079 /* ContentView.swift */; };
+		0000000000000000000000DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000007A /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00000000000000000000002B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 000000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000000000000000000000014;
+			remoteInfo = FibuWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		000000000000000000000028 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				000000000000000000000029 /* FibuWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+        F1B100000000000000000006 /* SkinPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinPicker.swift; sourceTree = "<group>"; };
+        F1B100000000000000000005 /* FibuSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibuSkin.swift; sourceTree = "<group>"; };
+        F1B100000000000000000004 /* Fibu.Watch.scn */ = {isa = PBXFileReference; lastKnownFileType = file.scn; path = "../Assets/Models/Fibu.Watch.scn"; sourceTree = "<group>"; };
+        F1B100000000000000000003 /* WatchIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchIsland.swift; sourceTree = "<group>"; };
+        F1B100000000000000000002 /* IslandCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandCamera.swift; sourceTree = "<group>"; };
+		F1B100000000000000000001 /* FibuWalker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibuWalker.swift; sourceTree = "<group>"; };
+		F1B100000000000000000000 /* IslandMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandMovement.swift; sourceTree = "<group>"; };
+		F1B000000000000000000002 /* Fibu.Soft.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "../Assets/Models/Fibu.Soft.usdz"; sourceTree = "<group>"; };
+		00000000000000000000000B /* FibuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FibuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000015 /* FibuWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FibuWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00000000000000000000006E /* FibuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibuApp.swift; sourceTree = "<group>"; };
+		00000000000000000000006F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		000000000000000000000070 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		000000000000000000000078 /* FibuWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibuWatchApp.swift; sourceTree = "<group>"; };
+		000000000000000000000079 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		00000000000000000000007A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00000000000000000000000E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000000000000000000000018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		000000000000000000000003 = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000005 /* FibuApp */,
+				000000000000000000000006 /* FibuWatch */,
+				000000000000000000000004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		000000000000000000000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000000B /* FibuApp.app */,
+				000000000000000000000015 /* FibuWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		000000000000000000000005 /* FibuApp */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000006E /* FibuApp.swift */,
+				00000000000000000000006F /* ContentView.swift */,
+				F1B100000000000000000001 /* FibuWalker.swift */,
+				F1B100000000000000000000 /* IslandMovement.swift */,
+                F1B100000000000000000002 /* IslandCamera.swift */,
+                F1B100000000000000000006 /* SkinPicker.swift */,
+                F1B100000000000000000005 /* FibuSkin.swift */,
+				F1B000000000000000000002 /* Fibu.Soft.usdz */,
+				000000000000000000000070 /* Assets.xcassets */,
+			);
+			path = FibuApp;
+			sourceTree = "<group>";
+		};
+		000000000000000000000006 /* FibuWatch */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000078 /* FibuWatchApp.swift */,
+				000000000000000000000079 /* ContentView.swift */,
+                F1B100000000000000000003 /* WatchIsland.swift */,
+                F1B100000000000000000004 /* Fibu.Watch.scn */,
+				00000000000000000000007A /* Assets.xcassets */,
+			);
+			path = FibuWatch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00000000000000000000000A /* FibuApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00000000000000000000000F /* Build configuration list for PBXNativeTarget "FibuApp" */;
+			buildPhases = (
+				00000000000000000000000C /* Sources */,
+				00000000000000000000000E /* Frameworks */,
+				00000000000000000000000D /* Resources */,
+				000000000000000000000028 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00000000000000000000002A /* PBXTargetDependency */,
+			);
+			name = FibuApp;
+			productName = FibuApp;
+			productReference = 00000000000000000000000B /* FibuApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		000000000000000000000014 /* FibuWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000000000000000000000019 /* Build configuration list for PBXNativeTarget "FibuWatch" */;
+			buildPhases = (
+				000000000000000000000016 /* Sources */,
+				000000000000000000000018 /* Frameworks */,
+				000000000000000000000017 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FibuWatch;
+			productName = FibuWatch;
+			productReference = 000000000000000000000015 /* FibuWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		000000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 000000000000000000000002 /* Build configuration list for PBXProject "FibuApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 000000000000000000000003;
+			productRefGroup = 000000000000000000000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00000000000000000000000A /* FibuApp */,
+				000000000000000000000014 /* FibuWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00000000000000000000000D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0000000000000000000000D4 /* Assets.xcassets in Resources */,
+				F1B000000000000000000001 /* Fibu.Soft.usdz in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000000000000000000000017 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0000000000000000000000DE /* Assets.xcassets in Resources */,
+                F1B200000000000000000004 /* Fibu.Watch.scn in Watch Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00000000000000000000000C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0000000000000000000000D2 /* FibuApp.swift in Sources */,
+				0000000000000000000000D3 /* ContentView.swift in Sources */,
+				F1B200000000000000000001 /* FibuWalker.swift in Sources */,
+				F1B200000000000000000000 /* IslandMovement.swift in Sources */,
+                F1B200000000000000000002 /* IslandCamera.swift in Sources */,
+                F1B200000000000000000006 /* SkinPicker.swift in Sources */,
+                F1B200000000000000000005 /* FibuSkin.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000000000000000000000016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0000000000000000000000DC /* FibuWatchApp.swift in Sources */,
+				0000000000000000000000DD /* ContentView.swift in Sources */,
+                F1B200000000000000000003 /* WatchIsland.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00000000000000000000002A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000000000000000000000014 /* FibuWatch */;
+			targetProxy = 00000000000000000000002B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		000000000000000000000007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		000000000000000000000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		000000000000000000000010 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6S98D64AMR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FibuApp;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ianbuckner.FibuApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		000000000000000000000011 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6S98D64AMR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FibuApp;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ianbuckner.FibuApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		00000000000000000000001A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6S98D64AMR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FibuApp;
+				INFOPLIST_KEY_WKApplication = YES;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.ianbuckner.FibuApp;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ianbuckner.FibuApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		00000000000000000000001B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6S98D64AMR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FibuApp;
+				INFOPLIST_KEY_WKApplication = YES;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.ianbuckner.FibuApp;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ianbuckner.FibuApp.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		000000000000000000000002 /* Build configuration list for PBXProject "FibuApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000000000000000000000007 /* Debug */,
+				000000000000000000000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00000000000000000000000F /* Build configuration list for PBXNativeTarget "FibuApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000000000000000000000010 /* Debug */,
+				000000000000000000000011 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000000000000000000000019 /* Build configuration list for PBXNativeTarget "FibuWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00000000000000000000001A /* Debug */,
+				00000000000000000000001B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 000000000000000000000001 /* Project object */;
+}

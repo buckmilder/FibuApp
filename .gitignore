@@ -1,0 +1,53 @@
+# macOS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Xcode user state and local build products
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+*.xcarchive
+*.ipa
+*.app/
+*.dSYM/
+*.dSYM.zip
+*.hmap
+*.moved-aside
+.build/
+
+# Blender backup/autosave files; keep .blend sources and USDZ exports
+*.blend[0-9]*
+*.blend~
+*.blend@
+*.blend.tmp
+
+# Editor/local temporary files
+*.swp
+*.swo
+*~
+
+# Credentials, signing material, and machine-local configuration
+.env
+.env.*
+!.env.example
+!.env.sample
+*.p12
+*.pfx
+*.p8
+*.pem
+*.key
+*.mobileprovision
+*.provisionprofile
+*.keychain
+*.keychain-db
+credentials.json
+secrets.json
+secrets/
+.secrets/
+Secrets.xcconfig
+*.local.xcconfig

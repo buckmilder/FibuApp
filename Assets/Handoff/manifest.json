@@ -1,0 +1,23 @@
+{
+  "repository_url": "https://github.com/buckmilder/FibuApp.git",
+  "repository_status": "Use main for the app baseline and codex/asset-handoff for cloud asset deliveries.",
+  "preferred_handoff_branch": "codex/asset-handoff",
+  "blender_source": "Assets/Blender/Fibu.Soft.blend",
+  "runtime_usdz": "Assets/Models/Fibu.Soft.usdz",
+  "watch_scene": "Assets/Models/Fibu.Watch.scn",
+  "original_reference": "Assets/Source/Fibu3.HD.HandWave.usdz",
+  "mesh_report": "Assets/Models/mesh-report.json",
+  "watch_export_command": "DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcrun swift scripts/prepare-watch-asset.swift",
+  "baseline": {
+    "triangles": 3200,
+    "joints": 32,
+    "max_skin_influences": 10
+  },
+  "baseline_sha256": {
+    "Assets/Source/Fibu3.HD.HandWave.usdz": "15ee5242a5b2dff61351666659b5b378430584fbe660c3ad031e65e0b8662994",
+    "Assets/Models/Fibu.Soft.usdz": "5ec3bce360252901fa80444995f28dcbc4a2a6ed957a597fa8af31fc18e00ba6",
+    "Assets/Models/Fibu.Watch.scn": "81cfc58da1ac12e64509163278719fa34e4208b049292056de73fe70f55ac765"
+  },
+  "blender_source_sha256": "930e0d0ef52c0ec571b001eb9120f5367c4b8bc984f3040fa251baf26e2f0938",
+  "habitat_exports": "Assets/Models/*.usdz (multiple habitat module files; preserve Fibu.Soft.usdz)"
+}

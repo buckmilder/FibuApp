@@ -1,0 +1,16 @@
+{
+  "original": {
+    "vertices": 920,
+    "faces": 962,
+    "triangles": 1836
+  },
+  "soft": {
+    "vertices": 1602,
+    "faces": 2194,
+    "triangles": 3200
+  },
+  "joint_count": 32,
+  "max_influences": 10,
+  "original_asset_preserved": true,
+  "uv_preserved": true
+}
