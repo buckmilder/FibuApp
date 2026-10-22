@@ -1,0 +1,91 @@
+{
+  "tile_meters": 1,
+  "up_axis": "Y",
+  "pivot": "bottom center",
+  "assets": [
+    {
+      "file": "Assets/Models/meadow_cube.usdz",
+      "sha256": "bec09085f435f67d7f06697f327d2a2fc397e6f62872fee000d87f0e73ad3bb8"
+    },
+    {
+      "file": "Assets/Models/meadow_half.usdz",
+      "sha256": "2fa204da89d18234882ca79c6d5297e40fcd963cd1380ff58839ca8693aa437f"
+    },
+    {
+      "file": "Assets/Models/meadow_post.usdz",
+      "sha256": "87439a8da874f917df5e35a0947ef1a28a6a39b3705037a8455bf36cd0162780"
+    },
+    {
+      "file": "Assets/Models/meadow_ramp.usdz",
+      "sha256": "7fb50e02614034787020a5ef64bc3311f9287f7c0f1ac44da863046779409a9a"
+    },
+    {
+      "file": "Assets/Models/meadow_slab.usdz",
+      "sha256": "79d86e6416d2862979244a454c4e247301399baea239ce69b609e527295dd373"
+    },
+    {
+      "file": "Assets/Models/meadow_steps.usdz",
+      "sha256": "b4bdf37d5f137b7b5148796fbfcdda1b3e0d5d9786574063b6bebe8a0b3a0048"
+    },
+    {
+      "file": "Assets/Models/meadow_wall.usdz",
+      "sha256": "f7346a742c46a772a1dc408c1b4f3c2b5de2f265d678493580903ec80cda7571"
+    },
+    {
+      "file": "Assets/Models/stone_cube.usdz",
+      "sha256": "5518e1e9f33e08faa83e1f68b6b6f873cb12251989ee9728850dfba9cd4c940a"
+    },
+    {
+      "file": "Assets/Models/stone_half.usdz",
+      "sha256": "26d7fe6d1b67cf7ab9ccf3f31a147db29cc24511f85dbeb5df1b47f6bcb4d6e9"
+    },
+    {
+      "file": "Assets/Models/stone_post.usdz",
+      "sha256": "71d7a71ccb73e766e7e6acb4fa08d117aea7b2d5bef33da609e213dc564494e6"
+    },
+    {
+      "file": "Assets/Models/stone_ramp.usdz",
+      "sha256": "7d6a11314b29273b329d0f8aa6033e22684f88fc77d2e148e941f3b7585efed5"
+    },
+    {
+      "file": "Assets/Models/stone_slab.usdz",
+      "sha256": "5581392c52067a5d97750e46be52a352d6500492b7126112ad66d8e243a31a64"
+    },
+    {
+      "file": "Assets/Models/stone_steps.usdz",
+      "sha256": "cd39cd0b4123fc19552850087e8c1e156e90af13e3be58534763133b6aa0c2ee"
+    },
+    {
+      "file": "Assets/Models/stone_wall.usdz",
+      "sha256": "11754a7b6a316da3356fb27e5a649858e58d0b56fab40fb0e5a8218396926a43"
+    },
+    {
+      "file": "Assets/Models/timber_cube.usdz",
+      "sha256": "04d99a70f56fa237fe41bab3fb4c19779beaab8d61718eb28547e118c43cdc92"
+    },
+    {
+      "file": "Assets/Models/timber_half.usdz",
+      "sha256": "8394a11fdbaad21d14da8be8bb74d9923a5086e4c701421915f18a6fa13763d5"
+    },
+    {
+      "file": "Assets/Models/timber_post.usdz",
+      "sha256": "22199b7d07dfc9537a6cbb8e500580243e6b4b507807b19ec69a229433c09c5f"
+    },
+    {
+      "file": "Assets/Models/timber_ramp.usdz",
+      "sha256": "cd36a56b937346dcf6a859c005f7a18382fd5cc29e66e6ab9817eb3ae9ae9af0"
+    },
+    {
+      "file": "Assets/Models/timber_slab.usdz",
+      "sha256": "b5714a7cc16cd01be30b8cb665a8357a32bb14c19cc3e510e053d3357cddc4ce"
+    },
+    {
+      "file": "Assets/Models/timber_steps.usdz",
+      "sha256": "f020a421726de072954c4a3120124a73b49ff94fb570661829443b5ab4ad8c68"
+    },
+    {
+      "file": "Assets/Models/timber_wall.usdz",
+      "sha256": "275bee9e4c768400677b92abd283d95f096f8bcc965f777850a23c32c7c9b585"
+    }
+  ]
+}
