@@ -1,3 +1,15 @@
+# Refined Fibu character candidate
+
+New separate asset: `Assets/Models/Fibu.Refined.usdz`; editable reconstructed source and reproducible scripts: `Assets/Blender/FibuRefined/`. Front, side, rear, and all supplied skin previews plus validation report are in `Assets/Handoff/FibuRefined/`. Original is LEFT; candidate RIGHT in comparison images.
+
+Rounds arms and smooths bending weights, lifts/tucks the lower belly, shifts the feet slightly forward/apart, and fills a single rounded posterior without a cleft. Protects the original painted smile during subdivision. Budget increases from 3,200 to 15,280 triangles (7,642 vertices); 32 original runtime joints and all original bind/animation data retained. Max ten normalized influences; interpolated UV charts retain coverage and original texture bytes. Surface and weights changed, so inspect skins and deformation rather than assuming perfect compatibility.
+
+All 51 authored wave rotation samples evaluated successfully. Rig/animation attribute equality, normalized weights, finite geometry/bounded pose dimensions, normal coverage, UV coverage, package dependencies, original texture identity, and hashes passed. The original skin plus all eleven pushed source skins were rendered on the candidate. No Xcode, procedural walk, device performance, or Watch conversion tested here.
+
+Local integration: load the candidate separately in existing SceneKit; inspect skins, original wave, idle and procedural walking, scale and toe grounding before switching the runtime resource. Build both schemes and run existing checks. Keep original Fibu.Soft.usdz, old sources, Watch scene, skin sources and app code intact until reviewed. Do not default-export the reconstructed editing rig: read the source README and use the supplied surface-only export pipeline. The runtime skeleton is authoritative and preserved.
+
+---
+
 # Habitat expansion — nine terrain styles plus foliage
 
 Adds six terrain materials: meadow (lighter grass over soil), pale sand, limestone, cobblestone, timber planks, and dark porous volcanic rock. Together with golden/forest/lime from the previous delivery, there are now NINE detailed terrain styles. Each new style comes in five fused arrangements, adding 30 USDZ files. See `Assets/Handoff/HabitatExpansion/catalog.json` for names and file patterns.
