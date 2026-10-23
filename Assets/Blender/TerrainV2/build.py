@@ -62,6 +62,7 @@ def make(theme,layout,cells):
     for p in mesh.polygons:p.use_smooth=True
     normal=o.modifiers.new('Weighted surface normals','WEIGHTED_NORMAL');normal.keep_sharp=True;normal.weight=50
     bpy.ops.object.modifier_apply(modifier=normal.name)
+    mesh=o.data;uv=mesh.uv_layers.active
     mesh.calc_loop_triangles()
     ns=mesh.corner_normals
     triangles=list(mesh.loop_triangles)

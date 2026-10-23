@@ -87,6 +87,33 @@ for v,rv in zip(mesh.vertices,reference.data.vertices):
     amount=math.exp(-((q.x/.32)**8+((q.z-1.60)/.36)**8+((q.y+.84)/.20)**8))
     v.co=v.co.lerp(q,amount)
 bpy.data.objects.remove(reference,do_unlink=True)
+# Keep the torso independent from the arm controls during larger reaches.
+def smoothstep(a,b,x):
+    t=max(0,min(1,(x-a)/(b-a)));return t*t*(3-2*t)
+leafids={n.split('/')[-1]:i for i,n in enumerate(d['joints'])}
+corrected=[]
+for v in mesh.vertices:
+    row={g.group:g.weight for g in v.groups if g.weight>1e-8};x,y,z=v.co
+    factor=smoothstep(.50,.82,abs(x))*smoothstep(0,.24,.60-abs(y+.12))*smoothstep(0,.15,.45-abs(z-1.39))
+    removed=sum(w for j,w in row.items() if j in armids)*(1-factor)
+    nonarm=sum(w for j,w in row.items() if j not in armids)
+    if removed>0:
+        for j in list(row):row[j]*=factor if j in armids else (1+removed/nonarm if nonarm>1e-8 else 1)
+        if nonarm<=1e-8:
+            joint='Neck' if z>1.45 else 'Chest' if z>1.15 else 'Stomach'
+            row[leafids[joint]]=row.get(leafids[joint],0)+removed
+    if z<.65 and abs(x)>.12:
+        side='_L' if x>0 else '_R';mapped={}
+        for j,w in row.items():
+            name=d['joints'][j].split('/')[-1]
+            if any(k in name for k in ['Thigh','Calf','Foot','Toe']) and (name.endswith('_L') or name.endswith('_R')):
+                j=leafids.get(name[:-2]+side,j)
+            mapped[j]=mapped.get(j,0)+w
+        row=mapped
+    total=sum(row.values());corrected.append({j:w/total for j,w in row.items() if w>1e-8})
+body.vertex_groups.clear();groups=[body.vertex_groups.new(name=f'J{i:02d}_'+n.split('/')[-1]) for i,n in enumerate(d['joints'])]
+for i,row in enumerate(corrected):
+    for j,w in row.items():groups[j].add([i],w,'REPLACE')
 for p in mesh.polygons:p.use_smooth=True
 mesh.calc_loop_triangles();loops=mesh.uv_layers.active.data
 newweights=[];newindices=[];maxdrop=0

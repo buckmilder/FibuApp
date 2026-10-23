@@ -1,0 +1,74 @@
+{
+  "fps": 24,
+  "clips": [
+    {
+      "name": "IdleBreath",
+      "file": "Fibu.Anim.IdleBreath.usdz",
+      "duration_seconds": 4,
+      "loop": true,
+      "frames_validated": 97,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 2
+    },
+    {
+      "name": "Sit",
+      "file": "Fibu.Anim.Sit.usdz",
+      "duration_seconds": 3,
+      "loop": false,
+      "frames_validated": 73,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 2.6
+    },
+    {
+      "name": "Whistle",
+      "file": "Fibu.Anim.Whistle.usdz",
+      "duration_seconds": 4,
+      "loop": true,
+      "frames_validated": 97,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 2
+    },
+    {
+      "name": "LayDown",
+      "file": "Fibu.Anim.LayDown.usdz",
+      "duration_seconds": 4,
+      "loop": false,
+      "frames_validated": 97,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 3.5
+    },
+    {
+      "name": "Hungry",
+      "file": "Fibu.Anim.Hungry.usdz",
+      "duration_seconds": 4,
+      "loop": true,
+      "frames_validated": 97,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 2
+    },
+    {
+      "name": "Eat",
+      "file": "Fibu.Anim.Eat.usdz",
+      "duration_seconds": 3,
+      "loop": false,
+      "frames_validated": 73,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 0.75
+    },
+    {
+      "name": "Jump",
+      "file": "Fibu.Anim.Jump.usdz",
+      "duration_seconds": 1.5,
+      "loop": false,
+      "frames_validated": 37,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 0.65
+    }
+  ],
+  "wave": "Use the preserved wave in Assets/Models/Fibu.Refined.usdz",
+  "notes": [
+    "Whistle is a body/hand gesture: no audio or facial blend shapes.",
+    "Eat is a mimed gesture; local app attaches food.",
+    "Sit and LayDown enter a held pose; do not loop the transition."
+  ]
+}

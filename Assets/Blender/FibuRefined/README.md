@@ -6,7 +6,7 @@
 
 Smooths irregular arm/hip rings, adds fuller rounded arms, smooths arm joint-weight transitions, lifts/tucks the lower belly, brings the feet slightly forward and apart, and fills the posterior into a single smooth rounded volume without a modeled cleft. One subdivision level supplies a smoother silhouette. A local linear reference protects the painted smile during refinement.
 
-The mesh grows from 1,602 vertices / 3,200 triangles to 7,642 vertices / 15,280 triangles. Treat it as an iPhone candidate; measure frame time before changing the Watch asset. All 32 original USD joint paths, hierarchy, rest/bind transforms, mesh binding transform, and animation attributes/time samples are retained. Arm weights are intentionally smoothed, then interpolated through subdivision and normalized to at most ten influences per vertex. The largest discarded influence sum is 0.001306 (about 0.13%) before normalization.
+The mesh grows from 1,602 vertices / 3,200 triangles to 7,642 vertices / 15,280 triangles. Treat it as an iPhone candidate; measure frame time before changing the Watch asset. All 32 original USD joint paths, hierarchy, rest/bind transforms, mesh binding transform, and animation attributes/time samples are retained. Arm weights are intentionally smoothed, then interpolated through subdivision and normalized to at most ten influences per vertex. The largest discarded influence sum is 0.002193 (about 0.22%) before normalization. A follow-up reach test also isolated torso weights from arm controls and corrected lower-leg side assignments, preventing hand-to-face poses from dragging torso vertices. The active Fibu.Soft.usdz remains untouched.
 
 ## Skins
 

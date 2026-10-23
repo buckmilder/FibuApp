@@ -1,0 +1,365 @@
+[
+  {
+    "filename": "terrain_cobble_corner.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "f3a616b2efc24564439af274a57e760810844d0af20de781e827ef57a434b517",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_cobble_pair.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "90ce5dd921e4fe16b5149d9df76c1561c69cb4a1a17973bce106c3fd483156e9",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_cobble_platform.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "45bf1248dbb72bf0c5108fe9bef3921ba5653e2f6d10b8c305c0f88e60fc2c6a",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_cobble_single.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "91573221f5184231fcd7830885c7fffe5ee894f5869b9643656f716b8f576b93",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_cobble_terrace.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "df1346154dcad0eef26f376c6169e73dc2e2b63847e3cfb7bef7ccb85644b860",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_forest_corner.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "7e4ac213dac1ac95be6f7018c4330e094c000f9ead5e69c297c680790f646380",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_forest_pair.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "4901a31b9cd4acc4568be85b27b1a8a05b29aae7da695ed9fdf1d6cdc3a19e90",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_forest_platform.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "f980132254e0a890e16fb035c5e81631d3ab64c4690e4c6341b28795cc70e1b8",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_forest_single.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "f68e3741ef4e4ca5a2b929c30cd9b4632ac8f107574c78563b9ebc5177a7487e",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_forest_terrace.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "d56fdad9e9180d72828e20ab8bc182e83faf469ce84f8b7db7c9233491932a3a",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_golden_corner.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "e6ad5dd310e48ba1204e6ed9699066f5b4cfdd8a53e8a0b823082468d2565229",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_golden_pair.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "dbdf39bbc4f75932edb596894ef25b45369e0117af4c23834e65e46a0a7383a1",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_golden_platform.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "f99c4bf978c8b2407667da2d29f5b224019b6f605005e73bd1d44f23a0ee81cd",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_golden_single.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "013ca5287328ae5bfffe5d3bea1942a0ab5a2360ae0925d6f0ef0a469d5d570e",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_golden_terrace.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "b2d1d40481470048a76eeec5776672fb336e2179505cb47d625c1e5216c363e8",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "habitat_camp.usdz",
+    "meshes": 77,
+    "triangles": 16540,
+    "sha256": "8f4044c63b45b56a6f6ba9eb8883281f1fc996991ee3824fdbc2f8f42ffc7c46",
+    "grid": [
+      9,
+      9
+    ],
+    "spawn_y_up": [
+      4,
+      1.13,
+      -0.45
+    ],
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "habitat_garden.usdz",
+    "meshes": 241,
+    "triangles": 46816,
+    "sha256": "8de8381f12b9edad7ba974be6e83ade05dbe2049627d10460cc57193c1d91a41",
+    "grid": [
+      9,
+      9
+    ],
+    "spawn_y_up": [
+      4,
+      1.13,
+      -0.45
+    ],
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "habitat_pond.usdz",
+    "meshes": 204,
+    "triangles": 30862,
+    "sha256": "eb231ded96406a03793e6623f25e6d3a2691cd193a2f431f144eac439450d852",
+    "grid": [
+      9,
+      9
+    ],
+    "spawn_y_up": [
+      4,
+      1.13,
+      -0.45
+    ],
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_lime_corner.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "84ab589e64ce1bf0ce9ac14a8184eaa9acc4ac4286080b8d4fe890699ab066fb",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_lime_pair.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "590f36965f223d60c15e99a2bd9be22787eff3f25027ebb1b953c835bb0c7fd7",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_lime_platform.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "66bd9790b714d977b494971be53e34a7f40b286735759abb5caaecf55e65ee97",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_lime_single.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "15e4c0832177b37a6444951de9d1badce08a0882258bc4d6c34d9da5a279fb23",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_lime_terrace.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "3facb6e5dcf9eefb98e54534d2435eeef4d5a5ee9fafcb1aec6240be104314db",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_limestone_corner.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "4db083091b3548ba46012fe10f3873f593f509ff8e7d2b761679a725d4cd52aa",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_limestone_pair.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "d69838344a022df0d80262415862286037898f362d116885f2163bd2edaa50c8",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_limestone_platform.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "21ef315b7314a59b052b551ae53877cf44f609ba5f7f831e1ecb4f771dd44d7b",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_limestone_single.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "a657a783ca32248d74bb9f40623d1b963976b3398355f71b4259b74a3c8dcb65",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_limestone_terrace.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "3aa301c4e31379a01c188c61d9d8b95a8fb4ff74273bc31bb272ba797d3407aa",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_meadow_corner.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "68807ab417b0df55da85605933f0aae4c64aaaabd9bc0c2dc4c9b99870bdfc59",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_meadow_pair.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "19f0ec081dad3fa5f1c57752c2bee800659e53cb00274a0658aba64c08712c38",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_meadow_platform.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "97ac0c1a6463b0eac8cd25bc2b9417fdef991eb0f63d6ad8ce22900ad76f4a30",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_meadow_single.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "dc8286dc86979010a563305d657c39ed4e5016871a4590e8bb3fb5b9e98f74ac",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_meadow_terrace.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "b95f307abc0947cb7fee4427fb3f3a9bf122686dbfd60b615db96a7da39edc31",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_sand_corner.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "e0a7d8cc4eea3879252fe8b61c65dffc12e666040769bf697d061ecb62f182e1",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_sand_pair.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "f01804c3e1751e1ffebbf6bb290e211730f9f88ff57242e7bcd795207c08ee9f",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_sand_platform.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "31f8413a298b59fd8055f164158ce0e34366f5901992858d9c0154dbf0d6108c",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_sand_single.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "d02db9a3bff43cdbf60eba295f906308cd840d62ce44c63446f3db753a10975a",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_sand_terrace.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "1894cbad860ca1ee610221198fa97303c64a641102aff5239eee1f4e21e541c6",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_timber_corner.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "9c7aa203ad5ec45fdc4e8a1388f60034b6c5b2a0dcce9a463ebd128dcc8176a3",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_timber_pair.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "49f1dd670c4ad3a3d470eec45d95ae8e1d4734ede566a3a2dcf9489007a578a6",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_timber_platform.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "9cb8fcbca02bf8173761702de077fc65ea360377cf6e3e372bb44d3c65edc850",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_timber_single.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "f6a15bf74027f58e398062b5910a6ec5a49354afd047a388bb329a35a2285730",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_timber_terrace.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "4e1600c847d08c1910a8044ceffe7a700badf08107fd3da20fdb5e824524c0a6",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_volcanic_corner.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "687ca3a2d14e5a5efda7ec74495fb2b1f6c41009d4d7b0a85edba5522959ec9a",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_volcanic_pair.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "ea59bcde8255a6591d1e4c18efafa937b2b6153706fefc7f9601681504cf2b92",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_volcanic_platform.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "99009e25b3f83efa3bd3a3f5d763fdd8579b3e1f96e9a7263e0e082f654dfc2c",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_volcanic_single.usdz",
+    "meshes": 1,
+    "triangles": 428,
+    "sha256": "076995b35ea7e6bf9efb27c74468f39781478d85665ab35184ffc97a4dbcfccc",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "terrain_volcanic_terrace.usdz",
+    "meshes": 1,
+    "triangles": 644,
+    "sha256": "50cc6793f4cc805b21781cadef9a5f00de5c9997be6fa807ee3a9e5f5e3db140",
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  }
+]

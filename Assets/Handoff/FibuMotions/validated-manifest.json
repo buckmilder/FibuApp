@@ -1,0 +1,83 @@
+{
+  "clips": [
+    {
+      "name": "IdleBreath",
+      "file": "Fibu.Anim.IdleBreath.usdz",
+      "duration_seconds": 4,
+      "loop": true,
+      "frames_validated": 97,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 2,
+      "sha256": "3a92729d4a4a36e0c809e68678410efae3951c4ae0c6f7c53efd29b3ce535b00",
+      "checks": "same candidate geometry/UV/weights/binds; all exported frames finite and nonstatic; loop seam checked where applicable"
+    },
+    {
+      "name": "Sit",
+      "file": "Fibu.Anim.Sit.usdz",
+      "duration_seconds": 3,
+      "loop": false,
+      "frames_validated": 73,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 2.6,
+      "sha256": "3dfae999d32aebc9cd0c346741973639f1f30cb7832f1d861659557386992371",
+      "checks": "same candidate geometry/UV/weights/binds; all exported frames finite and nonstatic; loop seam checked where applicable"
+    },
+    {
+      "name": "Whistle",
+      "file": "Fibu.Anim.Whistle.usdz",
+      "duration_seconds": 4,
+      "loop": true,
+      "frames_validated": 97,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 2,
+      "sha256": "810292c712056c1f7d6bda0602fc14d90e55d9daac1c7d278543b24a31f9af0d",
+      "checks": "same candidate geometry/UV/weights/binds; all exported frames finite and nonstatic; loop seam checked where applicable"
+    },
+    {
+      "name": "LayDown",
+      "file": "Fibu.Anim.LayDown.usdz",
+      "duration_seconds": 4,
+      "loop": false,
+      "frames_validated": 97,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 3.5,
+      "sha256": "0b819f1370c0ec95aa32440a670eeab8f680978507b86076d72c236335fade16",
+      "checks": "same candidate geometry/UV/weights/binds; all exported frames finite and nonstatic; loop seam checked where applicable"
+    },
+    {
+      "name": "Hungry",
+      "file": "Fibu.Anim.Hungry.usdz",
+      "duration_seconds": 4,
+      "loop": true,
+      "frames_validated": 97,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 2,
+      "sha256": "fa5345643f917dffc99702b8e2f30d0a17e962ff57336751a28bd5b09973d37e",
+      "checks": "same candidate geometry/UV/weights/binds; all exported frames finite and nonstatic; loop seam checked where applicable"
+    },
+    {
+      "name": "Eat",
+      "file": "Fibu.Anim.Eat.usdz",
+      "duration_seconds": 3,
+      "loop": false,
+      "frames_validated": 73,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 0.75,
+      "sha256": "6620927fe18d2dc2228ba1060b94be6cd753a5e7184c0a948dcf78d1fcea3141",
+      "checks": "same candidate geometry/UV/weights/binds; all exported frames finite and nonstatic; loop seam checked where applicable"
+    },
+    {
+      "name": "Jump",
+      "file": "Fibu.Anim.Jump.usdz",
+      "duration_seconds": 1.5,
+      "loop": false,
+      "frames_validated": 37,
+      "root_motion": "grounded; jump includes vertical motion",
+      "preview_seconds": 0.65,
+      "sha256": "2d85fd2257e3a52ffa586bfef2c54f583f7418ad7aa52a7dc3418b318bb96a7a",
+      "checks": "same candidate geometry/UV/weights/binds; all exported frames finite and nonstatic; loop seam checked where applicable"
+    }
+  ],
+  "frames_checked": 571,
+  "base_candidate_sha256": "269b07cd12b6150fc08d019aa1809f32eb734e307d8f4ed1badf8ed18e6ba161"
+}

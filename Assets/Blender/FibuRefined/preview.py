@@ -1,5 +1,5 @@
 """Render original/candidate in the SAME evaluated first-frame pose and skin."""
-import bpy,json,math
+import bpy,json,math,os
 from pathlib import Path
 from mathutils import Vector
 ROOT=Path(__file__).resolve().parent;OUT=ROOT/'generated';d=json.loads((OUT/'posed.json').read_text())
@@ -25,5 +25,6 @@ bpy.ops.object.camera_add(location=(0,-8,3.5));cam=bpy.context.object;cam.rotati
 scene.render.engine='CYCLES';scene.cycles.samples=24;scene.cycles.use_denoising=False
 scene.render.resolution_x=1500;scene.render.resolution_y=1100;scene.render.resolution_percentage=100;scene.render.image_settings.file_format='PNG'
 for label,angle in [('front',0),('side',math.pi/2),('back',math.pi)]:
+    if label not in os.environ.get('FIBU_PREVIEW_VIEWS','front,side,back').split(','):continue
     for o in objects:o.rotation_euler.z=angle
     scene.render.filepath=str(OUT/(label+'.png'));bpy.ops.render.render(write_still=True)

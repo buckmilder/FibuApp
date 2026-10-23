@@ -1,3 +1,25 @@
+# Painted modules, three 9×9 habitats, and Fibu motion starter set
+
+## Deliveries
+
+- **Refined Fibu follow-up:** `Assets/Models/Fibu.Refined.usdz` and `Assets/Blender/FibuRefined/` now isolate torso weights from arm controls and correct lower-leg side assignments for larger gestures. Original active Fibu.Soft.usdz and Watch model remain untouched. All 51 original wave samples still evaluate; skeleton and animation attributes remain unchanged. Current previews and all eleven supplied skins are refreshed under `Assets/Handoff/FibuRefined/`.
+- **Nine painted terrain styles:** all 45 `Assets/Models/terrain_*.usdz` detailed modules now embed 1024px top/side base color plus 256px normal/roughness maps. Geometry, normals, pivots, units, and mesh paths are unchanged. The source UV export handle was fixed; 29 prior exports have regenerated UV arrays. See `Assets/Handoff/HabitatWorlds/geometry-compatibility.json`. Older prototypes/sources and artist skins remain preserved.
+- **Three constructed 9×9 scenes:** `Assets/Models/habitat_garden.usdz`, `habitat_pond.usdz`, `habitat_camp.usdz`. Editable packed source, textures, generator and exporter: `Assets/Blender/HabitatWorlds/`. Previews, final asset hashes, grid/spawn/seat hints: `Assets/Handoff/HabitatWorlds/`.
+- **Seven new animation clips:** `Assets/Animations/Fibu.Anim.{IdleBreath,Sit,Whistle,LayDown,Hungry,Eat,Jump}.usdz`. Existing wave remains in the refined candidate. Sources: `Assets/Blender/FibuMotions/`; clip timing/loop metadata, hashes, pose sheet and sampled GIFs: `Assets/Handoff/FibuMotions/`.
+
+## Integration order on Mac
+
+1. Review the latest refined candidate and skin gallery separately from the active character. Keep the original as fallback. The candidate is 15,280 triangles / 32 joints; Watch remains on its existing asset. Check the new weight mapping in wave and procedural walking, as well as toe grounding and material selection.
+2. Load one complete habitat and its material maps using existing SceneKit. The habitat base is 9×9 one-meter tiles with ground top Y=1; map row y to USD -Z and use one common scene scale. Fibu is not embedded. Layout hints are not a navigation mesh: exclude the pond, furniture, fire, tree trunks, and raised props from walking as appropriate. Material import and performance need visual/device checks. Water/ripples and fire are static geometry, not simulation.
+3. Inspect each motion USDZ as a standalone scene first. It has the current refined mesh/weights and original skeleton/binds. Inspect the actual imported animation players rather than assuming identifiers. The existing FibuWalker freezes imported animations and drives bones: suspend that during authored actions and blend back afterward. Jump contains vertical root motion. Sit/LayDown are non-looping entries with held final poses. Whistle has no audio/pucker; Eat is mimed and needs a food attachment. These are first-pass actions for art/playback review, with near-body contacts and transitions still requiring local inspection.
+4. Integrate selected resources, build BOTH schemes, run existing movement/camera/skin checks, then inspect iPhone/Duo and Watch regressions per AGENTS.md. No Xcode references, Swift behavior, artist textures, original character, or Watch scene were changed here.
+
+## Validation performed in cloud
+
+All 48 terrain/scene USDZs reopen with finite indexed geometry, unit normals, valid UV/material coverage, embedded textures, resolved dependencies, aligned archives and matching hashes. Three habitat base bounds are exactly 9×9; garden/pond/camp have 46,816 / 30,862 / 16,540 triangles. Module geometry/normals/paths were compared with the previous commit. Refined character validation checks original skeleton/animation equality, 51 wave samples, skin weights, UV coverage and texture identity. All seven exported motion scenes are nonstatic and retain candidate mesh/UV/weight/bind identity; 571 exported frames evaluate, with loop endpoints checked where applicable. Blender previews and sampled Jump/Sit GIFs were rendered and reviewed. Numeric validation does not establish collision-free polished acting, SceneKit importer behavior, navigation, Xcode build success, physical device performance, or Watch suitability: those checks remain local.
+
+---
+
 # Refined Fibu character candidate
 
 New separate asset: `Assets/Models/Fibu.Refined.usdz`; editable reconstructed source and reproducible scripts: `Assets/Blender/FibuRefined/`. Front, side, rear, and all supplied skin previews plus validation report are in `Assets/Handoff/FibuRefined/`. Original is LEFT; candidate RIGHT in comparison images.
