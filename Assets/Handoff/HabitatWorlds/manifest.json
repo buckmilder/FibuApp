@@ -1,0 +1,50 @@
+[
+  {
+    "filename": "habitat_camp.usdz",
+    "meshes": 85,
+    "triangles": 18584,
+    "sha256": "f909ee782dd456d34fd13d0280ee26668a1518c14a5ffb3fad02216e54e52af5",
+    "grid": [
+      9,
+      9
+    ],
+    "spawn_y_up": [
+      4,
+      1.13,
+      -0.45
+    ],
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "habitat_garden.usdz",
+    "meshes": 249,
+    "triangles": 48860,
+    "sha256": "1c325c74ae7d7ea93e649e56b1a4ea4f28a0c74467bba89e96a4adc452870218",
+    "grid": [
+      9,
+      9
+    ],
+    "spawn_y_up": [
+      4,
+      1.13,
+      -0.45
+    ],
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  },
+  {
+    "filename": "habitat_pond.usdz",
+    "meshes": 212,
+    "triangles": 33404,
+    "sha256": "69e6ab1dbe24c0347d688d1da55bac05d1c53ff951a4dbab164ef801f9f97192",
+    "grid": [
+      9,
+      9
+    ],
+    "spawn_y_up": [
+      4,
+      1.13,
+      -0.45
+    ],
+    "validation": "finite indexed geometry; unit normals; UV/material coverage; textures resolved; aligned USDZ; 9\u00d79 base where applicable"
+  }
+]

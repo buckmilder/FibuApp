@@ -1,0 +1,38 @@
+{
+  "replace_all_existing_habitats": true,
+  "habitats": [
+    {
+      "id": "garden",
+      "file": "Assets/Models/habitat_garden.usdz",
+      "preview": "garden.png",
+      "grid": [
+        9,
+        9
+      ]
+    },
+    {
+      "id": "pond",
+      "file": "Assets/Models/habitat_pond.usdz",
+      "preview": "pond.png",
+      "grid": [
+        9,
+        9
+      ]
+    },
+    {
+      "id": "camp",
+      "file": "Assets/Models/habitat_camp.usdz",
+      "preview": "camp.png",
+      "grid": [
+        9,
+        9
+      ]
+    }
+  ],
+  "main_stair_x": {
+    "garden": 4,
+    "pond": 7.4,
+    "camp": 6.6
+  },
+  "character_changes_included": false
+}
