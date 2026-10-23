@@ -113,3 +113,9 @@ Garden, pond and camp remain unchanged references in `Assets/Models/` and `Asset
 ## Verification and limits
 
 Run `./scripts/habitat-editor.sh check`. Linux headless tests and desktop rendering/input checks are recorded in the handoff. Native Mac launch, trackpad ergonomics, and native iOS loader/rendering verification remain for local Codex. No iOS application changes were made, so no Xcode build is claimed. This tool does not yet ship an iOS loader, in-app editor, foliage brush, arbitrary connector snapping, automatic material transitions, enemies, events, or visual scripting.
+
+## Tile-sized props
+
+Trees and bushes use a 1×1 ground footprint; benches use 2×1 and rotate to 1×2. Catalog props snap to full terrain tiles, including correct half-cell centers for multi-tile objects. Scale is fixed and yaw uses quarter turns. Footprint outlines and inspector labels show placement size separately from passability. Trees and benches block the preview actor; bushes and grass remain walk-through. Tree canopies may overhang their occupied tile.
+
+Select older props and use **Align props** for an explicit, undoable conversion. Old files are preserved on load, and conflicting alignments are cancelled. Try `Assets/Habitats/tile-footprints-study.json`. Full rules and the local Swift navigation handoff are in [PROP_FOOTPRINTS.md](PROP_FOOTPRINTS.md).

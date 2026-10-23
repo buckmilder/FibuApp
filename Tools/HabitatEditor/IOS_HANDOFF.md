@@ -42,3 +42,7 @@ WASD now translates the authoring camera without enabling Fly, Z/X rotates left/
 The editor now registers one Water Block and includes `water-garden.json` and `water-study.json` as optional authoring examples. Verify Water-category placement/drag painting, stacks, foam joins, selection, connected-body appearance edits, undo/redo and save/reload. Use Show/Hide water to edit the submerged floor. Preview should show the volume while keeping the existing proxy's solid collision mask unchanged.
 
 Read `WATER.md` before native layout work: water is classified by the asset registry and is **not ordinary solid terrain**, even though it lives in the shared logical grid list. Preserve `water_styles` and cell style references. There is no static water USDZ to add; native code needs the documented boundary generator and matching transparent shader/foam treatment. Godot GLSL and SceneKit material shaders are separate implementations. No automatic food, health, swimming or waterfall behavior is included. Existing native habitat exports and Fibu remain untouched.
+
+## Tile prop rules
+
+The catalog now carries `prop_rules_version: 1`, `placement_grid`, `footprint`, `occupies_grid`, and `blocks_movement`. Implement the placement/collision/navigation semantics in [PROP_FOOTPRINTS.md](PROP_FOOTPRINTS.md). These supersede the prior assumption that all foliage/decor props are nonblocking. Bushes remain traversable; trees and benches now block their logical ground footprints. Godot's preview behavior does not automatically update the native app.

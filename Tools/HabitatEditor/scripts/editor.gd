@@ -131,6 +131,7 @@ func build_ui():
 	for name in ["Select","Place","Erase","Move"]:
 		var b=button(name,func(): set_tool(name),top); b.toggle_mode=true; b.button_pressed=(name==tool); tool_buttons[name]=b
 	button("Rotate ↻",rotate_selection,top)
+	button("Align props",align_props,top)
 	button("Duplicate",duplicate_selection,top); button("Delete",delete_selection,top)
 	preview_button = button("Preview ▶",toggle_preview,top)
 	button("Sky & Atmosphere",open_sky,top)
@@ -149,7 +150,7 @@ func build_ui():
 	var controls = HFlowContainer.new(); central.add_child(controls)
 	button("Grid",func(): show_grid = not show_grid; grid_root.visible = show_grid and not previewing,controls)
 	button("Show/Hide water",func(): water_visible=not water_visible; rebuild(); set_status("Water visible" if water_visible else "Water hidden for editing underneath; cells remain saved."),controls)
-	button("Fine snap",func(): fine_snap = not fine_snap; set_status("Prop snapping: " + ("0.25m" if fine_snap else "free")),controls)
+	button("Loose snap",func(): fine_snap = not fine_snap; set_status("Loose-asset snapping (catalog props use tiles): " + ("0.25m" if fine_snap else "free")),controls)
 	var layer_label = Label.new(); layer_label.text = "Build layer"; controls.add_child(layer_label)
 	layer_control = SpinBox.new(); layer_control.min_value = -100; layer_control.max_value = 100; layer_control.allow_greater = true; layer_control.allow_lesser = true; layer_control.step = 1; controls.add_child(layer_control)
 	layer_control.value_changed.connect(func(v): layer = int(v); rebuild_grid(); if cutaway: rebuild())
@@ -289,7 +290,10 @@ func rebuild():
 		var dimensions = as_vector(asset.dimensions)
 		var body = StaticBody3D.new(); body.collision_layer = 2; body.collision_mask = 0; body.set_meta("instance_id",obj.id); root.add_child(body)
 		var shape = CollisionShape3D.new(); var box = BoxShape3D.new(); box.size=dimensions; shape.shape=box; shape.position.y=dimensions.y/2; body.add_child(shape)
-		if asset.get("solid",false):
+		if asset.get("blocks_movement",false):
+			var blocker=StaticBody3D.new(); blocker.collision_layer=1; blocker.collision_mask=0; root.add_child(blocker)
+			var collision=CollisionShape3D.new(); var tile_box=BoxShape3D.new(); tile_box.size=HabitatDocument.placement_size(asset,dimensions); collision.shape=tile_box; collision.position.y=dimensions.y/2; blocker.add_child(collision)
+		elif asset.get("solid",false):
 			for mesh_node in model.find_children("*","MeshInstance3D",true,false):
 				var solid_body=StaticBody3D.new(); solid_body.collision_layer=1; solid_body.collision_mask=0; solid_body.set_meta("instance_id",obj.id); mesh_node.add_child(solid_body)
 				var solid_shape=CollisionShape3D.new(); solid_shape.shape=mesh_node.mesh.create_trimesh_shape(); solid_body.add_child(solid_shape)
@@ -317,7 +321,11 @@ func make_ghost():
 	var asset = registry.assets[active_asset]
 	if asset.kind in ["terrain","water"]:
 		var m = MeshInstance3D.new(); var cube = BoxMesh.new(); cube.size=Vector3.ONE; m.mesh=cube; m.position.y=.5; ghost.add_child(m)
-	else: ghost.add_child(registry.instance(active_asset))
+	else:
+		ghost.add_child(registry.instance(active_asset))
+		if asset.get("placement_grid",false):
+			var size=HabitatDocument.placement_size(asset,Vector3(1,.025,1))
+			wire_box(AABB(Vector3(-size.x/2,.015,-size.z/2),size),Color("ffdf80"),ghost)
 	set_ghost_color(false)
 	ghost.visible = false
 
@@ -372,7 +380,8 @@ func update_ghost(point: Vector2):
 			if posmod(roundi(rotation_y/90),2): d=Vector3(d.z,d.y,d.x)
 			ghost_position+=hit.normal*Vector3(d.x/2,d.y/2,d.z/2)-Vector3(0,d.y/2,0)
 			position=ghost_position
-		if asset.get("solid",false): ghost_position=Vector3(round(position.x),round(position.y*4)/4,round(position.z))
+		if asset.get("placement_grid",false): ghost_position=HabitatDocument.snap_prop(asset,position,rotation_y)
+		elif asset.get("solid",false): ghost_position=Vector3(round(position.x),round(position.y*4)/4,round(position.z))
 		elif fine_snap: ghost_position=position.snapped(Vector3(.25,.01,.25))
 		ghost_reason = document.can_place(asset,ghost_position,rotation_y,as_vector(asset.dimensions))
 		ghost_valid = ghost_reason.is_empty()
@@ -393,7 +402,7 @@ func place_at_cursor():
 		var asset = registry.assets[active_asset]
 		if asset.kind in ["terrain","water"]: document.data.terrain.append({"cell":ghost_cell.duplicate(),"asset":active_asset})
 		else:
-			document.data.objects.append({"id":HabitatDocument.new_id(),"asset":active_asset,"position":vector_array(ghost_position),"rotation":[0,rotation_y,0],"scale":[1,1,1],"solid":asset.get("solid",false),"dimensions":asset.dimensions.duplicate(),"properties":{}})
+			document.data.objects.append({"id":HabitatDocument.new_id(),"asset":active_asset,"position":vector_array(ghost_position),"rotation":[0,rotation_y,0],"scale":[1,1,1],"solid":asset.get("solid",false),"dimensions":asset.dimensions.duplicate(),"placement_grid":asset.get("placement_grid",false),"footprint":asset.get("footprint",[]).duplicate(),"blocks_movement":asset.get("blocks_movement",false),"occupies_grid":asset.get("occupies_grid",false),"properties":{}})
 	rebuild()
 
 func pick(point: Vector2) -> String:
@@ -584,7 +593,7 @@ func refresh_selection():
 		elif object_nodes.has(id):
 			var obj=find_object(id); var asset=registry.assets.get(obj.asset,{"dimensions":[1,1,1]})
 			var holder=Node3D.new(); outlines.add_child(holder); holder.transform=object_nodes[id].transform
-			var d=as_vector(asset.dimensions); wire_box(AABB(Vector3(-d.x/2,0,-d.z/2),d),Color("ffdf80"),holder)
+			var d=HabitatDocument.placement_size(asset,as_vector(asset.dimensions)); wire_box(AABB(Vector3(-d.x/2,0,-d.z/2),d),Color("ffdf80"),holder)
 	if selected.size()!=1: return
 	var id=selected[0]
 	if id.begins_with("t:"):
@@ -601,14 +610,17 @@ func refresh_selection():
 		if previewing: return
 		var before=document.data.duplicate(true); obj.name=value; commit(before); name_edit.release_focus())
 	var asset=registry.assets.get(obj.asset,{})
+	if asset.get("placement_grid",false):
+		var info=Label.new(); info.text="%d × %d tiles · %s" % [asset.footprint[0],asset.footprint[1],"Blocks Fibu" if asset.get("blocks_movement",false) else "Fibu can walk through"]; inspector.add_child(info)
 	for property in ["position","rotation","scale"]:
 		var row=HBoxContainer.new(); inspector.add_child(row)
 		var l=Label.new(); l.text=property.left(3); row.add_child(l)
 		for axis in range(3):
 			var spin=SpinBox.new(); spin.allow_greater=true; spin.allow_lesser=true; spin.min_value=-100; spin.max_value=100; spin.step=.25 if property=="position" else 1.0; spin.value=obj[property][axis]; spin.custom_minimum_size.x=67; row.add_child(spin)
+			if property=="position" and asset.get("placement_grid",false): spin.step=1
 			if property=="scale": spin.min_value=asset.get("scale_range",[.25,3])[0]; spin.max_value=asset.get("scale_range",[.25,3])[1]; spin.allow_lesser=false; spin.allow_greater=false; spin.step=.25
-			if asset.get("solid",false) and (property=="scale" or (property=="rotation" and axis!=1)): spin.editable=false
-			if property=="rotation" and asset.get("solid",false): spin.step=90
+			if (asset.get("solid",false) or asset.get("placement_grid",false)) and (property=="scale" or (property=="rotation" and axis!=1)): spin.editable=false
+			if property=="rotation" and (asset.get("solid",false) or asset.get("placement_grid",false)): spin.step=90
 			spin.value_changed.connect(func(value): edit_property(id,property,axis,value))
 
 func edit_property(id: String, property: String, axis: int, value: float):
@@ -617,6 +629,9 @@ func edit_property(id: String, property: String, axis: int, value: float):
 	var before=document.data.duplicate(true)
 	obj[property][axis]=value
 	var asset=registry.assets.get(obj.asset,{"solid":false,"dimensions":[1,1,1]})
+	if asset.get("placement_grid",false):
+		obj.rotation=[0,round(obj.rotation[1]/90)*90,0]; obj.scale=[1,1,1]
+		obj.position=vector_array(HabitatDocument.snap_prop(asset,as_vector(obj.position),obj.rotation[1]))
 	var reason=document.can_place(asset,as_vector(obj.position),obj.rotation[1],as_vector(asset.dimensions)*as_vector(obj.scale),[id])
 	if not reason.is_empty(): document.data=before; set_status(reason)
 	else: commit(before)
@@ -660,9 +675,14 @@ func move_selection(delta: Vector3, duplicate: bool = false):
 		var obj=old.duplicate(true); obj.position=vector_array(as_vector(old.position)+delta)
 		if duplicate: obj.id=HabitatDocument.new_id()
 		var asset=registry.assets.get(obj.asset,{"solid":false,"dimensions":[1,1,1]})
+		if asset.get("placement_grid",false):
+			obj.scale=[1,1,1]; obj.rotation=[0,round(obj.rotation[1]/90)*90,0]
+			obj.position=vector_array(HabitatDocument.snap_prop(asset,as_vector(obj.position),obj.rotation[1]))
 		var reason=document.can_place(asset,as_vector(obj.position),obj.rotation[1],as_vector(asset.dimensions)*as_vector(obj.scale),[] if duplicate else selected)
 		if not reason.is_empty(): document.data=before; set_status(reason); return
 		next_selection.append(obj.id); document.data.objects.append(obj)
+	var group_error=prop_group_error(next_selection)
+	if not group_error.is_empty(): document.data=before; set_status(group_error); rebuild(); return
 	selected=next_selection; commit(before); rebuild()
 
 func move_to_cursor():
@@ -697,8 +717,13 @@ func rotate_selection():
 		if obj.is_empty(): continue
 		obj.rotation[1]=fposmod(obj.rotation[1]+90,360)
 		var asset=registry.assets.get(obj.asset,{"solid":false,"dimensions":[1,1,1]})
+		if asset.get("placement_grid",false):
+			obj.scale=[1,1,1]; obj.rotation=[0,round(obj.rotation[1]/90)*90,0]
+			obj.position=vector_array(HabitatDocument.snap_prop(asset,as_vector(obj.position),obj.rotation[1]))
 		var reason=document.can_place(asset,as_vector(obj.position),obj.rotation[1],as_vector(asset.dimensions)*as_vector(obj.scale),selected)
 		if not reason.is_empty(): document.data=before; set_status(reason); rebuild(); return
+	var group_error=prop_group_error(selected)
+	if not group_error.is_empty(): document.data=before; set_status(group_error); rebuild(); return
 	commit(before); rebuild()
 
 func focus_selection():
@@ -1029,3 +1054,30 @@ func water_inspector(cell: Dictionary):
 	for property in ["animation_enabled","foam_enabled"]:
 		var check=CheckBox.new(); check.text=property.capitalize(); check.button_pressed=style[property]; inspector.add_child(check)
 		check.toggled.connect(func(value): edit_water(cell,property,value))
+
+func align_props():
+	if previewing: return
+	var before=document.data.duplicate(true)
+	var ids=[]
+	for obj in document.data.objects:
+		if selected.has(obj.id) and registry.assets.get(obj.asset,{}).get("placement_grid",false): ids.append(obj.id)
+	if ids.is_empty(): set_status("Select props to align to terrain tiles."); return
+	var pending=ids.duplicate()
+	for id in ids:
+		var obj=find_object(id); var asset=registry.assets[obj.asset]
+		obj.rotation=[0,round(obj.rotation[1]/90)*90,0]; obj.scale=[1,1,1]
+		obj.position=vector_array(HabitatDocument.snap_prop(asset,as_vector(obj.position),obj.rotation[1]))
+		var reason=document.can_place(asset,as_vector(obj.position),obj.rotation[1],as_vector(asset.dimensions),pending)
+		if not reason.is_empty(): document.data=before; set_status("Alignment cancelled: "+reason); rebuild(); return
+		pending.erase(id)
+	commit(before); rebuild(); set_status("Selected props aligned to whole terrain tiles. Undo restores original transforms.")
+
+func prop_group_error(ids: Array) -> String:
+	for id in ids:
+		if id.begins_with("t:"): continue
+		var obj=find_object(id)
+		if obj.is_empty(): continue
+		var asset=registry.assets.get(obj.asset,{"dimensions":[1,1,1],"solid":false})
+		var reason=document.can_place(asset,as_vector(obj.position),obj.rotation[1],as_vector(asset.dimensions)*as_vector(obj.scale),[id])
+		if not reason.is_empty(): return reason
+	return ""

@@ -55,7 +55,7 @@ func run():
 	check(not doc.can_place(cube,Vector3.ZERO,0,Vector3.ONE).is_empty(),"occupied terrain rejected")
 	check(doc.can_place(cube,Vector3(0,1,0),0,Vector3.ONE).is_empty(),"vertical stacking")
 	check(doc.can_place(cube,Vector3(0,-1,0),0,Vector3.ONE).is_empty(),"negative layer")
-	check(doc.can_place(registry.assets.foliage_round_tree,Vector3.ZERO,0,Vector3.ONE).is_empty(),"decorative overlap allowed")
+	check(not doc.can_place(registry.assets.foliage_round_tree,Vector3.ZERO,0,Vector3.ONE).is_empty(),"tree footprint cannot be buried in terrain")
 	var terrain=HabitatTerrain.new(); var mesh=terrain.build(doc.data,registry)
 	check(terrain.exposed_faces==6,"single voxel six faces")
 	check(terrain.triangle_count==192,"single voxel subdivision count")
@@ -250,6 +250,7 @@ func run():
 	check(editor.target==old_target,"typing in text field does not move camera")
 	forward_key=forward_key.duplicate(); forward_key.pressed=false; Input.parse_input_event(forward_key); editor.view.grab_focus()
 	await load("res://tests/water_checks.gd").run(editor,registry,check)
+	await load("res://tests/prop_checks.gd").run(editor,registry,check)
 	editor.queue_free()
 	await process_frame
 	print("Fibu editor: %d checks, %d failures" % [checks,failures])

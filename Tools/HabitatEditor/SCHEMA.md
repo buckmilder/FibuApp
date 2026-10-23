@@ -57,3 +57,7 @@ Signed layers permit holes, caves and floating islands. Terrain occupancy alone 
 ## Water extension
 
 `terrain` is the logical cell collection and can now also contain `asset: "water_teal"`, registered as `kind: "water"`, `solid: false`, `occupies_grid: true`. Native consumers must partition these cells before generating solid terrain or walkability. A cell's optional `water_style` references the optional top-level `water_styles` dictionary. See [WATER.md](WATER.md) for exact connectivity, appearance, default and merge rules. Water is generated from cells and style settings, not serialized mesh data. Legacy layouts without water fields remain valid.
+
+## Prop footprint extension
+
+Catalog `prop_rules_version: 1` adds tile-based prop footprints and independent movement blockers. New object snapshots include `placement_grid`, `footprint: [width,depth]`, `occupies_grid`, and `blocks_movement`. These are optional for older documents; registered catalog entries are authoritative. `dimensions` continues to describe visual size, while placement uses the local footprint. Even-width/depth axes use half-cell center positions. See [PROP_FOOTPRINTS.md](PROP_FOOTPRINTS.md) for snapping, compatibility, passability, collision and native handoff.

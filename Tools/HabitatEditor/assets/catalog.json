@@ -14,13 +14,24 @@
         1.857100248336792
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": true
     },
     {
       "id": "foliage_young_tree",
@@ -35,13 +46,24 @@
         1.2016143798828125
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": true
     },
     {
       "id": "foliage_shrub",
@@ -56,13 +78,24 @@
         0.9489682912826538
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": false
     },
     {
       "id": "foliage_grass_small",
@@ -77,13 +110,24 @@
         0.5809862017631531
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": false
     },
     {
       "id": "foliage_grass_fluffy",
@@ -98,13 +142,24 @@
         0.7598601579666138
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": false
     },
     {
       "id": "foliage_grass_tall",
@@ -119,13 +174,24 @@
         0.8091118335723877
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": false
     },
     {
       "id": "bench",
@@ -140,13 +206,24 @@
         0.690000057220459
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        2,
+        1
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": true
     },
     {
       "id": "pergola",
@@ -161,13 +238,24 @@
         2.9099998474121094
       ],
       "solid": false,
-      "rotations": [],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
       "scale_range": [
-        0.25,
+        1,
+        1
+      ],
+      "footprint": [
+        3,
         3
       ],
-      "footprint": [],
-      "overhang": true
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": false
     },
     {
       "id": "picnic",
@@ -182,13 +270,24 @@
         1.0999999046325684
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        2,
+        2
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": false
     },
     {
       "id": "fountain",
@@ -203,13 +302,24 @@
         0.6499996185302734
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": true
     },
     {
       "id": "umbrella",
@@ -224,13 +334,24 @@
         2.1000001430511475
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": false
     },
     {
       "id": "hearth",
@@ -245,13 +366,24 @@
         2.1999998092651367
       ],
       "solid": false,
-      "rotations": [],
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
       "scale_range": [
-        0.25,
+        1,
+        1
+      ],
+      "footprint": [
+        3,
         3
       ],
-      "footprint": [],
-      "overhang": true
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": true
     },
     {
       "id": "supplies",
@@ -266,13 +398,24 @@
         1.3874998092651367
       ],
       "solid": false,
-      "rotations": [],
-      "scale_range": [
-        0.25,
-        3
+      "rotations": [
+        0,
+        90,
+        180,
+        270
       ],
-      "footprint": [],
-      "overhang": true
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        2,
+        2
+      ],
+      "overhang": true,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": true
     },
     {
       "id": "stairs",
@@ -301,7 +444,10 @@
         1,
         1
       ],
-      "overhang": false
+      "overhang": false,
+      "placement_grid": true,
+      "occupies_grid": true,
+      "blocks_movement": false
     },
     {
       "id": "terrain_golden",
@@ -585,5 +731,6 @@
         "water_style": "default"
       }
     }
-  ]
+  ],
+  "prop_rules_version": 1
 }

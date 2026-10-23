@@ -4,9 +4,11 @@ extends RefCounted
 const VERSION = 1
 var data: Dictionary
 var error = ""
+var asset_catalog: Dictionary = {}
 
 func _init():
 	data = fresh()
+	for asset in JSON.parse_string(FileAccess.get_file_as_string("res://assets/catalog.json")).assets: asset_catalog[asset.id]=asset
 
 static func fresh() -> Dictionary:
 	return {"format":"fibu-habitat", "version":VERSION, "id":new_id(), "name":"Untitled habitat", "grid":{"width":9,"depth":9,"cell_size":1.0}, "coordinates":"Y-up meters; cell [x,layer,row] maps to [x,layer,-row]; cell bottom Y=layer; X/Z centered", "terrain":[], "objects":[], "water_styles":{}, "spawn":[4,1.15,-0.5], "environment":HabitatAtmosphere.preset("sunny_highlands")}
@@ -139,6 +141,7 @@ func can_place(asset: Dictionary, position: Vector3, rotation_y: float, size: Ve
 		for r in rotations:
 			if is_equal_approx(fposmod(rotation_y,360),fposmod(r,360)): allowed=true
 		if not allowed: return "Rotation is not allowed for this asset."
+	size = placement_size(asset,size)
 	var half = size * .5
 	if asset.get("solid",false) or asset.get("occupies_grid",false):
 		var turns = posmod(roundi(rotation_y / 90.0),4)
@@ -153,8 +156,10 @@ func can_place(asset: Dictionary, position: Vector3, rotation_y: float, size: Ve
 		for obj in data.objects:
 			if ignore_ids.has(obj.id): continue
 			# Solid custom assets store a canonical collision size; unknown assets are preserved.
-			if not obj.get("solid",false): continue
-			var d = Vector3(obj.dimensions[0]*obj.scale[0],obj.dimensions[1]*obj.scale[1],obj.dimensions[2]*obj.scale[2])
+			var definition=asset_catalog.get(obj.asset,obj)
+			if not definition.get("occupies_grid",false) and not definition.get("solid",false): continue
+			var dims=definition.get("dimensions",[1,1,1])
+			var d = placement_size(definition,Vector3(dims[0],dims[1],dims[2]))*Vector3(obj.scale[0],obj.scale[1],obj.scale[2])
 			if posmod(roundi(obj.rotation[1]/90),2): d = Vector3(d.z,d.y,d.x)
 			var p = Vector3(obj.position[0],obj.position[1],obj.position[2])
 			if box.intersects(AABB(p-Vector3(d.x/2,0,d.z/2),d)): return "Occupied by solid object."
@@ -162,3 +167,32 @@ func can_place(asset: Dictionary, position: Vector3, rotation_y: float, size: Ve
 		if position.x < -.5 or position.x > grid.width-.5 or position.z < -grid.depth+.5 or position.z > .5:
 			return "Object anchor exceeds habitat boundary."
 	return ""
+
+# Footprints are placement reservations, independent of Fibu's movement blockers.
+static func placement_size(asset: Dictionary, visual_size: Vector3) -> Vector3:
+	var footprint=asset.get("footprint",[])
+	if asset.get("placement_grid",false) and footprint.size()==2:
+		return Vector3(footprint[0],visual_size.y,footprint[1])
+	return visual_size
+
+static func snap_prop(asset: Dictionary, position: Vector3, yaw: float) -> Vector3:
+	if not asset.get("placement_grid",false): return position
+	var size=placement_size(asset,Vector3.ONE)
+	if posmod(roundi(yaw/90),2): size=Vector3(size.z,size.y,size.x)
+	# Even-width assets sit BETWEEN cell centers, covering exact whole tiles.
+	var offset=Vector3(.5 if roundi(size.x)%2==0 else 0,0,.5 if roundi(size.z)%2==0 else 0)
+	return (position-offset).snapped(Vector3.ONE)+offset
+
+func blocked_cells() -> Array:
+	var result=[]
+	for obj in data.objects:
+		var asset=asset_catalog.get(obj.asset,obj)
+		if not asset.get("blocks_movement",false): continue
+		var local_size=placement_size(asset,Vector3.ONE)*Vector3(obj.scale[0],obj.scale[1],obj.scale[2])
+		var angle=deg_to_rad(obj.rotation[1]); var c=abs(cos(angle)); var s=abs(sin(angle))
+		var size=Vector3(local_size.x*c+local_size.z*s,local_size.y,local_size.x*s+local_size.z*c)
+		for x in range(floori(obj.position[0]-size.x/2+.50001),ceili(obj.position[0]+size.x/2+.49999)):
+			for row in range(floori(-obj.position[2]-size.z/2+.50001),ceili(-obj.position[2]+size.z/2+.49999)):
+				var cell=[x,roundi(obj.position[1]),row]
+				if not result.has(cell): result.append(cell)
+	return result
