@@ -28,7 +28,7 @@ The starter garden opens initially; New creates an empty habitat. Save As before
 - Choose a terrain material using the search/category palette. **B** activates Place; click repeatedly or drag to paint. A stroke keeps its initial face plane, preventing accidental towers. Hover outlines are green/red for valid/invalid placement.
 - Blocks snap to one-meter cells, with no fixed positive/negative vertical layer limit. **R** rotates props in 90-degree increments. Solid footprints must fit inside the 9×9 boundary; decorative anchors must fit, but foliage can overhang.
 - Hover a top/side/bottom face to extend terrain. Hold **Alt** to force placement on the current build plane. **[ / ]** changes that layer; the layer field accepts values beyond its initial range.
-- **X** erases terrain; Ctrl-click in Erase deletes a picked prop. **V / Esc** selects; Shift-click toggles multiselection. Drag empty space to box-select visible instance centers.
+- **3** erases terrain; Ctrl-click in Erase deletes a picked prop. **1 / Esc** selects; Shift-click toggles multiselection. Drag empty space to box-select visible instance centers.
 - **G** preserves the selection and enters Move: click the destination surface/plane to translate the group. Terrain movement uses whole-cell offsets; props can be positioned precisely in Inspector. Alt targets the build plane.
 - **R** rotates selected props around their own pivots. Terrain cubes have no directional orientation. **Cmd/Ctrl-D** duplicates one cell to the right, subject to collision rules. **Delete** removes selection.
 - **Cmd/Ctrl-Z**, **Shift-Cmd/Ctrl-Z** (or Ctrl-Y) undo/redo; a stroke/group operation is one history entry. History is capped at 100 snapshots.
@@ -39,7 +39,13 @@ The starter garden opens initially; New creates an empty habitat. Save As before
 
 ## Camera and preview
 
-Right-drag orbits; middle-drag or Shift-right-drag pans; wheel zooms. Focus/**F**, Frame, Top, Isometric and Reset provide view presets. Fly enables WASD/QE translation in the camera basis. Navigation is not restricted to ground level.
+**W/A/S/D** moves the camera forward/left/back/right in the horizontal plane relative to its heading, without requiring Fly mode. **Z/X** rotates left/right around the focus point; **C/V** zooms in/out continuously while held. **Q/E** moves the camera down/up.
+
+**Hold Shift and left-drag** to orbit freely above and beneath the habitat. Right-drag also orbits; middle-drag pans; the wheel zooms. Orbit reaches almost vertical birdseye and underside views while avoiding the exact camera pole. A Shift-click without a drag still toggles multiselection in Select mode. Navigation gestures do not place or erase assets.
+
+Focus/**F**, Frame, Top, Isometric and Reset provide view presets. Fly optionally switches WASD/QE translation into the camera's full view basis; default movement stays horizontal even when looking underneath. Camera height is unrestricted. Keyboard movement pauses while editing text or using dialogs, including Sky & Atmosphere. During Preview, WASD controls the navigation proxy instead of the editor camera.
+
+Tool shortcuts are **1/Esc** Select, **B** Place, **3** Erase and **G** Move. V and X are reserved for the requested camera controls; Cmd/Ctrl-Z still undoes and Cmd/Ctrl-S still saves.
 
 **Tab / Preview** runs a small capsule navigation proxy: WASD/arrows, Space jumps, Esc returns. Quarter-height stairs auto-step; solid terrain/steps collide. Decorative furniture, water and gameplay hazards are **not** a navigation validation system. Preview events never edit authored data. Camera and selection restore on return. This is not the native Swift player controller and does not test Fibu animations or SceneKit rendering.
 

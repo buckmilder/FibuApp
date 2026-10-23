@@ -33,6 +33,7 @@ var yaw = .65
 var pitch = .65
 var distance = 17.0
 var camera_drag = 0
+var orbit_drag_distance = 0.0
 var free_fly = false
 var saved_camera: Array = []
 var ui_lock = false
@@ -153,7 +154,7 @@ func build_ui():
 	button("Isometric",func(): pitch = .65; yaw = .65; update_camera(),controls)
 	button("Frame",frame_all,controls); button("Focus",focus_selection,controls)
 	button("Reset",func(): target=Vector3(4,0,-4); yaw=.65; pitch=.65; distance=17; update_camera(),controls)
-	button("Fly",func(): free_fly = not free_fly; set_status("Fly: WASD, Q/E; right-drag to look. Fly off returns to orbit."),controls)
+	button("Fly",func(): free_fly = not free_fly; set_status("WASD always moves the camera. Fly toggles view-relative movement; Q/E moves vertically."),controls)
 	view = SubViewportContainer.new(); view.size_flags_vertical = Control.SIZE_EXPAND_FILL; view.size_flags_horizontal = Control.SIZE_EXPAND_FILL; view.stretch = true; view.focus_mode=Control.FOCUS_ALL; central.add_child(view)
 	viewport = SubViewport.new(); viewport.size = Vector2i(900,700); viewport.handle_input_locally = false; viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS; viewport.own_world_3d = true; view.add_child(viewport)
 
@@ -393,6 +394,19 @@ func pick(point: Vector2) -> String:
 func view_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		recent_hover=event.position
+		if event.button_index==MOUSE_BUTTON_LEFT and ((event.pressed and event.shift_pressed) or camera_drag==MOUSE_BUTTON_LEFT):
+			if event.pressed:
+				view.grab_focus(); camera_drag=MOUSE_BUTTON_LEFT; orbit_drag_distance=0.0; ghost.visible=false
+			else:
+				camera_drag=0
+				# Preserve Shift-click multiselect; only a drag navigates.
+				if orbit_drag_distance<4 and not previewing and tool=="Select":
+					var id=pick(event.position)
+					if not id.is_empty():
+						if selected.has(id): selected.erase(id)
+						else: selected.append(id)
+					refresh_selection()
+			return
 		if event.button_index in [MOUSE_BUTTON_RIGHT,MOUSE_BUTTON_MIDDLE]:
 			camera_drag = event.button_index if event.pressed else 0; return
 		if event.pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN]:
@@ -425,10 +439,11 @@ func view_input(event: InputEvent):
 	elif event is InputEventMouseMotion:
 		recent_hover=event.position
 		if camera_drag:
-			if camera_drag==MOUSE_BUTTON_MIDDLE or event.shift_pressed:
+			if camera_drag==MOUSE_BUTTON_MIDDLE:
 				target+=(-camera.global_basis.x*event.relative.x+camera.global_basis.y*event.relative.y)*distance*.0018
 			else:
-				yaw-=event.relative.x*.008; pitch=clamp(pitch+event.relative.y*.008,-1.5,1.55)
+				orbit_drag_distance+=event.relative.length()
+				yaw-=event.relative.x*.008; pitch=clamp(pitch+event.relative.y*.008,-1.565,1.565)
 			update_camera()
 		elif selecting_box:
 			box_rect=Rect2(drag_start,event.position-drag_start).abs(); overlay.queue_redraw()
@@ -493,11 +508,12 @@ func _input(event):
 		KEY_H: show_help()
 		KEY_G: set_tool("Move")
 		KEY_B: set_tool("Place")
-		KEY_V: set_tool("Select")
-		KEY_X: set_tool("Erase")
+		KEY_1: set_tool("Select")
+		KEY_3: set_tool("Erase")
 		KEY_BRACKETLEFT: layer_control.value-=1
 		KEY_BRACKETRIGHT: layer_control.value+=1
 		KEY_TAB: toggle_preview()
+		KEY_W,KEY_A,KEY_S,KEY_D,KEY_Z,KEY_X,KEY_C,KEY_V,KEY_Q,KEY_E: pass
 		_: return
 	get_viewport().set_input_as_handled()
 
@@ -740,7 +756,7 @@ func show_error(text: String):
 
 func show_help():
 	error_dialog.title="Desktop controls"
-	error_dialog.dialog_text="Right-drag: orbit • Middle/Shift-right-drag: pan • Wheel: zoom\nB: place • V/Esc: select • X: erase • G: move selection, then click destination\nR: rotate • Delete: delete • Cmd/Ctrl-D: duplicate one cell right\nShift-click: multiselect • Drag empty space: box select\nCmd/Ctrl-S: save • Cmd/Ctrl-Z: undo • Shift-Cmd/Ctrl-Z: redo\n[ / ]: build layer • Alt: force placement on build plane\nCtrl-click in Erase: delete a prop • F: focus • Tab: preview\nFly mode: WASD, Q/E • Preview: WASD/arrows, Space jumps, Esc returns\nChoose overlapping props using the selection dropdown.\nPreview is a navigation proxy, not the native Swift Fibu controller."
+	error_dialog.dialog_text="WASD: camera movement • Z/X: orbit left/right • C/V: zoom in/out\nShift-left-drag or right-drag: orbit above/under • Middle-drag: pan • Wheel: zoom\nB: place • 1/Esc: select • 3: erase • G: move selection, then click destination\nR: rotate • Delete: delete • Cmd/Ctrl-D: duplicate one cell right\nShift-click: multiselect • Drag empty space: box select\nCmd/Ctrl-S: save • Cmd/Ctrl-Z: undo • Shift-Cmd/Ctrl-Z: redo\n[ / ]: build layer • Alt: force placement on build plane\nCtrl-click in Erase: delete a prop • F: focus • Tab: preview\nQ/E: camera down/up • Fly: view-relative movement • Preview: WASD/arrows, Space jumps, Esc returns\nChoose overlapping props using the selection dropdown.\nPreview is a navigation proxy, not the native Swift Fibu controller."
 	error_dialog.popup_centered(Vector2i(800,410))
 
 func toggle_preview():
@@ -761,14 +777,31 @@ func toggle_preview():
 
 func _physics_process(delta):
 	if atmosphere: atmosphere.tick(delta)
+	# Command shortcuts must not also move/rotate the camera while held.
+	if Input.is_key_pressed(KEY_CTRL) or Input.is_key_pressed(KEY_META): return
 	var focus=get_viewport().gui_get_focus_owner()
 	if focus is LineEdit or (file_dialog and file_dialog.visible) or (error_dialog and error_dialog.visible) or (confirm and confirm.visible) or (sky_window and sky_window.visible): return
 	if previewing and proxy:
 		var input=Vector3(float(Input.is_physical_key_pressed(KEY_D) or Input.is_key_pressed(KEY_RIGHT))-float(Input.is_physical_key_pressed(KEY_A) or Input.is_key_pressed(KEY_LEFT)),0,float(Input.is_physical_key_pressed(KEY_S) or Input.is_key_pressed(KEY_DOWN))-float(Input.is_physical_key_pressed(KEY_W) or Input.is_key_pressed(KEY_UP)))
 		preview_step(delta,input,Input.is_physical_key_pressed(KEY_SPACE))
-	elif free_fly and camera:
+	elif camera:
 		var movement=Vector3(float(Input.is_physical_key_pressed(KEY_D))-float(Input.is_physical_key_pressed(KEY_A)),float(Input.is_physical_key_pressed(KEY_E))-float(Input.is_physical_key_pressed(KEY_Q)),float(Input.is_physical_key_pressed(KEY_S))-float(Input.is_physical_key_pressed(KEY_W)))
-		if movement.length_squared()>0: target+=camera.basis*movement*delta*max(distance*.4,2); update_camera()
+		var turn=float(Input.is_physical_key_pressed(KEY_X))-float(Input.is_physical_key_pressed(KEY_Z))
+		var zoom=float(Input.is_physical_key_pressed(KEY_V))-float(Input.is_physical_key_pressed(KEY_C))
+		camera_step(delta,movement,turn,zoom)
+
+func camera_step(delta: float, movement: Vector3, turn: float, zoom: float):
+	if movement.length_squared()>0:
+		var direction: Vector3
+		if free_fly: direction=camera.basis*movement.normalized()
+		else:
+			var right=Vector3(cos(yaw),0,-sin(yaw))
+			var backward=Vector3(sin(yaw),0,cos(yaw))
+			direction=(right*movement.x+Vector3.UP*movement.y+backward*movement.z).normalized()
+		target+=direction*delta*max(distance*.4,2)
+	yaw+=turn*delta*1.2
+	distance=clamp(distance*exp(zoom*delta*1.2),.5,5000)
+	if movement.length_squared()>0 or turn!=0 or zoom!=0: update_camera()
 
 func preview_step(delta: float, input: Vector3, jump: bool):
 		var forward=Vector3(camera.global_basis.z.x,0,camera.global_basis.z.z).normalized()

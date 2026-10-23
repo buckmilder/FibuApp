@@ -16,3 +16,8 @@ Not verified here: native Mac/trackpad behavior, macOS exported app bundle, Scen
 - All six actual backgrounds were rendered and visually inspected in the Compatibility renderer. Original procedural silhouettes, cloud gradients, night stars/moon, desert layers and icy peaks are visible from the default angled camera. Reference renders are `sky_*.png` in this folder.
 - The rendered editor's Sky & Atmosphere window and one-click Starry Night selection were exercised through mouse input; the scene background and lighting changed while construction remained in place. `atmosphere-panel.png` captures that panel.
 - No Forward+ volumetric features or distant collision geometry are used. This does not establish an iOS frame-rate/battery measurement, native Mac verification, SceneKit visual parity, or an automatic day/night clock.
+
+
+## Camera bindings follow-up
+
+130 automated checks pass after the camera update. Added coverage checks horizontal forward/strafe movement, Z/X yaw, C/V distance changes, Shift-drag underside/birdseye orientations, finite camera basis near the pole, gesture release without painting, unchanged authored data, and suppression of camera input during typing/command shortcuts. Both camera views were also rendered and visually inspected (`camera_birdseye.png`, `camera_underside.png`). Native Mac keyboard/trackpad verification remains local.

@@ -30,3 +30,8 @@ Arbitrary connector/socket snapping, transform gizmos, advanced foliage brushes,
 ## Sky update included before handoff
 
 The same branch now includes six procedural environments and a Sky & Atmosphere panel. Check preset thumbnails, switching, color/numeric edits, custom preset save/duplicate/revert, panorama imports and habitat save/reload. The starter includes explicit Sunny Highlands settings. `assets/skies/presets.json` supplies portable reference defaults; `ATMOSPHERE.md` describes keys, coordinate conventions, background placement and SceneKit integration. Preview shares the same environment renderer. This does not implement the native app's sky or its automatic day/night clock.
+
+
+## Updated camera controls
+
+WASD now translates the authoring camera without enabling Fly, Z/X rotates left/right, C/V zooms in/out, and Shift-left-drag or right-drag orbits above and below the habitat. Middle-drag pans; Q/E adjusts height. Tool shortcuts formerly using V/X are now 1/Esc Select and 3 Erase. Verify these on the Mac, including text-field focus and Cmd-Z/Cmd-S. Preview retains WASD proxy movement.
