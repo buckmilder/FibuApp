@@ -1,0 +1,21 @@
+{
+  "original_vertices": 1602,
+  "candidate_vertices": 7642,
+  "original_triangles": 3200,
+  "candidate_triangles": 15280,
+  "joint_count": 32,
+  "max_influences": 10,
+  "max_trimmed_weight": 0.0021924718748778105,
+  "uv_area_before": 0.6149800419807434,
+  "uv_area_after": 0.614979088306427,
+  "wave_samples_evaluated": 51,
+  "skeleton_and_animation_attributes_unchanged": true,
+  "original_texture_bytes_unchanged": true,
+  "candidate_sha256": "819ef67d0d86d2572fd0fc1c4d0eca611d516c514e297225beb1e12d1ba7f4b5",
+  "limitations": [
+    "UV coordinates are interpolated onto a denser topology, not identical arrays.",
+    "Skin appearance needs SceneKit review.",
+    "No Xcode or on-device tests performed.",
+    "Watch asset unchanged."
+  ]
+}
