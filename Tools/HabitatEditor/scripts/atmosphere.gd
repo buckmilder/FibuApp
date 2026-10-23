@@ -1,6 +1,8 @@
 class_name HabitatAtmosphere
 extends RefCounted
 
+signal settings_changed(settings: Dictionary)
+
 const PRESETS = ["sunny_highlands","golden_sunset","starry_night","misty_forest","desert_haze","frozen_twilight"]
 const NAMES = ["Sunny Highlands","Golden Sunset","Starry Night","Misty Forest","Desert Haze","Frozen Twilight"]
 const COLORS = [
@@ -62,8 +64,14 @@ func apply(raw: Dictionary):
 	if settings==last_settings: return
 	last_settings=settings.duplicate(true)
 	missing_panorama=""
-	var env=Environment.new(); env.background_mode=Environment.BG_SKY
-	var sky=Sky.new(); sky.radiance_size=Sky.RADIANCE_SIZE_32; sky.process_mode=Sky.PROCESS_MODE_INCREMENTAL
+	var env=environment_node.environment
+	if env==null: env=Environment.new()
+	env.background_mode=Environment.BG_SKY
+	var sky=env.sky
+	if sky==null: sky=Sky.new()
+	var background: Material = null
+	env.sky_rotation=Vector3.ZERO
+	sky.radiance_size=Sky.RADIANCE_SIZE_32; sky.process_mode=Sky.PROCESS_MODE_INCREMENTAL
 	var panorama_path=settings.get("panorama","")
 	if not panorama_path.is_empty():
 		if not panorama_cache.has(panorama_path):
@@ -73,14 +81,15 @@ func apply(raw: Dictionary):
 				if image: panorama_cache[panorama_path]=ImageTexture.create_from_image(image)
 			if not panorama_cache.has(panorama_path): missing_panorama=panorama_path
 		if panorama_cache.has(panorama_path):
-			var panorama=PanoramaSkyMaterial.new(); panorama.panorama=panorama_cache[panorama_path]; sky.sky_material=panorama
+			var panorama=PanoramaSkyMaterial.new(); panorama.panorama=panorama_cache[panorama_path]; background=panorama
 			env.sky_rotation.y=deg_to_rad(settings.background_rotation)
-	if sky.sky_material==null:
+	if background==null:
 		for key in ["landscape_visible","cloud_density","cloud_softness","stars","moon","haze","horizon_offset"]: material.set_shader_parameter(key,settings[key])
 		material.set_shader_parameter("landscape_kind",int(settings.landscape_kind))
 		for pair in [["sky_top","top_color"],["horizon","horizon_color"],["lower_sky","lower_color"],["landscape_tint","landscape_tint"],["cloud_color","cloud_color"]]: material.set_shader_parameter(pair[1],Color(settings[pair[0]]))
 		material.set_shader_parameter("background_rotation",deg_to_rad(settings.background_rotation)); material.set_shader_parameter("cloud_phase",phase)
-		sky.sky_material=material
+		background=material
+	sky.sky_material=background
 	env.sky=sky; env.ambient_light_source=Environment.AMBIENT_SOURCE_COLOR; env.ambient_light_color=Color(settings.ambient_color); env.ambient_light_energy=settings.ambient_energy
 	env.reflected_light_source=Environment.REFLECTION_SOURCE_DISABLED
 	env.tonemap_mode=Environment.TONE_MAPPER_FILMIC
@@ -88,6 +97,7 @@ func apply(raw: Dictionary):
 	env.fog_light_color=Color(settings.fog_color); env.fog_density=settings.fog_density; env.fog_height=settings.fog_height; env.fog_height_density=settings.fog_height_density; env.fog_sky_affect=.15
 	environment_node.environment=env
 	sunlight.rotation_degrees=Vector3(-settings.sun_elevation,settings.sun_azimuth,0); sunlight.light_color=Color(settings.sun_color); sunlight.light_energy=settings.sun_energy
+	settings_changed.emit(settings)
 
 func tick(delta: float):
 	if last_settings.get("cloud_motion",false) and last_settings.get("panorama","").is_empty():

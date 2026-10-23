@@ -1,0 +1,1237 @@
+{
+  "format": "fibu-habitat",
+  "version": 1,
+  "id": "fibu-water-study-v1",
+  "name": "Water Study",
+  "grid": {
+    "width": 9,
+    "depth": 9,
+    "cell_size": 1
+  },
+  "coordinates": "Y-up meters; cell [x,layer,row] maps to [x,layer,-row]; cell bottom Y=layer; X/Z centered",
+  "terrain": [
+    {
+      "cell": [
+        0,
+        -1,
+        0
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        1
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        2
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        3
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        4
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        5
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        6
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        7
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        8
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        0
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        1
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        2
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        3
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        4
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        5
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        6
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        7
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        8
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        0
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        1
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        2
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        3
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        4
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        5
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        6
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        7
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        8
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        0
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        1
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        2
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        3
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        4
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        5
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        6
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        7
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        8
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        0
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        1
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        2
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        3
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        4
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        5
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        6
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        7
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        8
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        0
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        1
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        2
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        3
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        4
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        5
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        6
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        7
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        8
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        0
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        1
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        2
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        3
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        4
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        5
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        6
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        7
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        8
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        0
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        1
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        2
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        3
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        4
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        5
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        6
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        7
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        8
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        0
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        1
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        2
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        3
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        4
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        5
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        6
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        7
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        8
+      ],
+      "asset": "terrain_sand"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        3
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        4
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        5
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        6
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        3
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        4
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        5
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        6
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        3
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        4
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        5
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        6
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        3
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        4
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        5
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        6
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        1
+      ],
+      "asset": "terrain_limestone"
+    },
+    {
+      "cell": [
+        5,
+        1,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        2,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        1,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        2,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        1,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        2,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        1,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        2,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        1,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        2,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        1,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        2,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        1,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        1,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        1,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        1,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        1,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        1,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        6
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        6
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        7
+      ],
+      "asset": "water_teal"
+    }
+  ],
+  "objects": [],
+  "water_styles": {},
+  "spawn": [
+    0,
+    0.03,
+    -8
+  ],
+  "environment": {
+    "ambient_color": "c4dce4",
+    "ambient_energy": 0.35,
+    "background_rotation": 0.0,
+    "cloud_color": "fff7e5",
+    "cloud_density": 0.55,
+    "cloud_motion": false,
+    "cloud_softness": 0.55,
+    "cloud_speed": 0.015,
+    "fog_color": "aecfc6",
+    "fog_density": 0.001,
+    "fog_height": 0.0,
+    "fog_height_density": 0.0,
+    "haze": 0.3,
+    "horizon": "bce3cf",
+    "horizon_offset": 0.55,
+    "landscape_kind": 0,
+    "landscape_tint": "326343",
+    "landscape_visible": true,
+    "lower_sky": "426b67",
+    "moon": 0.0,
+    "name": "Sunny Highlands",
+    "panorama": "",
+    "preset": "sunny_highlands",
+    "sky_top": "368ab1",
+    "stars": 0.0,
+    "sun_azimuth": -30,
+    "sun_color": "fff4d8",
+    "sun_elevation": 52,
+    "sun_energy": 0.65,
+    "version": 1
+  }
+}

@@ -58,5 +58,6 @@ for theme in ['golden','forest','lime','meadow','sand','limestone','cobble','tim
         for suffix in ['', '_normal','_roughness']:
             f=f'{theme}_{face}{suffix}.png';shutil.copy2(ROOT/'Assets/Blender/HabitatWorlds/textures'/f,HERE/'assets/textures'/f)
     entries.append({'id':'terrain_'+theme,'name':theme.title(),'category':'Terrain','kind':'terrain','theme':theme,'dimensions':[1,1,1],'footprint':[1,1],'rotations':[0],'connection_group':'terrain','ios':{'generator':'fibu-rounded-boundary-v1','material':theme},'godot':{'generator':'fibu-rounded-boundary-v1'},'solid':True})
+entries.append({'id': 'water_teal', 'name': 'Water Block', 'category': 'Water', 'kind': 'water', 'dimensions': [1, 1, 1], 'footprint': [1, 1], 'rotations': [0], 'solid': False, 'occupies_grid': True, 'connection_group': 'water', 'godot': {'generator': 'fibu-water-volume-v1'}, 'ios': {'generator': 'fibu-water-volume-v1'}, 'properties': {'water_style': 'default'}})
 (HERE/'assets/catalog.json').write_text(json.dumps({'version':1,'assets':entries},indent=2)+'\n')
 print('Prepared',len(entries),'assets')

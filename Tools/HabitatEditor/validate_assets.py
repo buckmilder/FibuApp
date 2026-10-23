@@ -30,4 +30,4 @@ for asset in catalog:
             for info in z.infolist():
                 f.seek(info.header_offset);header=f.read(30);name_len,extra_len=struct.unpack_from('<HH',header,26)
                 assert (info.header_offset+30+name_len+extra_len)%64==0
-print('23 thumbnails and 14 paired GLB/USDZ assets: hashes, dimensions, grounding, geometry, dependencies and archive alignment passed.')
+print(f'{len(catalog)} thumbnails and {len(records)} paired GLB/USDZ props: hashes, dimensions, grounding, geometry, dependencies and archive alignment passed. Procedural water is generated from its layout contract, not a static USDZ.')

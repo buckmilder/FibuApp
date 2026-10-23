@@ -1,0 +1,2298 @@
+{
+  "format": "fibu-habitat",
+  "version": 1,
+  "id": "fibu-water-garden-v1",
+  "name": "Water Garden",
+  "grid": {
+    "width": 9,
+    "depth": 9,
+    "cell_size": 1
+  },
+  "coordinates": "Y-up meters; cell [x,layer,row] maps to [x,layer,-row]; cell bottom Y=layer; X/Z centered",
+  "terrain": [
+    {
+      "cell": [
+        0,
+        -2,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        -2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        -2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        -2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        3
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        3
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        -2,
+        4
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        -2,
+        5
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        -2,
+        6
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        -2,
+        7
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        -2,
+        8
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        0,
+        -1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        0,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        0,
+        1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        -2,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        -2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        -2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        -2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        3
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        3
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        -2,
+        4
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        -2,
+        5
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        -2,
+        6
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        -2,
+        7
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        -2,
+        8
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        1,
+        -1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        0,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        1,
+        1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        -2,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        0
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        2,
+        -2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        2,
+        -2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        2,
+        -2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        2,
+        -2,
+        4
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        -2,
+        5
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        -2,
+        6
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        -2,
+        7
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        -2,
+        8
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        2,
+        -1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        0,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        2,
+        1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        -2,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        0
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        3,
+        -2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        3,
+        -2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        3,
+        -2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        3,
+        -2,
+        4
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        -2,
+        5
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        -2,
+        6
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        -2,
+        7
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        -2,
+        8
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        3,
+        -1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        0,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        3,
+        1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        -2,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        0
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        4,
+        -2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        4,
+        -2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        4,
+        -2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        4,
+        -2,
+        4
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        -2,
+        5
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        -2,
+        6
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        -2,
+        7
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        -2,
+        8
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        4,
+        -1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        0,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        4,
+        1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        -2,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        0
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        -2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        -2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        -2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        5,
+        -2,
+        4
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        -2,
+        5
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        -2,
+        6
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        -2,
+        7
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        -2,
+        8
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        5,
+        -1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        0,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        5,
+        1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        -2,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        0
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        -2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        1
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        -2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        2
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        -2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        3
+      ],
+      "asset": "water_teal"
+    },
+    {
+      "cell": [
+        6,
+        -2,
+        4
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        -2,
+        5
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        -2,
+        6
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        -2,
+        7
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        -2,
+        8
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        6,
+        -1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        0,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        6,
+        1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        -2,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        -2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        -2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        -2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        3
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        3
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        -2,
+        4
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        -2,
+        5
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        -2,
+        6
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        -2,
+        7
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        -2,
+        8
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        7,
+        -1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        0,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        7,
+        1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        -2,
+        0
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        0,
+        0
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        -2,
+        1
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        0,
+        1
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        -2,
+        2
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        0,
+        2
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        -2,
+        3
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        3
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        0,
+        3
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        -2,
+        4
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        0,
+        4
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        -2,
+        5
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        0,
+        5
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        -2,
+        6
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        0,
+        6
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        -2,
+        7
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        0,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        1,
+        7
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        -2,
+        8
+      ],
+      "asset": "terrain_cobble"
+    },
+    {
+      "cell": [
+        8,
+        -1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        0,
+        8
+      ],
+      "asset": "terrain_meadow"
+    },
+    {
+      "cell": [
+        8,
+        1,
+        8
+      ],
+      "asset": "terrain_meadow"
+    }
+  ],
+  "objects": [
+    {
+      "id": "5db4a2d2-465b-57b1-8659-04d2c2adfc55",
+      "asset": "foliage_round_tree",
+      "position": [
+        1,
+        2,
+        -7.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "solid": false,
+      "dimensions": [
+        1.8615450859069824,
+        2.661456346511841,
+        1.857100248336792
+      ],
+      "properties": {}
+    },
+    {
+      "id": "f7341a78-fe56-5b18-845a-e4fd06ef25db",
+      "asset": "foliage_young_tree",
+      "position": [
+        7.4,
+        2,
+        -7.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "solid": false,
+      "dimensions": [
+        1.2059831619262695,
+        1.7299463748931885,
+        1.2016143798828125
+      ],
+      "properties": {}
+    },
+    {
+      "id": "5d63f8c2-d83b-5c35-b966-ce1441f9daf5",
+      "asset": "foliage_shrub",
+      "position": [
+        0.4,
+        1,
+        -2
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "solid": false,
+      "dimensions": [
+        1.0552421808242798,
+        0.7799999713897705,
+        0.9489682912826538
+      ],
+      "properties": {}
+    },
+    {
+      "id": "0a4908ed-ae13-5256-8290-14114c193163",
+      "asset": "foliage_grass_fluffy",
+      "position": [
+        7.6,
+        1,
+        -3
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "solid": false,
+      "dimensions": [
+        0.8191715478897095,
+        0.5174212455749512,
+        0.7598601579666138
+      ],
+      "properties": {}
+    },
+    {
+      "id": "3868d120-2be3-5369-9e2e-44fd586d955f",
+      "asset": "foliage_grass_fluffy",
+      "position": [
+        1,
+        1,
+        -4.5
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "solid": false,
+      "dimensions": [
+        0.8191715478897095,
+        0.5174212455749512,
+        0.7598601579666138
+      ],
+      "properties": {}
+    },
+    {
+      "id": "9e9f8214-edfb-58d8-9c4c-4448a1d79c02",
+      "asset": "bench",
+      "position": [
+        4,
+        1,
+        -5.8
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "solid": false,
+      "dimensions": [
+        1.6499998569488525,
+        1.2999999523162842,
+        0.690000057220459
+      ],
+      "properties": {}
+    }
+  ],
+  "water_styles": {},
+  "spawn": [
+    1,
+    1.03,
+    -5
+  ],
+  "environment": {
+    "ambient_color": "c4dce4",
+    "ambient_energy": 0.35,
+    "background_rotation": 0.0,
+    "cloud_color": "fff7e5",
+    "cloud_density": 0.55,
+    "cloud_motion": false,
+    "cloud_softness": 0.55,
+    "cloud_speed": 0.015,
+    "fog_color": "aecfc6",
+    "fog_density": 0.001,
+    "fog_height": 0.0,
+    "fog_height_density": 0.0,
+    "haze": 0.3,
+    "horizon": "bce3cf",
+    "horizon_offset": 0.55,
+    "landscape_kind": 0,
+    "landscape_tint": "326343",
+    "landscape_visible": true,
+    "lower_sky": "426b67",
+    "moon": 0.0,
+    "name": "Sunny Highlands",
+    "panorama": "",
+    "preset": "sunny_highlands",
+    "sky_top": "368ab1",
+    "stars": 0.0,
+    "sun_azimuth": -30,
+    "sun_color": "fff4d8",
+    "sun_elevation": 52,
+    "sun_energy": 0.65,
+    "version": 1
+  }
+}

@@ -21,3 +21,10 @@ Not verified here: native Mac/trackpad behavior, macOS exported app bundle, Scen
 ## Camera bindings follow-up
 
 130 automated checks pass after the camera update. Added coverage checks horizontal forward/strafe movement, Z/X yaw, C/V distance changes, Shift-drag underside/birdseye orientations, finite camera basis near the pole, gesture release without painting, unchanged authored data, and suppression of camera input during typing/command shortcuts. Both camera views were also rendered and visually inspected (`camera_birdseye.png`, `camera_underside.png`). Native Mac keyboard/trackpad verification remains local.
+
+
+## Water Block follow-up
+
+165 automated checks pass. New coverage includes single/2×2/stacked/L-shaped/disconnected volumes, no internal faces or perimeter grids, shoreline/wall detection, winding and depth interpolation, depth independent of global Y, unchanged-body cache reuse, actual editor placement/move/duplicate/delete/history, body style isolation, water persistence, visibility/picking under water, preview collision separation and sky-linked foam lighting. Nearby picking was made more precise while retaining long-distance queries for tall construction.
+
+Actual Compatibility renders were inspected in daylight and night: the shallow shelf/deep floor remain visible, outer volume walls are translucent, and broken pale foam follows water/terrain boundaries. Reference images are water-garden.png, water-night.png, water-study.png and water-editor.png. The asset integrity helper validates 24 thumbnails and the unchanged 14 paired props. Native Mac and SceneKit/iPhone rendering/performance remain local verification tasks.

@@ -35,3 +35,10 @@ The same branch now includes six procedural environments and a Sky & Atmosphere 
 ## Updated camera controls
 
 WASD now translates the authoring camera without enabling Fly, Z/X rotates left/right, C/V zooms in/out, and Shift-left-drag or right-drag orbits above and below the habitat. Middle-drag pans; Q/E adjusts height. Tool shortcuts formerly using V/X are now 1/Esc Select and 3 Erase. Verify these on the Mac, including text-field focus and Cmd-Z/Cmd-S. Preview retains WASD proxy movement.
+
+
+## Water Block update
+
+The editor now registers one Water Block and includes `water-garden.json` and `water-study.json` as optional authoring examples. Verify Water-category placement/drag painting, stacks, foam joins, selection, connected-body appearance edits, undo/redo and save/reload. Use Show/Hide water to edit the submerged floor. Preview should show the volume while keeping the existing proxy's solid collision mask unchanged.
+
+Read `WATER.md` before native layout work: water is classified by the asset registry and is **not ordinary solid terrain**, even though it lives in the shared logical grid list. Preserve `water_styles` and cell style references. There is no static water USDZ to add; native code needs the documented boundary generator and matching transparent shader/foam treatment. Godot GLSL and SceneKit material shaders are separate implementations. No automatic food, health, swimming or waterfall behavior is included. Existing native habitat exports and Fibu remain untouched.

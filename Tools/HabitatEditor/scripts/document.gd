@@ -9,7 +9,7 @@ func _init():
 	data = fresh()
 
 static func fresh() -> Dictionary:
-	return {"format":"fibu-habitat", "version":VERSION, "id":new_id(), "name":"Untitled habitat", "grid":{"width":9,"depth":9,"cell_size":1.0}, "coordinates":"Y-up meters; cell [x,layer,row] maps to [x,layer,-row]; cell bottom Y=layer; X/Z centered", "terrain":[], "objects":[], "spawn":[4,1.15,-0.5], "environment":HabitatAtmosphere.preset("sunny_highlands")}
+	return {"format":"fibu-habitat", "version":VERSION, "id":new_id(), "name":"Untitled habitat", "grid":{"width":9,"depth":9,"cell_size":1.0}, "coordinates":"Y-up meters; cell [x,layer,row] maps to [x,layer,-row]; cell bottom Y=layer; X/Z centered", "terrain":[], "objects":[], "water_styles":{}, "spawn":[4,1.15,-0.5], "environment":HabitatAtmosphere.preset("sunny_highlands")}
 
 static func new_id() -> String:
 	return Crypto.new().generate_random_bytes(12).hex_encode()
@@ -46,6 +46,11 @@ func validate(candidate, catalog: Dictionary) -> String:
 		return "Missing terrain, objects, or finite spawn vector."
 	var sky_error=HabitatAtmosphere.validate(candidate.get("environment",{}))
 	if not sky_error.is_empty(): return sky_error
+	var styles=candidate.get("water_styles",{})
+	if not styles is Dictionary: return "Water styles must be an object."
+	for style in styles.values():
+		var water_error=HabitatWater.validate_style(style)
+		if not water_error.is_empty(): return water_error
 	var occupied = {}
 	var ids = {}
 	for cell in candidate.terrain:
@@ -58,7 +63,8 @@ func validate(candidate, catalog: Dictionary) -> String:
 		var k = key(cell.cell)
 		if occupied.has(k): return "Duplicate terrain cell: " + k
 		occupied[k] = true
-		if catalog.has(cell.asset) and catalog[cell.asset].kind != "terrain": return "Prop ID used as terrain."
+		if catalog.has(cell.asset) and not catalog[cell.asset].kind in ["terrain","water"]: return "Prop ID used as terrain."
+		if cell.has("water_style") and not cell.water_style is String: return "Water style identifier must be a string."
 	for obj in candidate.objects:
 		if not obj is Dictionary or not obj.get("id") is String or not obj.get("asset") is String:
 			return "Invalid object identifier."
@@ -134,7 +140,7 @@ func can_place(asset: Dictionary, position: Vector3, rotation_y: float, size: Ve
 			if is_equal_approx(fposmod(rotation_y,360),fposmod(r,360)): allowed=true
 		if not allowed: return "Rotation is not allowed for this asset."
 	var half = size * .5
-	if asset.get("solid",false):
+	if asset.get("solid",false) or asset.get("occupies_grid",false):
 		var turns = posmod(roundi(rotation_y / 90.0),4)
 		if turns % 2: half = Vector3(half.z,half.y,half.x)
 		if position.x-half.x < -.5001 or position.x+half.x > grid.width-.4999 or position.z-half.z < -grid.depth+.4999 or position.z+half.z > .5001:

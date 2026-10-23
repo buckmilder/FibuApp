@@ -23,6 +23,7 @@ var triangle_count = 0
 func build(data: Dictionary, registry: HabitatRegistry) -> ArrayMesh:
 	var occupied = {}
 	for item in data.terrain:
+		if HabitatWater.is_water(item): continue
 		occupied[Vector3i(item.cell[0],item.cell[1],-item.cell[2])] = item.asset
 	var positions: Array[Vector3] = []
 	var lookup = {}

@@ -14,7 +14,7 @@ func _initialize():
 func run():
 	registry=HabitatRegistry.new()
 	var doc=HabitatDocument.new()
-	check(registry.assets.size()==23,"all nine terrain and fourteen props registered")
+	check(registry.assets.size()==24,"nine terrain, fourteen props and one water registered")
 	for asset in registry.assets.values():
 		if asset.kind=="prop": check(registry.scenes[asset.id]!=null,"GLB loads: "+asset.id)
 	check(doc.validate(doc.data,registry.assets).is_empty(),"fresh document valid")
@@ -249,6 +249,7 @@ func run():
 	var old_target=editor.target; editor._physics_process(1)
 	check(editor.target==old_target,"typing in text field does not move camera")
 	forward_key=forward_key.duplicate(); forward_key.pressed=false; Input.parse_input_event(forward_key); editor.view.grab_focus()
+	await load("res://tests/water_checks.gd").run(editor,registry,check)
 	editor.queue_free()
 	await process_frame
 	print("Fibu editor: %d checks, %d failures" % [checks,failures])

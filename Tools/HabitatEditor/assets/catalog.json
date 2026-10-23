@@ -554,6 +554,36 @@
         "generator": "fibu-rounded-boundary-v1"
       },
       "solid": true
+    },
+    {
+      "id": "water_teal",
+      "name": "Water Block",
+      "category": "Water",
+      "kind": "water",
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "rotations": [
+        0
+      ],
+      "solid": false,
+      "occupies_grid": true,
+      "connection_group": "water",
+      "godot": {
+        "generator": "fibu-water-volume-v1"
+      },
+      "ios": {
+        "generator": "fibu-water-volume-v1"
+      },
+      "properties": {
+        "water_style": "default"
+      }
     }
   ]
 }

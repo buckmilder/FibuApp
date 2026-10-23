@@ -5,7 +5,7 @@ var document = HabitatDocument.new()
 var undo_stack: Array = []
 var redo_stack: Array = []
 var selected: Array = []
-var favorites: Array = ["terrain_meadow","foliage_round_tree","stairs"]
+var favorites: Array = ["terrain_meadow","foliage_round_tree","stairs","water_teal"]
 var file_path = ""
 var saved_signature = ""
 var tool = "Place"
@@ -45,6 +45,9 @@ var viewport: SubViewport
 var view: SubViewportContainer
 var world: Node3D
 var terrain_root: Node3D
+var water_root: Node3D
+var water_renderer=HabitatWater.new()
+var water_visible=true
 var props_root: Node3D
 var outlines: Node3D
 var grid_root: Node3D
@@ -145,6 +148,7 @@ func build_ui():
 	var central = VBoxContainer.new(); central.size_flags_horizontal = Control.SIZE_EXPAND_FILL; middle.add_child(central)
 	var controls = HFlowContainer.new(); central.add_child(controls)
 	button("Grid",func(): show_grid = not show_grid; grid_root.visible = show_grid and not previewing,controls)
+	button("Show/Hide water",func(): water_visible=not water_visible; rebuild(); set_status("Water visible" if water_visible else "Water hidden for editing underneath; cells remain saved."),controls)
 	button("Fine snap",func(): fine_snap = not fine_snap; set_status("Prop snapping: " + ("0.25m" if fine_snap else "free")),controls)
 	var layer_label = Label.new(); layer_label.text = "Build layer"; controls.add_child(layer_label)
 	layer_control = SpinBox.new(); layer_control.min_value = -100; layer_control.max_value = 100; layer_control.allow_greater = true; layer_control.allow_lesser = true; layer_control.step = 1; controls.add_child(layer_control)
@@ -226,6 +230,7 @@ func save_preferences():
 func build_world():
 	world = Node3D.new(); viewport.add_child(world)
 	atmosphere=HabitatAtmosphere.new(world,content_directory())
+	atmosphere.settings_changed.connect(water_renderer.set_lighting)
 	terrain_root = Node3D.new(); world.add_child(terrain_root)
 	props_root = Node3D.new(); world.add_child(props_root)
 	outlines = Node3D.new(); world.add_child(outlines)
@@ -263,6 +268,8 @@ func rebuild_grid():
 func rebuild():
 	if not world: return
 	clear_children(terrain_root); clear_children(props_root); object_nodes.clear()
+	if water_root: world.remove_child(water_root); water_root.queue_free()
+	water_root=null
 	var visible_data = document.data.duplicate(true)
 	if cutaway and not previewing:
 		visible_data.terrain = visible_data.terrain.filter(func(t): return t.cell[1] <= layer)
@@ -272,6 +279,8 @@ func rebuild():
 		var terrain_instance = MeshInstance3D.new(); terrain_instance.mesh = mesh; terrain_root.add_child(terrain_instance)
 		var body = StaticBody3D.new(); body.collision_layer = 1; body.collision_mask = 0; terrain_instance.add_child(body)
 		var shape = CollisionShape3D.new(); shape.shape = mesh.create_trimesh_shape(); body.add_child(shape)
+	if water_visible or previewing:
+		water_root=water_renderer.build(visible_data); world.add_child(water_root)
 	for obj in document.data.objects:
 		if cutaway and not previewing and obj.position[1] > layer+1: continue
 		var root = Node3D.new(); props_root.add_child(root); root.position=as_vector(obj.position); root.rotation_degrees=as_vector(obj.rotation); root.scale=as_vector(obj.scale)
@@ -306,7 +315,7 @@ func make_ghost():
 	if ghost: world.remove_child(ghost); ghost.queue_free()
 	ghost = Node3D.new(); world.add_child(ghost)
 	var asset = registry.assets[active_asset]
-	if asset.kind == "terrain":
+	if asset.kind in ["terrain","water"]:
 		var m = MeshInstance3D.new(); var cube = BoxMesh.new(); cube.size=Vector3.ONE; m.mesh=cube; m.position.y=.5; ghost.add_child(m)
 	else: ghost.add_child(registry.instance(active_asset))
 	set_ghost_color(false)
@@ -319,8 +328,14 @@ func set_ghost_color(valid: bool):
 
 func ray_at(point: Vector2, mask: int = 3) -> Dictionary:
 	var origin = camera.project_ray_origin(point); var direction = camera.project_ray_normal(point)
-	var query = PhysicsRayQueryParameters3D.create(origin,origin+direction*10000,mask)
-	return viewport.find_world_3d().direct_space_state.intersect_ray(query)
+	var pick_mask=mask|8 if water_visible and mask in [1,3] else mask
+	# A nearby segment avoids float precision loss at tiny shared triangle edges;
+	# retain the long query for tall/deep construction and distant camera positions.
+	for reach in [64.0,10000.0]:
+		var query=PhysicsRayQueryParameters3D.create(origin,origin+direction*reach,pick_mask)
+		var hit=viewport.find_world_3d().direct_space_state.intersect_ray(query)
+		if not hit.is_empty(): return hit
+	return {}
 
 func plane_at(point: Vector2):
 	var plane = Plane(Vector3.UP,float(layer))
@@ -334,7 +349,7 @@ func update_ghost(point: Vector2):
 	if not Input.is_key_pressed(KEY_ALT) and not hit.is_empty(): position = hit.position
 	if position == null: ghost.visible=false; ghost_valid=false; return
 	var asset = registry.assets[active_asset]
-	if painting and stroke_plane != null and (asset.kind=="terrain" or tool=="Erase"):
+	if painting and stroke_plane != null and (asset.kind in ["terrain","water"] or tool=="Erase"):
 		position=stroke_plane.intersects_ray(camera.project_ray_origin(point),camera.project_ray_normal(point))
 		if position==null: ghost.visible=false; ghost_valid=false; return
 		hit={}
@@ -344,7 +359,7 @@ func update_ghost(point: Vector2):
 		ghost_cell = [roundi(position.x),floori(position.y),roundi(-position.z)]
 		ghost_position = Vector3(ghost_cell[0],ghost_cell[1],-ghost_cell[2])
 		ghost_valid = document.terrain_map().has(HabitatDocument.key(ghost_cell))
-	elif asset.kind == "terrain":
+	elif asset.kind in ["terrain","water"]:
 		if not Input.is_key_pressed(KEY_ALT) and not hit.is_empty(): position += hit.normal*.08
 		ghost_cell = [roundi(position.x),floori(position.y+.001),roundi(-position.z)]
 		ghost_position = Vector3(ghost_cell[0],ghost_cell[1],-ghost_cell[2])
@@ -369,14 +384,14 @@ func place_at_cursor():
 	if not ghost_valid:
 		if not ghost_reason.is_empty(): set_status(ghost_reason)
 		return
-	var k = HabitatDocument.key(ghost_cell) if registry.assets[active_asset].kind=="terrain" or tool=="Erase" else str(ghost_position)
+	var k = HabitatDocument.key(ghost_cell) if registry.assets[active_asset].kind in ["terrain","water"] or tool=="Erase" else str(ghost_position)
 	if painted.has(k): return
 	painted[k] = true
 	if tool == "Erase":
 		document.data.terrain = document.data.terrain.filter(func(t): return HabitatDocument.key(t.cell)!=k)
 	elif tool == "Place":
 		var asset = registry.assets[active_asset]
-		if asset.kind == "terrain": document.data.terrain.append({"cell":ghost_cell.duplicate(),"asset":active_asset})
+		if asset.kind in ["terrain","water"]: document.data.terrain.append({"cell":ghost_cell.duplicate(),"asset":active_asset})
 		else:
 			document.data.objects.append({"id":HabitatDocument.new_id(),"asset":active_asset,"position":vector_array(ghost_position),"rotation":[0,rotation_y,0],"scale":[1,1,1],"solid":asset.get("solid",false),"dimensions":asset.dimensions.duplicate(),"properties":{}})
 	rebuild()
@@ -449,7 +464,7 @@ func view_input(event: InputEvent):
 			box_rect=Rect2(drag_start,event.position-drag_start).abs(); overlay.queue_redraw()
 		else:
 			update_ghost(event.position)
-			if painting and (registry.assets[active_asset].kind=="terrain" or tool=="Erase"): place_at_cursor()
+			if painting and (registry.assets[active_asset].kind in ["terrain","water"] or tool=="Erase"): place_at_cursor()
 
 func end_pointer(point: Vector2):
 	if painting:
@@ -460,6 +475,7 @@ func end_pointer(point: Vector2):
 			selected.clear()
 			var rect=Rect2(drag_start,point-drag_start).abs()
 			for t in document.data.terrain:
+				if not water_visible and HabitatWater.is_water(t): continue
 				if cutaway and t.cell[1]>layer: continue
 				var p=Vector3(t.cell[0],t.cell[1]+.5,-t.cell[2])
 				if not camera.is_position_behind(p) and rect.has_point(camera.unproject_position(p)): selected.append("t:"+HabitatDocument.key(t.cell))
@@ -575,6 +591,7 @@ func refresh_selection():
 		var t=document.terrain_map().get(id.substr(2),{})
 		if not t.is_empty():
 			var label=Label.new(); label.text="%s\nCell: %s" % [t.asset,str(t.cell)]; inspector.add_child(label)
+			if HabitatWater.is_water(t): water_inspector(t)
 		return
 	var obj=find_object(id)
 	if obj.is_empty(): return
@@ -697,7 +714,7 @@ func frame_all():
 func set_spawn():
 	if previewing: return
 	var before=document.data.duplicate(true)
-	document.data.spawn=vector_array(ghost_position+Vector3(0,1.03 if registry.assets[active_asset].kind=="terrain" else .03,0)); commit(before); rebuild()
+	document.data.spawn=vector_array(ghost_position+Vector3(0,1.03 if registry.assets[active_asset].kind in ["terrain","water"] else .03,0)); commit(before); rebuild()
 	set_status("Spawn set above last placement cursor. Preview to check ground contact.")
 
 func content_directory() -> String:
@@ -951,3 +968,64 @@ func load_panorama(path: String):
 	DirAccess.make_dir_recursive_absolute(content_directory().path_join("SkyArt"))
 	if DirAccess.copy_absolute(path,content_directory().path_join(relative))!=OK: set_status("Cannot copy panorama to habitat content."); return
 	sky_change("panorama",relative); refresh_sky_fields(); set_status("Panorama copied into Assets/Habitats; commit it with the layout.")
+
+
+func selected_water_body(cell: Dictionary) -> Array:
+	for component in HabitatWater.components(document.data):
+		for item in component:
+			if item.cell==cell.cell: return component
+	return []
+
+func edit_water(cell: Dictionary, property: String, value, record: bool = true):
+	if previewing: return
+	var body=selected_water_body(cell)
+	if body.is_empty(): return
+	var before=document.data.duplicate(true)
+	var style=HabitatWater.style_for(document.data,body); style[property]=value
+	if not HabitatWater.validate_style(style).is_empty(): return
+	if not document.data.has("water_styles"): document.data.water_styles={}
+	var id=body[0].get("water_style","")
+	# Give this connected body a unique style; do not change disconnected ponds.
+	var outside=false
+	for t in document.data.terrain:
+		if HabitatWater.is_water(t) and not t in body and t.get("water_style","default")==id: outside=true
+	if id.is_empty() or id=="default" or outside: id="water_"+HabitatDocument.new_id()
+	document.data.water_styles[id]=style
+	for item in body: item.water_style=id
+	if record: commit(before)
+	else: update_title()
+	# Keep inspector focus while editing; regenerate only rendering/picking nodes.
+	refresh_water_render()
+
+func refresh_water_render():
+	if water_root: world.remove_child(water_root); water_root.queue_free()
+	water_root=null
+	if water_visible or previewing:
+		var data=document.data.duplicate(true)
+		if cutaway and not previewing: data.terrain=data.terrain.filter(func(t): return t.cell[1]<=layer)
+		water_root=water_renderer.build(data); world.add_child(water_root)
+
+func water_inspector(cell: Dictionary):
+	var body=selected_water_body(cell)
+	if body.is_empty(): return
+	var style=HabitatWater.style_for(document.data,body)
+	section("Connected water · %d cells" % body.size(),inspector)
+	for property in ["shallow_color","deep_color","foam_color"]:
+		var row=HBoxContainer.new(); inspector.add_child(row)
+		var label=Label.new(); label.text=property.capitalize(); label.custom_minimum_size.x=145; row.add_child(label)
+		var picker=ColorPickerButton.new(); picker.color=Color(style[property]); picker.edit_alpha=false; picker.custom_minimum_size=Vector2(75,28); row.add_child(picker)
+		var history={}
+		picker.color_changed.connect(func(color):
+			if history.is_empty(): history.before=document.data.duplicate(true)
+			edit_water(cell,property,color.to_html(false),false))
+		picker.popup_closed.connect(func():
+			if history.has("before"): commit(history.before); history.clear())
+	var ranges={"opacity":[.02,.8,.02],"side_opacity":[.02,.8,.02],"depth_strength":[0,2,.05],"roughness":[0,1,.05],"highlight_strength":[0,.5,.01],"ripple_speed":[0,2,.05],"ripple_strength":[0,.1,.005],"ripple_scale":[.1,10,.1],"foam_width":[.02,.3,.01],"foam_coverage":[0,1,.05],"foam_speed":[0,1,.02],"foam_irregularity":[0,1,.05]}
+	for property in ranges:
+		var row=HBoxContainer.new(); inspector.add_child(row)
+		var label=Label.new(); label.text=property.capitalize(); label.custom_minimum_size.x=145; row.add_child(label)
+		var spin=SpinBox.new(); spin.min_value=ranges[property][0]; spin.max_value=ranges[property][1]; spin.step=ranges[property][2]; spin.value=style[property]; spin.custom_minimum_size.x=85; row.add_child(spin)
+		spin.value_changed.connect(func(value): edit_water(cell,property,value))
+	for property in ["animation_enabled","foam_enabled"]:
+		var check=CheckBox.new(); check.text=property.capitalize(); check.button_pressed=style[property]; inspector.add_child(check)
+		check.toggled.connect(func(value): edit_water(cell,property,value))

@@ -52,3 +52,8 @@ The registry selects a material theme per terrain ID. Terrain is logical occupan
 This runtime algorithm intentionally differs from the older Blender-dissolve/bevel export pipeline. A Swift loader must reproduce this algorithm or consume geometry baked from it to match the editor. Rounded values can slightly alter support at edges; gameplay grounding should query the resulting mesh.
 
 Signed layers permit holes, caves and floating islands. Terrain occupancy alone does not imply reachability, support rules, water safety or a navigation mesh. More complex diagonal contacts should be visually validated before production use.
+
+
+## Water extension
+
+`terrain` is the logical cell collection and can now also contain `asset: "water_teal"`, registered as `kind: "water"`, `solid: false`, `occupies_grid: true`. Native consumers must partition these cells before generating solid terrain or walkability. A cell's optional `water_style` references the optional top-level `water_styles` dictionary. See [WATER.md](WATER.md) for exact connectivity, appearance, default and merge rules. Water is generated from cells and style settings, not serialized mesh data. Legacy layouts without water fields remain valid.

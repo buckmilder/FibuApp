@@ -5,6 +5,7 @@ from mathutils import Vector
 HERE=Path(__file__).resolve().parent
 catalog=json.loads((HERE/'assets/catalog.json').read_text())
 for asset in catalog['assets']:
+    if asset['kind']=='water':continue # Rendered by Godot tests/render_water.gd
     bpy.ops.wm.read_factory_settings(use_empty=True)
     if asset['kind']=='prop':bpy.ops.import_scene.gltf(filepath=str(HERE/asset['godot'].replace('res://','')))
     else:

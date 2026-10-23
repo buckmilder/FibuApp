@@ -53,7 +53,7 @@ Tool shortcuts are **1/Esc** Select, **B** Place, **3** Erase and **G** Move. V 
 
 ## Assets and adding more
 
-`assets/catalog.json` registers nine terrain materials and fourteen individual props. GLBs embed their maps; terrain maps are in `assets/textures/`. Thumbnails are actual rendered asset previews. IDs are stable and must not be renamed after layouts refer to them.
+`assets/catalog.json` registers nine terrain materials, fourteen individual props, and one procedural Water Block. GLBs embed their maps; terrain maps are in `assets/textures/`. Thumbnails are actual rendered asset previews. IDs are stable and must not be renamed after layouts refer to them.
 
 To add a prop:
 
@@ -86,6 +86,12 @@ Save or duplicate named custom presets under `Assets/Habitats/SkyPresets/`. Savi
 
 Optional slow cloud movement is off by default. No automatic clock or day/night cycle is implemented. These are editable mood starting points; a future native cycle can interpolate environment values while keeping geometry unchanged. See [ATMOSPHERE.md](ATMOSPHERE.md) for the data contract and Swift integration limits.
 
+## Water Block
+
+Choose **Water → Water Block** to paint connected, translucent teal water volumes. They stack on signed layers, cull internal faces, show submerged floors, and add broken foam along exposed edges and shores. Select a cell to edit the connected body's appearance. **Show/Hide water** lets you select and edit terrain underneath. Preview renders water without treating it as solid ground; no swimming is implemented.
+
+Open `Assets/Habitats/water-garden.json` or `water-study.json` for examples. Water cells and appearance settings save with the habitat. See [WATER.md](WATER.md) for the volume algorithm, depth approximation, style data and native rendering handoff.
+
 ## Data and architecture
 
 See [SCHEMA.md](SCHEMA.md) and [IOS_HANDOFF.md](IOS_HANDOFF.md). Authored content lives in `Assets/Habitats/`, separate from `user://` editor preferences and test files. Open/Save As use normal file dialogs, retain unknown fields/missing IDs, reject malformed and unsupported-version files, and write with a same-directory temporary file then atomic rename. Unsaved changes are guarded on New/Open/Close.
@@ -93,6 +99,7 @@ See [SCHEMA.md](SCHEMA.md) and [IOS_HANDOFF.md](IOS_HANDOFF.md). Authored conten
 - `scripts/document.gd`: portable data, validation, placement checks and serialization.
 - `scripts/registry.gd`: asset loading/material cache.
 - `scripts/atmosphere.gd` and `assets/skies/stylized.gdshader`: environment presets, background rendering and coordinated lighting.
+- `scripts/water.gd` and `assets/water/`: connected water geometry, depth tint, ripples, shoreline foam and picking.
 - `scripts/terrain.gd`: occupancy-driven exposed boundary, shared smoothing, normals and UVs.
 - `scripts/editor.gd`: desktop UI, commands/history, placement, camera and preview.
 - `tests/run.gd`: model/mesh checks and actual editor command/physics tests.
