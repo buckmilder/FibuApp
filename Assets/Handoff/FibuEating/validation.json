@@ -5,17 +5,24 @@
   "samples": 85,
   "duration": 2.8,
   "floorMaxError": 0.0,
-  "maxFaceFitError": 0.002308094226174656,
+  "maxFaceFitError": 4.4247359896280196e-07,
+  "torsoMaxDisplacement": 1.0428960342491203e-07,
+  "armRegionVertices": 924,
+  "upperArmFixedDuringHelper": true,
+  "forearmRadialScale": 1.4,
+  "foodGeometryIncluded": false,
   "skinDerivatives": 12,
   "packageDependenciesResolved": true,
-  "sha256": "bf0429dd78e28a26aa33328f2d2f2ba4a969ccb8b428e5203abc3e21a86ea814",
+  "sha256": "38891575d7b00852b0e13a8a1c1a6930e66cc8c40fe07191624af7c0e04e551d",
   "limitations": [
     "No SceneKit/Xcode execution in cloud.",
     "USD face visibility and blendshape playback require native loader verification; timeline included for explicit control.",
     "Artist review needed for automatic smile removal, especially patterned skins.",
-    "Food prop is a separate preview placeholder; no app feeding/rewards integration."
+    "FoodSocket is authored; tap-to-feed game integration remains local."
   ],
-  "exportChecksPassed": 259,
+  "packagedTorsoMaxDisplacement": 0,
+  "packagedFoodGripMaxError": 1.9517253050532756e-07,
+  "exportChecksPassed": 695,
   "approvedModelSHA256": "819ef67d0d86d2572fd0fc1c4d0eca611d516c514e297225beb1e12d1ba7f4b5",
-  "packageSHA256": "bf0429dd78e28a26aa33328f2d2f2ba4a969ccb8b428e5203abc3e21a86ea814"
+  "packageSHA256": "38891575d7b00852b0e13a8a1c1a6930e66cc8c40fe07191624af7c0e04e551d"
 }

@@ -33,7 +33,8 @@ for mesh in [body]+meshes:
     bind=UsdSkel.BindingAPI(mesh);K=bind.GetJointWeightsPrimvar().GetElementSize();weights=np.array(bind.GetJointWeightsPrimvar().Get()).reshape(-1,K);indices=np.array(bind.GetJointIndicesPrimvar().Get())
     check(mesh.GetPrim().GetName()+' normalized skin weights',np.allclose(weights.sum(axis=1),1,atol=1e-5) and weights.min()>=-1e-6 and indices.min()>=0 and indices.max()<32)
     normals=np.array(mesh.GetNormalsAttr().Get());check(mesh.GetPrim().GetName()+' smooth normals',len(normals)==len(mesh.GetPointsAttr().Get()) and np.allclose(np.linalg.norm(normals,axis=1),1,atol=1e-4))
-    check(mesh.GetPrim().GetName()+' two facial targets',list(bind.GetBlendShapesAttr().Get())==['CheekPuff','Swallow'])
+    expected=['CheekPuff','Swallow','ArmPrepare','ArmBite'] if mesh.GetPath()==body.GetPath() else ['CheekPuff','Swallow']
+    check(mesh.GetPrim().GetName()+' deformation targets',list(bind.GetBlendShapesAttr().Get())==expected)
     for path in bind.GetBlendShapeTargetsRel().GetTargets():
         shape=UsdSkel.BlendShape(s.GetPrimAtPath(path));offsets=np.array(shape.GetOffsetsAttr().Get());check(str(path)+' offsets',offsets.shape==normals.shape and np.isfinite(offsets).all() and len(shape.GetNormalOffsetsAttr().Get())==len(normals))
 for record in json.loads((OUT/'skins.json').read_text())['skins']:
@@ -42,5 +43,41 @@ for record in json.loads((OUT/'skins.json').read_text())['skins']:
     check(record['id']+' artist source hash',hashlib.sha256(source.read_bytes()).hexdigest()==record['source_sha256'])
     check(record['id']+' outside repair mask unchanged',np.array_equal(a[~mask],b[~mask]))
     if record['id']!='013':check(record['id']+' no remaining dark painted mouth',not ((b[:,:,0]<100)&(b[:,:,1]<100)&(b[:,:,2]<100)&mask).any())
-report=json.loads((OUT/'validation.json').read_text());check('grounded through animation',report['floorMaxError']<.003);check('mouth follows surface within 0.004 normalized units',report['maxFaceFitError']<.004)
+check('versioned socket timeline',timeline['schemaVersion']==2 and timeline['foodSocket']=='FoodSocket')
+check('additive morph calculation',timeline['morphCalculationMode']=='additive')
+check('explicit body morph fields',set(timeline['bodyMorphFields'])=={'CheekPuff','Swallow','ArmPrepare','ArmBite'})
+check('explicit face morph fields',set(timeline['faceMorphFields'])=={'CheekPuff','Swallow'})
+check('no food geometry',[p.GetName() for p in s.Traverse() if p.IsA(UsdGeom.Mesh)]==['Fibu_body','Face_smile','Face_open','Face_lick','Face_chew','Face_swallow','Face_happy'])
+socket=UsdGeom.Xform(next(p for p in s.Traverse() if p.GetName()=='FoodSocket'))
+check('empty food socket',not list(socket.GetPrim().GetChildren()))
+cache=UsdSkel.Cache()
+for prim in s.Traverse():
+    if prim.IsA(UsdSkel.Root):cache.Populate(UsdSkel.Root(prim),Usd.PrimDefaultPredicate)
+query=cache.GetSkelQuery(sk);skin=cache.GetSkinningQuery(body.GetPrim());rest=np.array(body.GetPointsAttr().Get());binding=UsdSkel.BindingAPI(body);offsets=[np.array(UsdSkel.BlendShape(s.GetPrimAtPath(path)).GetOffsetsAttr().Get()) for path in binding.GetBlendShapeTargetsRel().GetTargets()]
+def evaluated(frame):
+    values=anim.GetBlendShapeWeightsAttr().Get(frame);vertices=rest+sum((a*w for a,w in zip(offsets,values)),np.zeros_like(rest));points=Vt.Vec3fArray([Gf.Vec3f(*map(float,v)) for v in vertices]);assert skin.ComputeSkinnedPoints(query.ComputeSkinningTransforms(frame),points,frame);return np.array(points)
+neutral=evaluated(0);unit=np.ptp(neutral[:,2])/2.7;floor=neutral[:,2].min();z=(neutral[:,2]-floor)/unit
+region=json.loads((OUT/'arm-region.json').read_text());arm=np.zeros(len(rest),bool);arm[region['vertexIds']]=True
+check('arm isolated to right side',np.all(neutral[arm,0]/unit<-.40))
+fixed=(~arm)&(z<1.52);max_torso=0;grip_error=0
+triangles=[];cursor=0;raw=list(body.GetFaceVertexIndicesAttr().Get())
+for count in body.GetFaceVertexCountsAttr().Get():
+    for j in range(1,count-1):triangles.append([raw[cursor],raw[cursor+j],raw[cursor+j+1]])
+    cursor+=count
+triangles=np.array(triangles)
+for row in timeline['samples']:
+    frame=row['frame'];points=evaluated(frame);error=np.linalg.norm(points[fixed]-neutral[fixed],axis=1).max()/unit;max_torso=max(max_torso,float(error))
+    check(f'fixed torso through sample {frame}',error<1e-5)
+    check(f'fixed joint pose through sample {frame}',anim.GetRotationsAttr().Get(frame)==anim.GetRotationsAttr().Get(0) and anim.GetTranslationsAttr().Get(frame)==anim.GetTranslationsAttr().Get(0))
+    check(f'socket follows authored hand sample {frame}',np.allclose(np.array(socket.GetLocalTransformation(frame).ExtractTranslation()),row['foodSocketPosition'],atol=1e-5))
+    check(f'arm weights convex sample {frame}',row['armPrepare']+row['armBite']<=1+1e-6)
+    a,b=row['gripVertexIds'];fraction=row['gripFraction'];tri=points[triangles];cross=np.cross(tri[:,1]-tri[:,0],tri[:,2]-tri[:,0]);normals=np.zeros_like(points)
+    for j in range(3):np.add.at(normals,triangles[:,j],cross)
+    normals/=np.maximum(np.linalg.norm(normals,axis=1)[:,None],1e-10)
+    palm=points[a]*(1-fraction)+points[b]*fraction;n=normals[a]*(1-fraction)+normals[b]*fraction;n/=np.linalg.norm(n);expected=palm+n*row['gripOffsetPreviewUnits']*unit
+    error=np.linalg.norm(expected-row['foodSocketPosition'])/unit;grip_error=max(grip_error,float(error))
+    check(f'socket maintains palm contact sample {frame}',arm[a] and arm[b] and 0<=fraction<=1 and error<1e-5)
+check('elastic arm changes surface',np.linalg.norm(evaluated(28)-neutral,axis=1).max()/unit>.5)
+check('neutral ending surface',np.allclose(evaluated(84),neutral,atol=1e-5))
+report=json.loads((OUT/'validation.json').read_text());report['packagedTorsoMaxDisplacement']=max_torso;report['packagedFoodGripMaxError']=grip_error;check('grounded through animation',report['floorMaxError']<.003);check('mouth follows surface within 0.004 normalized units',report['maxFaceFitError']<.004)
 report['exportChecksPassed']=len(checks);report['approvedModelSHA256']=hashlib.sha256((REPO/'Assets/Models/Fibu.Proportions.usdz').read_bytes()).hexdigest();report['packageSHA256']=hashlib.sha256((OUT/'Fibu.Eat.usdz').read_bytes()).hexdigest();(OUT/'validation.json').write_text(json.dumps(report,indent=2)+'\n');print(f'PASS: {len(checks)} exported asset checks; skeleton, body proportions, skinning, expressions, morphs, package and timing.')

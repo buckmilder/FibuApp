@@ -1,14 +1,15 @@
 """Copy review outputs; assemble animated GIF and annotated expression contact sheet."""
 from pathlib import Path
-import json,shutil
+import json,shutil,hashlib
 from PIL import Image,ImageDraw,ImageOps
 ROOT=Path(__file__).resolve().parent;REPO=ROOT.parents[2];OUT=ROOT/'generated';MODELS=REPO/'Assets/Models/FibuEating';HANDOFF=REPO/'Assets/Handoff/FibuEating';MODELS.mkdir(exist_ok=True);HANDOFF.mkdir(exist_ok=True)
 assert len(list((OUT/'frames').glob('*.png')))==43,'Render the complete animation before delivery'
+stamp=json.loads((OUT/'render-source.json').read_text());assert stamp['packageSHA256']==hashlib.sha256((OUT/'Fibu.Eat.usdz').read_bytes()).hexdigest();assert stamp['dataSHA256']==hashlib.sha256((OUT/'preview-data.json').read_bytes()).hexdigest()
 shutil.copy2(OUT/'Fibu.Eat.usdz',MODELS/'Fibu.Eat.usdz');shutil.copytree(OUT/'source/EatingTextures',MODELS/'EatingTextures',dirs_exist_ok=True)
 anchors=json.loads((OUT/'face-anchors.json').read_text());data=json.loads((OUT/'preview-data.json').read_text())
 for anchor in anchors['anchors']:anchor['vertexIndices']=data['faces'][anchor['triangle']]
 (HANDOFF/'face-anchors.json').write_text(json.dumps(anchors,indent=2)+'\n')
-for name in ['timeline.json','skins.json','validation.json']:shutil.copy2(OUT/name,HANDOFF/name)
+for name in ['timeline.json','skins.json','validation.json','arm-region.json','render-source.json']:shutil.copy2(OUT/name,HANDOFF/name)
 frames=[Image.open(p).convert('RGB') for p in sorted((OUT/'frames').glob('*.png'))]
 palette=Image.new('RGB',(frames[0].width*7,frames[0].height))
 for i,f in enumerate(frames[::7][:7]):palette.paste(f,(i*f.width,0))

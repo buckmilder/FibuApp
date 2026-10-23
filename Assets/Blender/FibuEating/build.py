@@ -2,10 +2,11 @@
 Run with Python + numpy/scipy/Pillow/usd-core. Never changes active app resources.
 """
 from pathlib import Path
-import json, math, zipfile, shutil, hashlib
+import json, math, zipfile, shutil, hashlib, subprocess, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 from scipy import ndimage
+from elastic_arm import make_shapes, grip_path
 from pxr import Usd, UsdGeom, UsdSkel, UsdShade, UsdUtils, Gf, Vt, Sdf
 ROOT=Path(__file__).resolve().parent; REPO=ROOT.parents[2]; OUT=ROOT/'generated'; OUT.mkdir(exist_ok=True)
 SOURCE=OUT/'source'; SOURCE.mkdir(exist_ok=True)
@@ -156,18 +157,60 @@ cheek=np.column_stack([-.17*unit*weight,-.12*unit*weight,.018*unit*weight])
 snorm=(pose-(mouth+np.array([0,0,-.23*unit])))/unit
 sw=np.exp(-((snorm[:,0]/.27)**2+(snorm[:,1]/.30)**2+(snorm[:,2]/.16)**2))
 swallow=np.column_stack([np.zeros(len(rest)),-.035*unit*sw,-.035*unit*sw])
+face_support=np.clip(((pose[:,2]-floor)/unit-1.52)/.08,0,1)
+face_support=face_support*face_support*(3-2*face_support)
+cheek*=face_support[:,None];swallow*=face_support[:,None]
+# Expand the original sparse animation mapping to all skeleton joints before helper evaluation.
+anim.GetJointsAttr().Set(names);anim.GetTranslationsAttr().Set(baseT,0);anim.GetRotationsAttr().Set(baseR,0);anim.GetScalesAttr().Set(baseS,0)
+# Use an expanded helper rig ONLY while authoring the two surface poses.
+# Its shoulder/bone motion is discarded after sampling; torso points are pinned.
+def helper_reach(target,radial_scale):
+    # Keep the shoulder AND upper arm in place. Lengthen the forearm by moving
+    # its wrist endpoint, retaining a round hand instead of scaling it long.
+    rotations=Vt.QuatfArray(baseR);scales=Vt.Vec3hArray(baseS);translations=Vt.Vec3fArray(baseT)
+    fore=ids['Forearm_R'];wrist=ids['Hand_R'];scales[fore]=Gf.Vec3h(*(float(v)*radial_scale for v in baseS[fore]))
+    def globals_for():
+        result=[]
+        for i,m in enumerate(UsdSkel.MakeTransforms(translations,rotations,scales)):result.append(m if parents[i]<0 else m*result[parents[i]])
+        return result
+    origin=np.array(global0[fore].ExtractTranslation());radius=np.linalg.norm(target-origin);low,high=.2,8
+    for _ in range(35):
+        length=(low+high)/2;translations[wrist]=baseT[wrist]*length;g=globals_for();actual=np.linalg.norm(np.array(g[ids['Hand_R_end']].ExtractTranslation())-origin)
+        if actual<radius:low=length
+        else:high=length
+    translations[wrist]=baseT[wrist]*((low+high)/2)
+    g=globals_for();a=np.array(g[ids['Hand_R_end']].ExtractTranslation())-origin;b=target-origin;a/=np.linalg.norm(a);b/=np.linalg.norm(b);axis=np.cross(a,b);size=np.linalg.norm(axis)
+    if size>1e-8:
+        axis/=size;angle=math.degrees(math.acos(float(np.clip(a@b,-1,1))));P=Gf.Matrix4d(1).SetRotate(g[parents[fore]].ExtractRotation());L=Gf.Matrix4d(1).SetRotate(Gf.Rotation(Gf.Quatd(rotations[fore])));D=Gf.Matrix4d(1).SetRotate(Gf.Rotation(Gf.Vec3d(*axis),angle));rotation=(L*P*D*P.GetInverse()).ExtractRotationQuat();rotation.Normalize();rotations[fore]=Gf.Quatf(rotation)
+    anim.GetTranslationsAttr().Set(translations,0);anim.GetRotationsAttr().Set(rotations,0);anim.GetScalesAttr().Set(scales,0)
+    result=skinpoints(body,rest,0);error=np.linalg.norm(np.array(globals_for()[ids['Hand_R_end']].ExtractTranslation())-target)/unit
+    assert error<.015,f'Helper hand missed socket target: {error}'
+    return result
+def world(point):
+    value=np.array(point)*unit;value[2]+=floor;return value
+prepare_hand=world([-.69,-.99,1.15]);bite_hand=world([-.10,-1.02,1.62])
+helpers=[helper_reach(prepare_hand,1.18),helper_reach(bite_hand,1.40)]
+anim.GetTranslationsAttr().Set(baseT,0);anim.GetRotationsAttr().Set(baseR,0);anim.GetScalesAttr().Set(baseS,0)
+armdeltas,arm_info=make_shapes(pose,faces,bindindices,bindweights,names,[list(m.ExtractTranslation()) for m in global0],unit,floor,helpers)
+neutral_hand=np.array(global0[ids['Hand_R_end']].ExtractTranslation())
+grip_vertices,grip_parameters=grip_path(pose,pose+armdeltas[1],faces,arm_info['vertexIds'],unit,floor)
+arm_info['foodGripSurfacePath']=grip_vertices;arm_info['foodGripOffsetPreviewUnits']=.11
+arm_region=np.zeros(len(rest),bool);arm_region[arm_info['vertexIds']]=True
+cheek[arm_region]=0;swallow[arm_region]=0
 bodyoffsets=[np.einsum('nij,nj->ni',bodyinv,delta) for delta in [cheek,swallow]]
 def smoothnormals(points,triangles):
     normals=np.zeros_like(points);triangles=np.array(triangles);p=points[triangles];cross=np.cross(p[:,1]-p[:,0],p[:,2]-p[:,0])
     for i in range(3):np.add.at(normals,triangles[:,i],cross)
     return normals/np.maximum(np.linalg.norm(normals,axis=1)[:,None],1e-12)
-def blendshapes(mesh,offsets):
+armoffsets=[np.einsum('nij,nj->ni',bodyinv,delta) for delta in armdeltas]
+bodyoffsets+=armoffsets
+def blendshapes(mesh,offsets,shape_names=('CheekPuff','Swallow')):
     binding=UsdSkel.BindingAPI.Apply(mesh.GetPrim());paths=[]
     points=np.array(mesh.GetPointsAttr().Get());tri=faces if mesh.GetPath()==body.GetPath() else np.array(ofaces);normals=smoothnormals(points,tri);mesh.CreateNormalsAttr(Vt.Vec3fArray([Gf.Vec3f(*map(float,v)) for v in normals]));mesh.SetNormalsInterpolation(UsdGeom.Tokens.vertex)
-    for name,offset in zip(['CheekPuff','Swallow'],offsets):
+    for name,offset in zip(shape_names,offsets):
         shape=UsdSkel.BlendShape.Define(stage,mesh.GetPath().AppendChild(name));shape.CreateOffsetsAttr(Vt.Vec3fArray([Gf.Vec3f(*map(float,v)) for v in offset]));shape.CreateNormalOffsetsAttr(Vt.Vec3fArray([Gf.Vec3f(*map(float,v)) for v in smoothnormals(points+offset,tri)-normals]));paths.append(shape.GetPath())
-    binding.CreateBlendShapesAttr(['CheekPuff','Swallow']);binding.CreateBlendShapeTargetsRel().SetTargets(paths)
-blendshapes(body,bodyoffsets)
+    binding.CreateBlendShapesAttr(list(shape_names));binding.CreateBlendShapeTargetsRel().SetTargets(paths)
+blendshapes(body,bodyoffsets,['CheekPuff','Swallow','ArmPrepare','ArmBite'])
 # Smooth vertex normals and morph normal offsets accompany the facial surface changes.
 meshes=[]
 for name in expressions:
@@ -183,21 +226,6 @@ for name in expressions:
     reader=UsdShade.Shader.Define(stage,mat.GetPath().AppendChild('UV'));reader.CreateIdAttr('UsdPrimvarReader_float2');reader.CreateInput('varname',Sdf.ValueTypeNames.Token).Set('st');tex.CreateInput('st',Sdf.ValueTypeNames.Float2).ConnectToSource(reader.ConnectableAPI(),'result');shader.CreateInput('diffuseColor',Sdf.ValueTypeNames.Color3f).ConnectToSource(tex.ConnectableAPI(),'rgb');shader.CreateInput('opacity',Sdf.ValueTypeNames.Float).ConnectToSource(tex.ConnectableAPI(),'a');mat.CreateSurfaceOutput().ConnectToSource(shader.ConnectableAPI(),'surface');UsdShade.MaterialBindingAPI.Apply(mesh.GetPrim()).Bind(mat)
     mesh.CreateVisibilityAttr().Set(UsdGeom.Tokens.inherited if name=='smile' else UsdGeom.Tokens.invisible)
     meshes.append((name,mesh,raw,blend));facepaths.append(str(mesh.GetPath()))
-# CCD hand reach, applied to the original USD joint rotations, with small bounded steps.
-def globals_for(rot):
-    result=[]
-    for i,m in enumerate(UsdSkel.MakeTransforms(baseT,rot,baseS)):result.append(m if parents[i]<0 else m*result[parents[i]])
-    return result
-def reach(target):
-    rot=Vt.QuatfArray(baseR)
-    for _ in range(45):
-        for joint in ['Forearm_R','Bicep_R','Shoulder_R']:
-            g=globals_for(rot);i=ids[joint];o=g[i].ExtractTranslation();end=g[ids['Hand_R_end']].ExtractTranslation();a=np.array(end-o);b=np.array(target)-np.array(o);a/=np.linalg.norm(a);b/=np.linalg.norm(b);axis=np.cross(a,b);length=np.linalg.norm(axis)
-            if length<1e-7:continue
-            axis/=length;angle=min(9,math.degrees(math.acos(float(np.clip(a@b,-1,1)))));P=Gf.Matrix4d(1).SetRotate(g[parents[i]].ExtractRotation());L=Gf.Matrix4d(1).SetRotate(Gf.Rotation(Gf.Quatd(rot[i])));D=Gf.Matrix4d(1).SetRotate(Gf.Rotation(Gf.Vec3d(*axis),angle));qq=(L*P*D*P.GetInverse()).ExtractRotationQuat();qq.Normalize();rot[i]=Gf.Quatf(qq)
-    return rot
-bitepose=reach(mouth+np.array([-.08,-.22,-.13])*unit)
-cheerpose=reach(mouth+np.array([-.90,.30,.32])*unit)
 def smooth(t):t=np.clip(t,0,1);return float(t*t*(3-2*t))
 def envelope(t,start,peak,hold,end):return smooth((t-start)/(peak-start))*(1-smooth((t-hold)/(end-hold)))
 def expression_at(t):
@@ -205,51 +233,51 @@ def expression_at(t):
         if start<=t<end:return name
     return 'smile'
 FPS=30;duration=2.8;frames=round(FPS*duration)
-anim.GetTranslationsAttr().Clear();anim.GetRotationsAttr().Clear();anim.GetScalesAttr().Clear();anim.GetJointsAttr().Set(names);anim.CreateBlendShapesAttr(['CheekPuff','Swallow']);stage.SetTimeCodesPerSecond(FPS);stage.SetFramesPerSecond(FPS);stage.SetStartTimeCode(0);stage.SetEndTimeCode(frames)
-anim.GetTranslationsAttr().Set(baseT);anim.GetRotationsAttr().Set(baseR);anim.GetScalesAttr().Set(baseS);anim.CreateBlendShapeWeightsAttr().Set(Vt.FloatArray([0,0]))
+anim.GetTranslationsAttr().Clear();anim.GetRotationsAttr().Clear();anim.GetScalesAttr().Clear();anim.GetJointsAttr().Set(names);anim.CreateBlendShapesAttr(['CheekPuff','Swallow','ArmPrepare','ArmBite']);stage.SetTimeCodesPerSecond(FPS);stage.SetFramesPerSecond(FPS);stage.SetStartTimeCode(0);stage.SetEndTimeCode(frames)
+anim.GetTranslationsAttr().Set(baseT);anim.GetRotationsAttr().Set(baseR);anim.GetScalesAttr().Set(baseS);anim.CreateBlendShapeWeightsAttr().Set(Vt.FloatArray([0,0,0,0]))
 timeline=[]
 for frame in range(frames+1):
-    t=frame/FPS;amount=envelope(t,.18,.78,1.0,1.46);rot=Vt.QuatfArray(baseR)
-    for joint in ['Shoulder_R','Bicep_R','Forearm_R','Hand_R']:
-        i=ids[joint];rot[i]=Gf.Slerp(amount,baseR[i],bitepose[i]);rot[i]=Gf.Slerp(envelope(t,.96,1.42,2.35,2.72),rot[i],cheerpose[i])
-    # Mild neck anticipation, no whole-body squash or leg motion.
-    i=ids['Neck'];nod=-3.0*envelope(t,.18,.75,1.15,1.55)+2.0*envelope(t,2.05,2.2,2.3,2.55);rot[i]=Gf.Quatf(Gf.Rotation(Gf.Vec3d(1,0,0),nod).GetQuat())*rot[i]
+    t=frame/FPS;rot=Vt.QuatfArray(baseR)
+    # Two safe paths: out in front first, across to the mouth second, then reverse.
+    activation=smooth((t-.10)/.36)*(1-smooth((t-1.54)/.40))
+    bite=smooth((t-.46)/.40)*(1-smooth((t-1.05)/.49))
+    prep=activation*(1-bite);bite*=activation
     puff=envelope(t,1.55,1.76,1.89,2.10);swallowweight=envelope(t,1.96,2.12,2.16,2.33)
-    anim.GetTranslationsAttr().Set(baseT,frame);anim.GetRotationsAttr().Set(rot,frame);anim.GetScalesAttr().Set(baseS,frame);anim.CreateBlendShapeWeightsAttr().Set(Vt.FloatArray([puff,swallowweight]),frame)
+    anim.GetTranslationsAttr().Set(baseT,frame);anim.GetRotationsAttr().Set(rot,frame);anim.GetScalesAttr().Set(baseS,frame);anim.CreateBlendShapeWeightsAttr().Set(Vt.FloatArray([puff,swallowweight,prep,bite]),frame)
     expr=expression_at(t)
     for name,mesh,_,_ in meshes:mesh.CreateVisibilityAttr().Set(UsdGeom.Tokens.inherited if name==expr else UsdGeom.Tokens.invisible,frame)
-    timeline.append({'handReach':amount,'frame':frame,'time':t,'expression':expr,'cheekPuff':puff,'swallow':swallowweight,'foodVisible':t<.96,'biteEvent':frame==29})
+    timeline.append({'armPrepare':prep,'armBite':bite,'frame':frame,'time':t,'expression':expr,'cheekPuff':puff,'swallow':swallowweight,'foodVisible':t<.96,'biteEvent':frame==29})
 # Evaluate EVERY sample; include morphs explicitly before LBS for preview/validation.
 previews=[];mins=[];finite=True
 for row in timeline:
-    f=row['frame'];weights=np.array([row['cheekPuff'],row['swallow']]);deformed=rest+sum((off*w for off,w in zip(bodyoffsets,weights)),np.zeros_like(rest));points=skinpoints(body,deformed,f)
+    f=row['frame'];weights=np.array([row['cheekPuff'],row['swallow'],row['armPrepare'],row['armBite']]);deformed=rest+sum((off*w for off,w in zip(bodyoffsets,weights)),np.zeros_like(rest));points=skinpoints(body,deformed,f)
     c,qq=queries();g=qq.ComputeJointSkelTransforms(f);hand=np.array(g[ids['Hand_R_end']].ExtractTranslation());mins.append(float(points[:,2].min()));assert np.isfinite(points).all();assert np.ptp(points,axis=0).max()<height*1.2
-    facepoints=skinpoints(meshes[0][1],meshes[0][2]+sum((off*w for off,w in zip(meshes[0][3],weights)),np.zeros_like(surface)),f)
+    facepoints=skinpoints(meshes[0][1],meshes[0][2]+sum((off*w for off,w in zip(meshes[0][3],weights[:2])),np.zeros_like(surface)),f)
     # Fit against the ACTUAL animated surface. Renderer can use these barycentric anchors too.
     anchored=np.array([np.sum(points[faces[a['triangle']]]*np.array(a['barycentric'])[:,None],axis=0) for a in anchors]);errors=np.linalg.norm(facepoints-(anchored+np.array([0,-.0035*unit,0])),axis=1)
-    foodposition=hand+np.array([-.05*(1-row['handReach']),-.42*(1-row['handReach'])-.055*row['handReach'],.12])*unit
-    row['foodPositionSkeletonSpace']=foodposition.tolist();row['foodPositionHandLocal']=list(g[ids['Hand_R_end']].GetInverse().Transform(Gf.Vec3d(*foodposition)))
-    previews.append({'food':foodposition.tolist(),'frame':f,'body':points.tolist(),'face':facepoints.tolist(),'hand':hand.tolist(),'expression':row['expression'],'foodVisible':row['foodVisible'],'maxFaceFitError':float(errors.max())})
+    travel=row['armBite'];segment=min(len(grip_vertices)-2,max(0,int(np.searchsorted(grip_parameters,travel,side='right')-1)));fraction=(travel-grip_parameters[segment])/(grip_parameters[segment+1]-grip_parameters[segment]);a,b=grip_vertices[segment:segment+2]
+    normal=smoothnormals(points,faces);palm=points[a]*(1-fraction)+points[b]*fraction;n=normal[a]*(1-fraction)+normal[b]*fraction;n/=np.linalg.norm(n)
+    socketposition=palm+n*.11*unit
+    row['gripVertexIds']=[a,b];row['gripFraction']=float(fraction);row['gripOffsetPreviewUnits']=.11
+    row['foodSocketPosition']=socketposition.tolist()
+    torso=(~arm_region)&(((pose[:,2]-floor)/unit)<1.52)
+    row['torsoMaxDisplacement']=float(np.linalg.norm(points[torso]-pose[torso],axis=1).max()/unit)
+    assert row['torsoMaxDisplacement']<1e-5,'Torso moved'
+    previews.append({'socket':socketposition.tolist(),'frame':f,'body':points.tolist(),'face':facepoints.tolist(),'hand':hand.tolist(),'expression':row['expression'],'foodVisible':row['foodVisible'],'maxFaceFitError':float(errors.max())})
 assert max(abs(v-floor) for v in mins)<.003
-# A replaceable, independent bread placeholder. App code can hide it and attach real food.
-prop=UsdGeom.Xform.Define(stage,parent.AppendChild('PreviewFood'));translation=prop.AddTranslateOp();scaleop=prop.AddScaleOp();translation.Set(Gf.Vec3d(*timeline[0]['foodPositionSkeletonSpace']));scaleop.Set(Gf.Vec3f(1))
-for row in timeline:
-    translation.Set(Gf.Vec3d(*row['foodPositionSkeletonSpace']),row['frame']);scaleop.Set(Gf.Vec3f(1 if row['foodVisible'] else 0),row['frame'])
-bread=UsdGeom.Mesh.Define(stage,prop.GetPath().AppendChild('Bread'));vertices=[];breadfaces=[];segments=24;rings=12
-for j in range(rings+1):
-    theta=math.pi*j/rings
-    for i in range(segments):
-        phi=math.tau*i/segments;vertices.append([.145*unit*math.sin(theta)*math.cos(phi),.09*unit*math.sin(theta)*math.sin(phi),.105*unit*math.cos(theta)])
-for j in range(rings):
-    for i in range(segments):
-        a=j*segments+i;b=j*segments+(i+1)%segments;breadfaces.extend([[a,a+segments,b],[b,a+segments,b+segments]])
-bread.CreatePointsAttr(Vt.Vec3fArray([Gf.Vec3f(*map(float,v)) for v in vertices]));bread.CreateFaceVertexCountsAttr([3]*len(breadfaces));bread.CreateFaceVertexIndicesAttr(np.array(breadfaces).ravel().tolist());bread.CreateSubdivisionSchemeAttr('none');bread.CreateNormalsAttr(Vt.Vec3fArray([Gf.Vec3f(*map(float,v)) for v in smoothnormals(np.array(vertices),breadfaces)]));bread.SetNormalsInterpolation(UsdGeom.Tokens.vertex)
-mat=UsdShade.Material.Define(stage,prop.GetPath().AppendChild('GoldenBread'));shader=UsdShade.Shader.Define(stage,mat.GetPath().AppendChild('Surface'));shader.CreateIdAttr('UsdPreviewSurface');shader.CreateInput('diffuseColor',Sdf.ValueTypeNames.Color3f).Set(Gf.Vec3f(.66,.23,.035));shader.CreateInput('roughness',Sdf.ValueTypeNames.Float).Set(.8);mat.CreateSurfaceOutput().ConnectToSource(shader.ConnectableAPI(),'surface');UsdShade.MaterialBindingAPI.Apply(bread.GetPrim()).Bind(mat)
+# Empty transform ONLY. Local app parents the item the user tapped to this socket.
+prop=UsdGeom.Xform.Define(stage,parent.AppendChild('FoodSocket'));translation=prop.AddTranslateOp();translation.Set(Gf.Vec3d(*timeline[0]['foodSocketPosition']))
+for row in timeline:translation.Set(Gf.Vec3d(*row['foodSocketPosition']),row['frame'])
 # Standalone export: the currently active app and approved model stay byte-for-byte untouched.
-layer=SOURCE/'Fibu.Eat.usdc';stage.GetRootLayer().Export(str(layer));package=OUT/'Fibu.Eat.usdz';assert UsdUtils.CreateNewUsdzPackage(Sdf.AssetPath(str(layer)),str(package));assert Usd.Stage.Open(str(package));assert not UsdUtils.ComputeAllDependencies(str(package))[2]
+layer=SOURCE/'Fibu.Eat.usdc';package=OUT/'Fibu.Eat.usdz'
+if layer.exists():layer.unlink()
+if package.exists():package.unlink()
+stage.GetRootLayer().Export(str(layer));assert UsdUtils.CreateNewUsdzPackage(Sdf.AssetPath(str(layer)),str(package));subprocess.run([sys.executable,'-c','from pxr import Usd, UsdUtils; import sys; assert Usd.Stage.Open(sys.argv[1]); assert not UsdUtils.ComputeAllDependencies(sys.argv[1])[2]',str(package)],check=True,capture_output=True)
 (OUT/'preview-data.json').write_text(json.dumps({'fps':FPS,'duration':duration,'floor':float(floor),'unit':float(unit),'faces':faces.tolist(),'uv':uv.reshape(-1,2).tolist(),'overlayFaces':ofaces,'overlayUV':overlayuv,'frames':previews}))
 (OUT/'face-anchors.json').write_text(json.dumps({'schemaVersion':1,'bodyVertexCount':len(rest),'overlayGrid':[N,N],'offsetInPreviewUnits':.0035,'anchors':anchors},indent=2))
-(OUT/'timeline.json').write_text(json.dumps({'schemaVersion':1,'fps':FPS,'duration':duration,'loop':False,'foodJoint':'Hand_R_end','foodBiteTime':29/FPS,'mouthVisibility':'exclusive expression nodes; do not crossfade dark artwork','samples':timeline},indent=2))
+(OUT/'timeline.json').write_text(json.dumps({'schemaVersion':2,'morphCalculationMode':'additive','bodyMorphFields':{'CheekPuff':'cheekPuff','Swallow':'swallow','ArmPrepare':'armPrepare','ArmBite':'armBite'},'faceMorphFields':{'CheekPuff':'cheekPuff','Swallow':'swallow'},'fps':FPS,'duration':duration,'loop':False,'foodSocket':'FoodSocket','foodSocketSpace':'skeleton space; socket is sibling of Fibu_body','foodAttachTime':0,'suggestedFoodDiameterSkeletonUnits':.22*unit,'skeletonUnitsPerPreviewUnit':unit,'foodAttachment':'parent the selected game item once at clip start; no food geometry in clip','foodBiteTime':29/FPS,'mouthVisibility':'exclusive expression nodes; do not crossfade dark artwork','samples':timeline},indent=2))
 (OUT/'skins.json').write_text(json.dumps({'schemaVersion':1,'skins':skinrecords,'note':'Automatic smile removal is a review derivative. Patterned skins need artist inspection; never overwrite originals.'},indent=2))
-report={'bodyVertices':len(rest),'bodyTriangles':len(faces),'joints':len(names),'samples':len(previews),'duration':duration,'floorMaxError':max(abs(v-floor) for v in mins),'maxFaceFitError':max(p['maxFaceFitError'] for p in previews)/unit,'skinDerivatives':len(skinrecords),'packageDependenciesResolved':True,'sha256':hashlib.sha256(package.read_bytes()).hexdigest(),'limitations':['No SceneKit/Xcode execution in cloud.','USD face visibility and blendshape playback require native loader verification; timeline included for explicit control.','Artist review needed for automatic smile removal, especially patterned skins.','Food prop is a separate preview placeholder; no app feeding/rewards integration.']}
+report={'bodyVertices':len(rest),'bodyTriangles':len(faces),'joints':len(names),'samples':len(previews),'duration':duration,'floorMaxError':max(abs(v-floor) for v in mins),'maxFaceFitError':max(p['maxFaceFitError'] for p in previews)/unit,'torsoMaxDisplacement':max(r['torsoMaxDisplacement'] for r in timeline),'armRegionVertices':len(arm_info['vertexIds']),'upperArmFixedDuringHelper':True,'forearmRadialScale':1.40,'foodGeometryIncluded':False,'skinDerivatives':len(skinrecords),'packageDependenciesResolved':True,'sha256':hashlib.sha256(package.read_bytes()).hexdigest(),'limitations':['No SceneKit/Xcode execution in cloud.','USD face visibility and blendshape playback require native loader verification; timeline included for explicit control.','Artist review needed for automatic smile removal, especially patterned skins.','FoodSocket is authored; tap-to-feed game integration remains local.']}
 (OUT/'validation.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2),flush=True)
+
+(OUT/'arm-region.json').write_text(json.dumps(arm_info,indent=2)+'\n')
