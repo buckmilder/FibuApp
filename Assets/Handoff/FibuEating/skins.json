@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "skins": [
+    {
+      "id": "Original",
+      "source": "Assets/Models/Fibu.Proportions.usdz!0/Feeb_skin.png",
+      "file": "EatingTextures/Skin.Original.NoSmile.png",
+      "mask": "EatingTextures/Mask.Original.png",
+      "changed_pixels": 3931,
+      "source_sha256": "cb0a67d0358dbcfb19fc9724ac11ff0e7e4d59565a9f3868c6539fbc36a401e1",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "000",
+      "source": "Assets/Skins/Source/000.texture.png",
+      "file": "EatingTextures/Skin.000.NoSmile.png",
+      "mask": "EatingTextures/Mask.000.png",
+      "changed_pixels": 3900,
+      "source_sha256": "5a245597d149b6ea845e327de85f8ac2b5ba024fc6fd6bdd10f4de3be1ee1a04",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "001",
+      "source": "Assets/Skins/Source/001.texture.png",
+      "file": "EatingTextures/Skin.001.NoSmile.png",
+      "mask": "EatingTextures/Mask.001.png",
+      "changed_pixels": 3900,
+      "source_sha256": "1b47d70a5aa61f0825f3335637f067cd616aa96e60242b2446364506aee108f0",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "002",
+      "source": "Assets/Skins/Source/002.texture.png",
+      "file": "EatingTextures/Skin.002.NoSmile.png",
+      "mask": "EatingTextures/Mask.002.png",
+      "changed_pixels": 3900,
+      "source_sha256": "eee15489e32281c060e93845f3d34624a1184125bba7abd9853a6183bca8039d",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "003",
+      "source": "Assets/Skins/Source/003.texture.png",
+      "file": "EatingTextures/Skin.003.NoSmile.png",
+      "mask": "EatingTextures/Mask.003.png",
+      "changed_pixels": 3900,
+      "source_sha256": "2c436a758151811a1bac0ac302312fea6c9f47e9b7079c5b256d4c96f8c9fbf0",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "004",
+      "source": "Assets/Skins/Source/004.texture.png",
+      "file": "EatingTextures/Skin.004.NoSmile.png",
+      "mask": "EatingTextures/Mask.004.png",
+      "changed_pixels": 3900,
+      "source_sha256": "0ab8f6e5bd5cda1406de7ebf0abeda2215b8920c862b2a2066d3e84340b78bfc",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "005",
+      "source": "Assets/Skins/Source/005.texture.png",
+      "file": "EatingTextures/Skin.005.NoSmile.png",
+      "mask": "EatingTextures/Mask.005.png",
+      "changed_pixels": 3900,
+      "source_sha256": "76dc899cad5946ee16ead824df90c363e5835c8c605a0fb0e13bc2b84f752918",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "006",
+      "source": "Assets/Skins/Source/006.texture.png",
+      "file": "EatingTextures/Skin.006.NoSmile.png",
+      "mask": "EatingTextures/Mask.006.png",
+      "changed_pixels": 3900,
+      "source_sha256": "9e80e71bb582e73fdd19686c11a59c4241bc6ffea04609f715e37b050f99b956",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "007",
+      "source": "Assets/Skins/Source/007.texture.png",
+      "file": "EatingTextures/Skin.007.NoSmile.png",
+      "mask": "EatingTextures/Mask.007.png",
+      "changed_pixels": 3900,
+      "source_sha256": "5a1953af31c63bfcb302bd6e941adb526594a5397c90ad4b96d8b92fcf0b6246",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "011",
+      "source": "Assets/Skins/Source/011.texture.png",
+      "file": "EatingTextures/Skin.011.NoSmile.png",
+      "mask": "EatingTextures/Mask.011.png",
+      "changed_pixels": 3900,
+      "source_sha256": "78ad6cee068319c74a8f3c903f8ec370b2b17a9bc95b50b5691d8b1e42214573",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "012",
+      "source": "Assets/Skins/Source/012.texture.png",
+      "file": "EatingTextures/Skin.012.NoSmile.png",
+      "mask": "EatingTextures/Mask.012.png",
+      "changed_pixels": 3900,
+      "source_sha256": "f531ce7b5d08103e7df1b2e15c1d5db7e872a41dcecdab17c8f9dde11babf0d3",
+      "repair": "local diffusion of individually registered painted smile"
+    },
+    {
+      "id": "013",
+      "source": "Assets/Skins/Source/013.texture.png",
+      "file": "EatingTextures/Skin.013.NoSmile.png",
+      "mask": "EatingTextures/Mask.013.png",
+      "changed_pixels": 19264,
+      "source_sha256": "51c9079e4379c4a40743c77c7a495204e9f6b942216b95193f6fbaae8d685938",
+      "repair": "local exemplar fur patch; artist review required"
+    }
+  ],
+  "note": "Automatic smile removal is a review derivative. Patterned skins need artist inspection; never overwrite originals."
+}

@@ -1,0 +1,1711 @@
+{
+  "schemaVersion": 1,
+  "fps": 30,
+  "duration": 2.8,
+  "loop": false,
+  "foodJoint": "Hand_R_end",
+  "foodBiteTime": 0.9666666666666667,
+  "mouthVisibility": "exclusive expression nodes; do not crossfade dark artwork",
+  "samples": [
+    {
+      "handReach": 0.0,
+      "frame": 0,
+      "time": 0.0,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.785296826329307,
+        -3.535841211180049,
+        1.4379050108409244
+      ],
+      "foodPositionHandLocal": [
+        1.1202532680729533,
+        0.14972495530632868,
+        1.6671569920319922
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 1,
+      "time": 0.03333333333333333,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.785296826329307,
+        -3.535841211180049,
+        1.4379050108409244
+      ],
+      "foodPositionHandLocal": [
+        1.1202532680729533,
+        0.14972495530632868,
+        1.6671569920319922
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 2,
+      "time": 0.06666666666666667,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.785296826329307,
+        -3.535841211180049,
+        1.4379050108409244
+      ],
+      "foodPositionHandLocal": [
+        1.1202532680729533,
+        0.14972495530632868,
+        1.6671569920319922
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 3,
+      "time": 0.1,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.785296826329307,
+        -3.535841211180049,
+        1.4379050108409244
+      ],
+      "foodPositionHandLocal": [
+        1.1202532680729533,
+        0.14972495530632868,
+        1.6671569920319922
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 4,
+      "time": 0.13333333333333333,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.785296826329307,
+        -3.535841211180049,
+        1.4379050108409244
+      ],
+      "foodPositionHandLocal": [
+        1.1202532680729533,
+        0.14972495530632868,
+        1.6671569920319922
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 5,
+      "time": 0.16666666666666666,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.785296826329307,
+        -3.535841211180049,
+        1.4379050108409244
+      ],
+      "foodPositionHandLocal": [
+        1.1202532680729533,
+        0.14972495530632868,
+        1.6671569920319922
+      ]
+    },
+    {
+      "handReach": 0.0032592592592592643,
+      "frame": 6,
+      "time": 0.2,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.786603752835972,
+        -3.5495376185721472,
+        1.4375265665384087
+      ],
+      "foodPositionHandLocal": [
+        1.122276790011455,
+        0.15166114395027153,
+        1.6592189796673613
+      ]
+    },
+    {
+      "handReach": 0.022299039780521265,
+      "frame": 7,
+      "time": 0.23333333333333334,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.792558371947353,
+        -3.6299198903789396,
+        1.437561828478524
+      ],
+      "foodPositionHandLocal": [
+        1.1333284156174137,
+        0.16399097182593048,
+        1.6127806866438978
+      ]
+    },
+    {
+      "handReach": 0.05656515775034293,
+      "frame": 8,
+      "time": 0.26666666666666666,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.7958794799452282,
+        -3.7756015445946836,
+        1.4472736385467229
+      ],
+      "foodPositionHandLocal": [
+        1.149560640721023,
+        0.1901193943792181,
+        1.5291713809114345
+      ]
+    },
+    {
+      "handReach": 0.10399999999999995,
+      "frame": 9,
+      "time": 0.3,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.784354527254019,
+        -3.9772008171799755,
+        1.4809663045425552
+      ],
+      "foodPositionHandLocal": [
+        1.1631961657356837,
+        0.23292453707555055,
+        1.41428874052927
+      ]
+    },
+    {
+      "handReach": 0.16254595336076808,
+      "frame": 10,
+      "time": 0.3333333333333333,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.7439592023209296,
+        -4.220901783766914,
+        1.553935778319672
+      ],
+      "foodPositionHandLocal": [
+        1.1643257725739091,
+        0.292518851590833,
+        1.2758745495477424
+      ]
+    },
+    {
+      "handReach": 0.2301454046639231,
+      "frame": 11,
+      "time": 0.36666666666666664,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.6620484404677756,
+        -4.486941032540648,
+        1.6784267376128135
+      ],
+      "foodPositionHandLocal": [
+        1.143111334369164,
+        0.3643941161460647,
+        1.123892386768463
+      ]
+    },
+    {
+      "handReach": 0.3047407407407407,
+      "frame": 12,
+      "time": 0.4,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.5308682739233186,
+        -4.750459809628072,
+        1.85990299127683
+      ],
+      "foodPositionHandLocal": [
+        1.0927552825897766,
+        0.43980525790662445,
+        0.9700056919252555
+      ]
+    },
+    {
+      "handReach": 0.3842743484224965,
+      "frame": 13,
+      "time": 0.43333333333333335,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.350222552960474,
+        -4.985018568599713,
+        2.0946014939883284
+      ],
+      "foodPositionHandLocal": [
+        1.011718322303153,
+        0.5083437520847646,
+        0.8261034327267487
+      ]
+    },
+    {
+      "handReach": 0.4666886145404663,
+      "frame": 14,
+      "time": 0.4666666666666667,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.1280492711632433,
+        -5.1677859037003175,
+        2.3693124565201193
+      ],
+      "foodPositionHandLocal": [
+        0.9038952910683686,
+        0.5613568638256239,
+        0.7022105392785959
+      ]
+    },
+    {
+      "handReach": 0.5499259259259258,
+      "frame": 15,
+      "time": 0.5,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -1.8784314571186727,
+        -5.284395719093982,
+        2.6637462602087774
+      ],
+      "foodPositionHandLocal": [
+        0.7767534498798148,
+        0.59431283158303,
+        0.6044803467205396
+      ]
+    },
+    {
+      "handReach": 0.6319286694101507,
+      "frame": 16,
+      "time": 0.5333333333333333,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -1.6178911181519804,
+        -5.3314690403240474,
+        2.9548425712619535
+      ],
+      "foodPositionHandLocal": [
+        0.6387618855793296,
+        0.607015594165615,
+        0.5341002994621835
+      ]
+    },
+    {
+      "handReach": 0.7106392318244169,
+      "frame": 17,
+      "time": 0.5666666666666667,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -1.3617182575907414,
+        -5.315970700200327,
+        3.2216144851888204
+      ],
+      "foodPositionHandLocal": [
+        0.49767248720437873,
+        0.6021170474312161,
+        0.4876494495592083
+      ]
+    },
+    {
+      "handReach": 0.7839999999999998,
+      "frame": 18,
+      "time": 0.6,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -1.1218914355971772,
+        -5.252185160744283,
+        3.4489591060718214
+      ],
+      "foodPositionHandLocal": [
+        0.36023137958517154,
+        0.5833814648046355,
+        0.4588084167055869
+      ]
+    },
+    {
+      "handReach": 0.8499533607681755,
+      "frame": 19,
+      "time": 0.6333333333333333,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.9070472284909556,
+        -5.158027732519336,
+        3.629383003957227
+      ],
+      "foodPositionHandLocal": [
+        0.23270637080162482,
+        0.5548720740076574,
+        0.4407135260542834
+      ]
+    },
+    {
+      "handReach": 0.9064417009602193,
+      "frame": 20,
+      "time": 0.6666666666666666,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.7237826249902093,
+        -5.052174323121575,
+        3.762524170764696
+      ],
+      "foodPositionHandLocal": [
+        0.1212520107832824,
+        0.5211272702613989,
+        0.4280093235298805
+      ]
+    },
+    {
+      "handReach": 0.9514074074074074,
+      "frame": 21,
+      "time": 0.7,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.5781245349031158,
+        -4.952468426815475,
+        3.8530385200843433
+      ],
+      "foodPositionHandLocal": [
+        0.031702424347882285,
+        0.4875609034586992,
+        0.4179119284416961
+      ]
+    },
+    {
+      "handReach": 0.9827928669410149,
+      "frame": 22,
+      "time": 0.7333333333333333,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.476382790111702,
+        -4.87513293365683,
+        3.9077080824987345
+      ],
+      "foodPositionHandLocal": [
+        -0.03085600934987509,
+        0.46032230082668324,
+        0.41011400181980173
+      ]
+    },
+    {
+      "handReach": 0.9985404663923182,
+      "frame": 23,
+      "time": 0.7666666666666667,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.42526241578535184,
+        -4.833987781971844,
+        3.9324499865339653
+      ],
+      "foodPositionHandLocal": [
+        -0.06215726659735621,
+        0.44540988178021923,
+        0.4058101843959716
+      ]
+    },
+    {
+      "handReach": 1.0,
+      "frame": 24,
+      "time": 0.8,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.4205213245766157,
+        -4.830095597871738,
+        3.934652090167877
+      ],
+      "foodPositionHandLocal": [
+        -0.06505321060258229,
+        0.4439844689446968,
+        0.4053954469577561
+      ]
+    },
+    {
+      "handReach": 1.0,
+      "frame": 25,
+      "time": 0.8333333333333334,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.4205213245766157,
+        -4.830095597871738,
+        3.934652090167877
+      ],
+      "foodPositionHandLocal": [
+        -0.06505321060258229,
+        0.4439844689446968,
+        0.4053954469577561
+      ]
+    },
+    {
+      "handReach": 1.0,
+      "frame": 26,
+      "time": 0.8666666666666667,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.4205213245766157,
+        -4.830095597871738,
+        3.934652090167877
+      ],
+      "foodPositionHandLocal": [
+        -0.06505321060258229,
+        0.4439844689446968,
+        0.4053954469577561
+      ]
+    },
+    {
+      "handReach": 1.0,
+      "frame": 27,
+      "time": 0.9,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.4205213245766157,
+        -4.830095597871738,
+        3.934652090167877
+      ],
+      "foodPositionHandLocal": [
+        -0.06505321060258229,
+        0.4439844689446968,
+        0.4053954469577561
+      ]
+    },
+    {
+      "handReach": 1.0,
+      "frame": 28,
+      "time": 0.9333333333333333,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": true,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.4205213245766157,
+        -4.830095597871738,
+        3.934652090167877
+      ],
+      "foodPositionHandLocal": [
+        -0.06505321060258229,
+        0.4439844689446968,
+        0.4053954469577561
+      ]
+    },
+    {
+      "handReach": 1.0,
+      "frame": 29,
+      "time": 0.9666666666666667,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": true,
+      "foodPositionSkeletonSpace": [
+        -0.423581013958019,
+        -4.830766532454008,
+        3.935811715829332
+      ],
+      "foodPositionHandLocal": [
+        -0.0649898528799422,
+        0.4441781043085947,
+        0.4051933496988306
+      ]
+    },
+    {
+      "handReach": 1.0,
+      "frame": 30,
+      "time": 1.0,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.525493244516446,
+        -4.851430554476691,
+        3.974721906287271
+      ],
+      "foodPositionHandLocal": [
+        -0.06288549204851046,
+        0.45056004539836003,
+        0.39842264910373837
+      ]
+    },
+    {
+      "handReach": 0.9850080210892243,
+      "frame": 31,
+      "time": 1.0333333333333334,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -0.8026887306589807,
+        -4.9213416322525845,
+        4.042188668438074
+      ],
+      "foodPositionHandLocal": [
+        -0.029910714369447255,
+        0.4792623658077826,
+        0.3852081661860116
+      ]
+    },
+    {
+      "handReach": 0.943076140988527,
+      "frame": 32,
+      "time": 1.0666666666666667,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -1.2586074097592255,
+        -5.021128434852959,
+        4.112270589461776
+      ],
+      "foodPositionHandLocal": [
+        0.04961931004501263,
+        0.53856339395902,
+        0.3610852089341203
+      ]
+    },
+    {
+      "handReach": 0.8787704446453519,
+      "frame": 33,
+      "time": 1.1,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -1.827483777958585,
+        -5.084066193153786,
+        4.185146419492303
+      ],
+      "foodPositionHandLocal": [
+        0.15295236170439752,
+        0.6218577094750941,
+        0.3156144817489728
+      ]
+    },
+    {
+      "handReach": 0.7966570170071444,
+      "frame": 34,
+      "time": 1.1333333333333333,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.4335860584049005,
+        -5.069417173763867,
+        4.272724433354757
+      ],
+      "foodPositionHandLocal": [
+        0.2553094747203449,
+        0.7285219404779238,
+        0.24268218799906688
+      ]
+    },
+    {
+      "handReach": 0.7013019430213479,
+      "frame": 35,
+      "time": 1.1666666666666667,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -3.0048220467586146,
+        -4.973234507575823,
+        4.397116073834593
+      ],
+      "foodPositionHandLocal": [
+        0.3357106949923283,
+        0.8600270606861917,
+        0.13850952201418876
+      ]
+    },
+    {
+      "handReach": 0.5972713076354074,
+      "frame": 36,
+      "time": 1.2,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -3.4875715858354233,
+        -4.820502074966898,
+        4.578351101184173
+      ],
+      "foodPositionHandLocal": [
+        0.37987024045180207,
+        1.0113025577739425,
+        -0.003269608956680604
+      ]
+    },
+    {
+      "handReach": 0.48913119579676645,
+      "frame": 37,
+      "time": 1.2333333333333334,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -3.8546669538813214,
+        -4.646348523088968,
+        4.821407115364276
+      ],
+      "foodPositionHandLocal": [
+        0.38081577169486647,
+        1.1653583365983702,
+        -0.1910631752913921
+      ]
+    },
+    {
+      "handReach": 0.38144769245287047,
+      "frame": 38,
+      "time": 1.2666666666666666,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.103704279874115,
+        -4.479547683436492,
+        5.110099398849376
+      ],
+      "foodPositionHandLocal": [
+        0.34086885726452393,
+        1.2953371499643127,
+        -0.42739233136852967
+      ]
+    },
+    {
+      "handReach": 0.2787868825511628,
+      "frame": 39,
+      "time": 1.3,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.250627182568498,
+        -4.337754604047236,
+        5.4098107412956145
+      ],
+      "foodPositionHandLocal": [
+        0.27425807161794413,
+        1.3749311137887332,
+        -0.6995629192517276
+      ]
+    },
+    {
+      "handReach": 0.1857148510390889,
+      "frame": 40,
+      "time": 1.3333333333333333,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.322962072072209,
+        -4.2322576675215124,
+        5.678211977538683
+      ],
+      "foodPositionHandLocal": [
+        0.2047656620826297,
+        1.3943196318070612,
+        -0.9769801135546027
+      ]
+    },
+    {
+      "handReach": 0.10679768286409197,
+      "frame": 41,
+      "time": 1.3666666666666667,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.351737871667311,
+        -4.172847354317892,
+        5.879336544958939
+      ],
+      "foodPositionHandLocal": [
+        0.15476986628464126,
+        1.371661613923046,
+        -1.2187972152691051
+      ]
+    },
+    {
+      "handReach": 0.046601462973617225,
+      "frame": 42,
+      "time": 1.4,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.362532203259526,
+        -4.167275446462616,
+        5.991501121806243
+      ],
+      "foodPositionHandLocal": [
+        0.13286547119934777,
+        1.3484876611182557,
+        -1.386419082380176
+      ]
+    },
+    {
+      "handReach": 0.009692276315108495,
+      "frame": 43,
+      "time": 1.4333333333333333,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.369785346903896,
+        -4.210962171269574,
+        6.010787904783969
+      ],
+      "foodPositionHandLocal": [
+        0.13307819261117704,
+        1.3625111519115354,
+        -1.455862360009646
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 44,
+      "time": 1.4666666666666666,
+      "expression": "lick",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 45,
+      "time": 1.5,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 46,
+      "time": 1.5333333333333334,
+      "expression": "open",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 47,
+      "time": 1.5666666666666667,
+      "expression": "open",
+      "cheekPuff": 0.017896635432538565,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 48,
+      "time": 1.6,
+      "expression": "open",
+      "cheekPuff": 0.14307310225677602,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 49,
+      "time": 1.6333333333333333,
+      "expression": "open",
+      "cheekPuff": 0.34743468227973096,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 50,
+      "time": 1.6666666666666667,
+      "expression": "open",
+      "cheekPuff": 0.582990397805213,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 51,
+      "time": 1.7,
+      "expression": "chew",
+      "cheekPuff": 0.8017492711370259,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 52,
+      "time": 1.7333333333333334,
+      "expression": "chew",
+      "cheekPuff": 0.9557203245789793,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 53,
+      "time": 1.7666666666666666,
+      "expression": "chew",
+      "cheekPuff": 1.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 54,
+      "time": 1.8,
+      "expression": "chew",
+      "cheekPuff": 1.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 55,
+      "time": 1.8333333333333333,
+      "expression": "chew",
+      "cheekPuff": 1.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 56,
+      "time": 1.8666666666666667,
+      "expression": "chew",
+      "cheekPuff": 1.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 57,
+      "time": 1.9,
+      "expression": "chew",
+      "cheekPuff": 0.9934132383111975,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 58,
+      "time": 1.9333333333333333,
+      "expression": "chew",
+      "cheekPuff": 0.889832711450247,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 59,
+      "time": 1.9666666666666666,
+      "expression": "chew",
+      "cheekPuff": 0.6974688758513404,
+      "swallow": 0.005063657407407297,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 60,
+      "time": 2.0,
+      "expression": "chew",
+      "cheekPuff": 0.46431270921066836,
+      "swallow": 0.15625,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 61,
+      "time": 2.033333333333333,
+      "expression": "swallow",
+      "cheekPuff": 0.23835518922442678,
+      "swallow": 0.4376446759259246,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 62,
+      "time": 2.066666666666667,
+      "expression": "swallow",
+      "cheekPuff": 0.06758729358880478,
+      "swallow": 0.740740740740742,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 63,
+      "time": 2.1,
+      "expression": "swallow",
+      "cheekPuff": 0.0,
+      "swallow": 0.95703125,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 64,
+      "time": 2.1333333333333333,
+      "expression": "swallow",
+      "cheekPuff": 0.0,
+      "swallow": 1.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 65,
+      "time": 2.1666666666666665,
+      "expression": "swallow",
+      "cheekPuff": 0.0,
+      "swallow": 0.9955070071088801,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 66,
+      "time": 2.2,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.8599633625076325,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 67,
+      "time": 2.2333333333333334,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.6022947433490895,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 68,
+      "time": 2.2666666666666666,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.31296409374976564,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 69,
+      "time": 2.3,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.08243435782617681,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 70,
+      "time": 2.3333333333333335,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.3720055846851595,
+        -4.2271689280661615,
+        6.010788005722544
+      ],
+      "foodPositionHandLocal": [
+        0.1343162265537083,
+        1.3699343157136112,
+        -1.470386414803889
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 71,
+      "time": 2.3666666666666667,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.37360098268749,
+        -4.245979170178469,
+        5.9897170078493165
+      ],
+      "foodPositionHandLocal": [
+        0.13907319134899598,
+        1.386434070083025,
+        -1.4543923743967024
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 72,
+      "time": 2.4,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.383655214373907,
+        -4.382596558142916,
+        5.82323704344116
+      ],
+      "foodPositionHandLocal": [
+        0.18276155031628158,
+        1.5026600514034585,
+        -1.3286866072086163
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 73,
+      "time": 2.433333333333333,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.391331907346608,
+        -4.608995695539609,
+        5.480744320739897
+      ],
+      "foodPositionHandLocal": [
+        0.2952743302465502,
+        1.6777170832250055,
+        -1.0746519390751046
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 74,
+      "time": 2.466666666666667,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.371817302397696,
+        -4.851448208746711,
+        4.950056825888037
+      ],
+      "foodPositionHandLocal": [
+        0.49708242406477965,
+        1.8242808584881245,
+        -0.6940505501104323
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 75,
+      "time": 2.5,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.290101778295783,
+        -5.01701701179835,
+        4.25427862088154
+      ],
+      "foodPositionHandLocal": [
+        0.7697106655740227,
+        1.8486213619232306,
+        -0.21666126109784695
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 76,
+      "time": 2.533333333333333,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -4.115935992364084,
+        -5.024226512403841,
+        3.4738017848323404
+      ],
+      "foodPositionHandLocal": [
+        1.0481009392743819,
+        1.694332033135979,
+        0.2958388021993699
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 77,
+      "time": 2.566666666666667,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -3.8471137405881555,
+        -4.842999405465972,
+        2.7302552118670445
+      ],
+      "foodPositionHandLocal": [
+        1.2512505385561354,
+        1.3777887772346742,
+        0.7699789323441912
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 78,
+      "time": 2.6,
+      "expression": "happy",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -3.5214677485698416,
+        -4.513170631488691,
+        2.135647745324614
+      ],
+      "foodPositionHandLocal": [
+        1.3306750935534026,
+        0.9814014573912724,
+        1.1501967840504843
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 79,
+      "time": 2.6333333333333333,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -3.203064112354995,
+        -4.1259368789658595,
+        1.7426498781178617
+      ],
+      "foodPositionHandLocal": [
+        1.2974009587962025,
+        0.6069098311477235,
+        1.4160539168323654
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 80,
+      "time": 2.6666666666666665,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.952926831966643,
+        -3.784464425320313,
+        1.5332727424472181
+      ],
+      "foodPositionHandLocal": [
+        1.2090290948261908,
+        0.3277607353460968,
+        1.577218710837245
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 81,
+      "time": 2.7,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.810077864010059,
+        -3.5737146481089757,
+        1.4497223959836816
+      ],
+      "foodPositionHandLocal": [
+        1.1349170536572917,
+        0.17554071021538542,
+        1.654674055061605
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 82,
+      "time": 2.7333333333333334,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.785296826329307,
+        -3.535841211180049,
+        1.4379050108409244
+      ],
+      "foodPositionHandLocal": [
+        1.1202532680729533,
+        0.14972495530632868,
+        1.6671569920319922
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 83,
+      "time": 2.7666666666666666,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.785296826329307,
+        -3.535841211180049,
+        1.4379050108409244
+      ],
+      "foodPositionHandLocal": [
+        1.1202532680729533,
+        0.14972495530632868,
+        1.6671569920319922
+      ]
+    },
+    {
+      "handReach": 0.0,
+      "frame": 84,
+      "time": 2.8,
+      "expression": "smile",
+      "cheekPuff": 0.0,
+      "swallow": 0.0,
+      "foodVisible": false,
+      "biteEvent": false,
+      "foodPositionSkeletonSpace": [
+        -2.785296826329307,
+        -3.535841211180049,
+        1.4379050108409244
+      ],
+      "foodPositionHandLocal": [
+        1.1202532680729533,
+        0.14972495530632868,
+        1.6671569920319922
+      ]
+    }
+  ]
+}
