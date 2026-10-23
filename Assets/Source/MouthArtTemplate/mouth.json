@@ -1,0 +1,39 @@
+{
+  "format": "fibu-mouth-art",
+  "version": 1,
+  "art_status": "blank_template_not_final_art",
+  "canvas": {
+    "width": 512,
+    "height": 512
+  },
+  "registration": {
+    "anchor_px": [
+      256,
+      256
+    ]
+  },
+  "clips": [
+    {
+      "id": "smile",
+      "loop": true,
+      "end_behavior": "hold_last",
+      "frames": [
+        {
+          "file": "frames/replace_me.png",
+          "duration_ms": 1000
+        }
+      ]
+    },
+    {
+      "id": "eat",
+      "loop": false,
+      "end_behavior": "hold_last",
+      "frames": [
+        {
+          "file": "frames/replace_me.png",
+          "duration_ms": 2800
+        }
+      ]
+    }
+  ]
+}
