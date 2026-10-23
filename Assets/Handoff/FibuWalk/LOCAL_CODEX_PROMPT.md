@@ -1,3 +1,5 @@
+> **ON HOLD — do not integrate or activate.** The user declined this walk candidate for now because of lower-torso distortion. The material below is retained for reference only. See `Assets/Handoff/FibuRigReview/` for inspection of the approved neutral skeleton.
+
 Fetch origin/codex/fibu-walk without overwriting local work. Read Assets/Handoff/FibuWalk/README.md, timeline.json, validation.json and blend-review.json. This is a SEPARATE walking review candidate; do not immediately replace the active model or eating/Watch resources.
 
 Add an opt-in preview using Assets/Models/FibuWalk/Fibu.Walk.usdz. Keep its mesh and animation together: lower-body weights and compensated bind points differ from the older model. Skeleton paths, topology and UVs match; embedded texture bytes are preserved. Verify every locally available skin. Retain the original wave/eating assets and any newer local model work. If consolidating models, rebase those clips/morphs onto the candidate deliberately and check each action rather than assuming clip-only compatibility.

@@ -1,3 +1,5 @@
+> **ON HOLD — do not integrate or activate.** The user declined this walk candidate for now because of lower-torso distortion. The material below is retained for reference only. See `Assets/Handoff/FibuRigReview/` for inspection of the approved neutral skeleton.
+
 # Fibu soft walk — review candidate
 
 Branch: `codex/fibu-walk`. Runtime candidate: `Assets/Models/FibuWalk/Fibu.Walk.usdz`. Editable review: `Assets/Blender/FibuWalk/Fibu.WalkPreview.blend`. Authoritative generator: `Assets/Blender/FibuWalk/build.py`.

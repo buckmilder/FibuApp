@@ -1,0 +1,327 @@
+{
+  "source": "Assets/Models/Fibu.Proportions.usdz",
+  "sourceSHA256": "819ef67d0d86d2572fd0fc1c4d0eca611d516c514e297225beb1e12d1ba7f4b5",
+  "pose": "original neutral animation sample 0, not the rejected walk",
+  "joints": [
+    {
+      "path": "Skeleton",
+      "name": "Skeleton",
+      "parent": -1,
+      "position": [
+        0.0,
+        0.0,
+        0.8346055480399314
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton",
+      "name": "Skeleton",
+      "parent": 0,
+      "position": [
+        0.0,
+        0.0,
+        0.8346055480399314
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone",
+      "name": "RigBone",
+      "parent": 1,
+      "position": [
+        0.0,
+        0.0,
+        0.015337303262185693
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty",
+      "name": "Booty",
+      "parent": 2,
+      "position": [
+        0.0,
+        -9.766438541147061e-08,
+        0.8346054992077386
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist",
+      "name": "Waist",
+      "parent": 3,
+      "position": [
+        0.0,
+        -9.766438541147061e-08,
+        0.8346054992077386
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach",
+      "name": "Stomach",
+      "parent": 4,
+      "position": [
+        0.0,
+        -1.236860096125085e-07,
+        1.0528906911427467
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest",
+      "name": "Chest",
+      "parent": 5,
+      "position": [
+        0.0,
+        -1.4853240276868113e-07,
+        1.261317331120565
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Neck",
+      "name": "Neck",
+      "parent": 6,
+      "position": [
+        1.8014231637387178e-16,
+        -0.01809367750877614,
+        1.4633308525189914
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Neck/Face",
+      "name": "Face",
+      "parent": 7,
+      "position": [
+        -7.677484716718054e-12,
+        0.007522153117218183,
+        1.716191469998587
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Neck/Face/Head",
+      "name": "Head",
+      "parent": 8,
+      "position": [
+        -7.696246732e-12,
+        -0.08124534496257678,
+        2.1911293128814053
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Neck/Face/Head/Head_end",
+      "name": "Head_end",
+      "parent": 9,
+      "position": [
+        -7.68999052692131e-12,
+        0.013742233054693298,
+        2.4958812383776534
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Shoulder_L",
+      "name": "Shoulder_L",
+      "parent": 6,
+      "position": [
+        0.33641464651651115,
+        -0.11081904782429408,
+        1.4217736992234236
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Shoulder_L/Bicep_L",
+      "name": "Bicep_L",
+      "parent": 11,
+      "position": [
+        0.6728290971813895,
+        -0.11081910884576782,
+        1.380216560845632
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Shoulder_L/Bicep_L/Forearm_L",
+      "name": "Forearm_L",
+      "parent": 12,
+      "position": [
+        0.8369775188572085,
+        -0.20984083420132815,
+        1.1882565331439938
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L",
+      "name": "Hand_L",
+      "parent": 13,
+      "position": [
+        0.7246813203815082,
+        -0.31042419905448887,
+        1.0566571949859154
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Shoulder_L/Bicep_L/Forearm_L/Hand_L/Hand_L_end",
+      "name": "Hand_L_end",
+      "parent": 14,
+      "position": [
+        0.567134403386847,
+        -0.3837716030577561,
+        1.0454648674331648
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Shoulder_R",
+      "name": "Shoulder_R",
+      "parent": 6,
+      "position": [
+        -0.3364146527533634,
+        -0.11081905943948413,
+        1.4217734891767977
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Shoulder_R/Bicep_R",
+      "name": "Bicep_R",
+      "parent": 16,
+      "position": [
+        -0.6728289852411038,
+        -0.11081906052744445,
+        1.3802164301237403
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Shoulder_R/Bicep_R/Forearm_R",
+      "name": "Forearm_R",
+      "parent": 17,
+      "position": [
+        -0.8370280214245359,
+        -0.2098041805174903,
+        1.1882801290896605
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R",
+      "name": "Hand_R",
+      "parent": 18,
+      "position": [
+        -0.7247675533530622,
+        -0.3103708864545461,
+        1.0566373993356233
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Waist/Stomach/Chest/Shoulder_R/Bicep_R/Forearm_R/Hand_R/Hand_R_end",
+      "name": "Hand_R_end",
+      "parent": 19,
+      "position": [
+        -0.557989087774696,
+        -0.3518219060511763,
+        1.028478994611114
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone",
+      "name": "Crotch_Bone",
+      "parent": 3,
+      "position": [
+        0.0,
+        -9.766438541147061e-08,
+        0.8346054992077386
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone/Thigh_L",
+      "name": "Thigh_L",
+      "parent": 21,
+      "position": [
+        0.43151198769530924,
+        -1.3161989866807734e-07,
+        0.549766026037018
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone/Thigh_L/Calf_L",
+      "name": "Calf_L",
+      "parent": 22,
+      "position": [
+        0.43151198769530924,
+        -1.5665940803788582e-07,
+        0.3397194099411222
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone/Thigh_L/Calf_L/Foot_L",
+      "name": "Foot_L",
+      "parent": 23,
+      "position": [
+        0.43151198769530924,
+        -1.4883869511148463e-07,
+        0.11599798877504738
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone/Thigh_L/Calf_L/Foot_L/Toe_L",
+      "name": "Toe_L",
+      "parent": 24,
+      "position": [
+        0.4315119837211487,
+        -0.1071910091388667,
+        0.09619031785618327
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone/Thigh_L/Calf_L/Foot_L/Toe_L/Toe_L_end",
+      "name": "Toe_L_end",
+      "parent": 25,
+      "position": [
+        0.43151198372113975,
+        -0.21438185768314608,
+        0.09619034005842554
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone/Thigh_R",
+      "name": "Thigh_R",
+      "parent": 21,
+      "position": [
+        -0.43151198769530924,
+        -1.3161989866807734e-07,
+        0.549766026037018
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone/Thigh_R/Calf_R",
+      "name": "Calf_R",
+      "parent": 27,
+      "position": [
+        -0.43151198769530924,
+        -1.5665940803788582e-07,
+        0.3397194099411222
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone/Thigh_R/Calf_R/Foot_R",
+      "name": "Foot_R",
+      "parent": 28,
+      "position": [
+        -0.43151198769530924,
+        -1.4883869511148463e-07,
+        0.11599798877504738
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone/Thigh_R/Calf_R/Foot_R/Toe_R",
+      "name": "Toe_R",
+      "parent": 29,
+      "position": [
+        -0.4315119837211487,
+        -0.1071910091388667,
+        0.09619031785618327
+      ]
+    },
+    {
+      "path": "Skeleton/Skeleton/RigBone/Booty/Crotch_Bone/Thigh_R/Calf_R/Foot_R/Toe_R/Toe_R_end",
+      "name": "Toe_R_end",
+      "parent": 30,
+      "position": [
+        -0.43151198372113975,
+        -0.21438185768314608,
+        0.09619034005842554
+      ]
+    }
+  ]
+}
