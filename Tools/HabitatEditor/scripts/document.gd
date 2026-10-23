@@ -9,7 +9,7 @@ func _init():
 	data = fresh()
 
 static func fresh() -> Dictionary:
-	return {"format":"fibu-habitat", "version":VERSION, "id":new_id(), "name":"Untitled habitat", "grid":{"width":9,"depth":9,"cell_size":1.0}, "coordinates":"Y-up meters; cell [x,layer,row] maps to [x,layer,-row]; cell bottom Y=layer; X/Z centered", "terrain":[], "objects":[], "spawn":[4,1.15,-0.5], "environment":{}}
+	return {"format":"fibu-habitat", "version":VERSION, "id":new_id(), "name":"Untitled habitat", "grid":{"width":9,"depth":9,"cell_size":1.0}, "coordinates":"Y-up meters; cell [x,layer,row] maps to [x,layer,-row]; cell bottom Y=layer; X/Z centered", "terrain":[], "objects":[], "spawn":[4,1.15,-0.5], "environment":HabitatAtmosphere.preset("sunny_highlands")}
 
 static func new_id() -> String:
 	return Crypto.new().generate_random_bytes(12).hex_encode()
@@ -44,6 +44,8 @@ func validate(candidate, catalog: Dictionary) -> String:
 		return "This asset catalog uses 1-meter cells. Rescaling catalogs is not implemented."
 	if not candidate.get("terrain") is Array or not candidate.get("objects") is Array or not vector_valid(candidate.get("spawn")):
 		return "Missing terrain, objects, or finite spawn vector."
+	var sky_error=HabitatAtmosphere.validate(candidate.get("environment",{}))
+	if not sky_error.is_empty(): return sky_error
 	var occupied = {}
 	var ids = {}
 	for cell in candidate.terrain:

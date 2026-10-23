@@ -20,8 +20,13 @@ Implement a Swift decoder/loader for the format documented in `SCHEMA.md`. First
 - Validate versions, finite transforms, duplicate cells/IDs and missing assets. Keep unsupported fields when implementing a future native editor. Avoid clearing unrelated user preferences or skin choices.
 - Run both existing simulator scheme builds and movement/camera/skin checks after native implementation. Visually verify all elevations, props, lighting, character scale and stair contact. Swift loading and simulator behavior have not been tested in Linux.
 
-Desktop Preview is a capsule navigation proxy, not the Swift controller or an animation test. No production day/night cycle is included. Studio lighting is editable-tool presentation and is not baked into authored terrain colors.
+Desktop Preview is a capsule navigation proxy, not the Swift controller or an animation test. No automatic day/night cycle is included. Sky & Atmosphere is now authored environment data: preserve it when loading layouts and read `ATMOSPHERE.md`. It is not baked into terrain colors. Godot sky shaders do not run directly in SceneKit; native rendering requires a port or panoramic baking step plus matching light/fog settings.
 
 ## Scope remaining
 
 Arbitrary connector/socket snapping, transform gizmos, advanced foliage brushes, material transitions, exact decomposition of the three reference habitats, and an exported Mac app bundle remain future work. Basic grid/face snapping, inspector transforms and click-destination group movement are implemented. Review the README before extending the asset schema.
+
+
+## Sky update included before handoff
+
+The same branch now includes six procedural environments and a Sky & Atmosphere panel. Check preset thumbnails, switching, color/numeric edits, custom preset save/duplicate/revert, panorama imports and habitat save/reload. The starter includes explicit Sunny Highlands settings. `assets/skies/presets.json` supplies portable reference defaults; `ATMOSPHERE.md` describes keys, coordinate conventions, background placement and SceneKit integration. Preview shares the same environment renderer. This does not implement the native app's sky or its automatic day/night clock.

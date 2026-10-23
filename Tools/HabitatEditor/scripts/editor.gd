@@ -66,6 +66,15 @@ var box_rect = Rect2()
 var recent_hover = Vector2.ZERO
 var selection_list: OptionButton
 var spawn_marker: Node3D
+var content_root_override = ""
+var atmosphere: HabitatAtmosphere
+var sky_window: Window
+var sky_fields: VBoxContainer
+var sky_preset_list: OptionButton
+var sky_preset_paths: Array = []
+var sky_revert = {}
+var sky_name: LineEdit
+var panorama_dialog: FileDialog
 
 func _ready():
 	get_tree().auto_accept_quit = false
@@ -120,6 +129,7 @@ func build_ui():
 	button("Rotate ↻",rotate_selection,top)
 	button("Duplicate",duplicate_selection,top); button("Delete",delete_selection,top)
 	preview_button = button("Preview ▶",toggle_preview,top)
+	button("Sky & Atmosphere",open_sky,top)
 	button("Help",show_help,top)
 	var row = HBoxContainer.new(); layout.add_child(row)
 	title_label = Label.new(); title_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL; row.add_child(title_label)
@@ -214,11 +224,7 @@ func save_preferences():
 
 func build_world():
 	world = Node3D.new(); viewport.add_child(world)
-	var env_node = WorldEnvironment.new(); var env = Environment.new()
-	env.background_mode = Environment.BG_COLOR; env.background_color = Color("638b94")
-	env.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR; env.ambient_light_color = Color("d0dfe6"); env.ambient_light_energy = .3
-	env.tonemap_mode = Environment.TONE_MAPPER_FILMIC; env_node.environment = env; world.add_child(env_node)
-	var sun = DirectionalLight3D.new(); sun.rotation_degrees = Vector3(-52,-30,0); sun.light_energy = .5; sun.shadow_enabled = true; sun.directional_shadow_max_distance = 80; world.add_child(sun)
+	atmosphere=HabitatAtmosphere.new(world,content_directory())
 	terrain_root = Node3D.new(); world.add_child(terrain_root)
 	props_root = Node3D.new(); world.add_child(props_root)
 	outlines = Node3D.new(); world.add_child(outlines)
@@ -278,7 +284,7 @@ func rebuild():
 				var solid_body=StaticBody3D.new(); solid_body.collision_layer=1; solid_body.collision_mask=0; solid_body.set_meta("instance_id",obj.id); mesh_node.add_child(solid_body)
 				var solid_shape=CollisionShape3D.new(); solid_shape.shape=mesh_node.mesh.create_trimesh_shape(); solid_body.add_child(solid_shape)
 		object_nodes[obj.id] = root
-	rebuild_grid(); refresh_selection(); update_title()
+	rebuild_grid(); refresh_selection(); update_title(); atmosphere.apply(document.data.get("environment",{}))
 	selection_list.clear(); selection_list.add_item("Select object by name…")
 	for obj in document.data.objects:
 		selection_list.add_item(obj.get("name",registry.assets.get(obj.asset,{}).get("name",obj.asset))+" · "+obj.id.left(6))
@@ -450,7 +456,7 @@ func end_pointer(point: Vector2):
 func _input(event):
 	# Handle viewport pointer events before SubViewportContainer forwards them to
 	# its child world. gui_input alone misses buttons consumed by the container.
-	if (event is InputEventMouseButton or event is InputEventMouseMotion) and view and not file_dialog.visible and not confirm.visible and not error_dialog.visible:
+	if (event is InputEventMouseButton or event is InputEventMouseMotion) and view and not file_dialog.visible and not confirm.visible and not error_dialog.visible and not (sky_window and sky_window.visible):
 		var local_point=event.position-view.global_position
 		if Rect2(Vector2.ZERO,view.size).has_point(local_point) or camera_drag!=0 or selecting_box:
 			var local_event=event.duplicate()
@@ -462,7 +468,7 @@ func _input(event):
 	if event is InputEventMouseButton and not event.pressed and event.button_index==MOUSE_BUTTON_LEFT and painting:
 		painting=false; commit(stroke_before)
 	if not event is InputEventKey or not event.pressed or event.echo: return
-	if get_viewport().gui_get_focus_owner() is LineEdit or file_dialog.visible or confirm.visible or error_dialog.visible: return
+	if get_viewport().gui_get_focus_owner() is LineEdit or file_dialog.visible or confirm.visible or error_dialog.visible or (sky_window and sky_window.visible) or (panorama_dialog and panorama_dialog.visible): return
 	var command = event.ctrl_pressed or event.meta_pressed
 	if command:
 		match event.keycode:
@@ -679,6 +685,7 @@ func set_spawn():
 	set_status("Spawn set above last placement cursor. Preview to check ground contact.")
 
 func content_directory() -> String:
+	if not content_root_override.is_empty(): return content_root_override
 	var root=ProjectSettings.globalize_path("res://").path_join("../../Assets/Habitats").simplify_path()
 	if DirAccess.dir_exists_absolute(root): return root
 	return OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
@@ -704,6 +711,7 @@ func load_path(path: String):
 		file_path=path; saved_signature=signature(); undo_stack.clear(); redo_stack.clear(); selected.clear(); rebuild(); frame_all()
 		var missing=document.missing_assets(registry.assets)
 		if not missing.is_empty(): show_error("Missing assets preserved: "+str(missing)+". Props show magenta placeholders; terrain uses fallback material.")
+		elif not atmosphere.missing_panorama.is_empty(): show_error("Panorama missing: "+atmosphere.missing_panorama+". Procedural fallback shown; the reference is preserved.")
 		else: set_status("Opened "+path)
 	else: show_error(document.error)
 
@@ -752,8 +760,9 @@ func toggle_preview():
 		outlines.visible=true; rebuild(); preview_button.text="Preview ▶"; set_status("Returned to editing; authored layout was preserved.")
 
 func _physics_process(delta):
+	if atmosphere: atmosphere.tick(delta)
 	var focus=get_viewport().gui_get_focus_owner()
-	if focus is LineEdit or (file_dialog and file_dialog.visible) or (error_dialog and error_dialog.visible) or (confirm and confirm.visible): return
+	if focus is LineEdit or (file_dialog and file_dialog.visible) or (error_dialog and error_dialog.visible) or (confirm and confirm.visible) or (sky_window and sky_window.visible): return
 	if previewing and proxy:
 		var input=Vector3(float(Input.is_physical_key_pressed(KEY_D) or Input.is_key_pressed(KEY_RIGHT))-float(Input.is_physical_key_pressed(KEY_A) or Input.is_key_pressed(KEY_LEFT)),0,float(Input.is_physical_key_pressed(KEY_S) or Input.is_key_pressed(KEY_DOWN))-float(Input.is_physical_key_pressed(KEY_W) or Input.is_key_pressed(KEY_UP)))
 		preview_step(delta,input,Input.is_physical_key_pressed(KEY_SPACE))
@@ -784,3 +793,128 @@ func _notification(what):
 	if what==NOTIFICATION_WM_CLOSE_REQUEST:
 		if previewing: toggle_preview()
 		guard_action(func(): get_tree().quit())
+
+
+func sky_change(key: String, value):
+	if previewing: return
+	var before=document.data.duplicate(true)
+	var settings=HabitatAtmosphere.resolved(document.data.get("environment",{}))
+	settings[key]=value
+	document.data.environment=settings
+	atmosphere.apply(settings)
+	commit(before)
+
+func choose_sky(settings: Dictionary):
+	if previewing: return
+	var before=document.data.duplicate(true)
+	document.data.environment=settings.duplicate(true)
+	atmosphere.apply(settings); commit(before); refresh_sky_fields()
+
+func open_sky():
+	if previewing: return
+	if not sky_window:
+		sky_window=Window.new(); sky_window.title="Sky & Atmosphere"; sky_window.size=Vector2i(760,760); sky_window.min_size=Vector2i(640,480); sky_window.transient=true; sky_window.exclusive=true; add_child(sky_window)
+		sky_window.close_requested.connect(func(): sky_window.hide())
+		var layout=VBoxContainer.new(); layout.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT); sky_window.add_child(layout)
+		var presets=HFlowContainer.new(); layout.add_child(presets)
+		for index in range(HabitatAtmosphere.PRESETS.size()):
+			var id=HabitatAtmosphere.PRESETS[index]
+			var b=button(HabitatAtmosphere.NAMES[index],func(): choose_sky(HabitatAtmosphere.preset(id)),presets)
+			b.custom_minimum_size=Vector2(230,72); b.expand_icon=true; b.add_theme_constant_override("icon_max_width",80)
+			var thumbnail="res://assets/skies/"+id+".png"
+			if ResourceLoader.exists(thumbnail): b.icon=load(thumbnail)
+		var actions=HFlowContainer.new(); layout.add_child(actions)
+		sky_name=LineEdit.new(); sky_name.placeholder_text="Custom preset name"; sky_name.custom_minimum_size.x=190; actions.add_child(sky_name)
+		button("Save preset",func(): save_sky_preset(false),actions)
+		button("Duplicate preset",func(): save_sky_preset(true),actions)
+		button("Revert session changes",func(): choose_sky(sky_revert),actions)
+		sky_preset_list=OptionButton.new(); actions.add_child(sky_preset_list)
+		sky_preset_list.item_selected.connect(func(index):
+			if index==0: return
+			var raw=JSON.parse_string(FileAccess.get_file_as_string(sky_preset_paths[index-1]))
+			if raw is Dictionary and HabitatAtmosphere.validate(raw).is_empty(): choose_sky(raw))
+		var scroll=ScrollContainer.new(); scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL; layout.add_child(scroll)
+		sky_fields=VBoxContainer.new(); sky_fields.size_flags_horizontal=Control.SIZE_EXPAND_FILL; scroll.add_child(sky_fields)
+		var footer=HFlowContainer.new(); layout.add_child(footer)
+		button("Import panorama…",import_panorama,footer)
+		button("Use procedural sky",func(): sky_change("panorama",""); refresh_sky_fields(),footer)
+		button("Done",func(): sky_window.hide(),footer)
+	sky_revert=document.data.get("environment",{}).duplicate(true)
+	refresh_sky_fields(); refresh_custom_skies(); sky_window.popup_centered()
+
+func refresh_sky_fields():
+	if not sky_fields: return
+	clear_children(sky_fields)
+	var settings=HabitatAtmosphere.resolved(document.data.get("environment",{}))
+	sky_name.text=settings.name
+	for key in ["sky_top","horizon","lower_sky","sun_color","ambient_color","cloud_color","fog_color","landscape_tint"]:
+		var row=HBoxContainer.new(); sky_fields.add_child(row)
+		var label=Label.new(); label.text=key.capitalize(); label.custom_minimum_size.x=250; row.add_child(label)
+		var picker=ColorPickerButton.new(); picker.color=Color(settings[key]); picker.edit_alpha=false; picker.custom_minimum_size=Vector2(130,30); row.add_child(picker)
+		var history={}
+		picker.color_changed.connect(func(color):
+			if history.is_empty(): history.before=document.data.duplicate(true)
+			var env=HabitatAtmosphere.resolved(document.data.get("environment",{})); env[key]=color.to_html(false); document.data.environment=env; atmosphere.apply(env); update_title())
+		picker.popup_closed.connect(func():
+			if history.has("before"): commit(history.before); history.clear())
+	var ranges={"sun_azimuth":[-360,360,1],"sun_elevation":[-90,90,1],"sun_energy":[0,4,.01],"ambient_energy":[0,2,.01],"cloud_density":[0,1,.05],"cloud_softness":[0,1,.05],"cloud_speed":[0,.1,.005],"fog_density":[0,.05,.001],"fog_height":[-10000,10000,1],"fog_height_density":[0,.1,.001],"background_rotation":[-360,360,1],"stars":[0,2,.1],"moon":[0,1,.1],"haze":[0,1,.05],"horizon_offset":[0,1,.05]}
+	for key in ranges:
+		var row=HBoxContainer.new(); sky_fields.add_child(row)
+		var label=Label.new(); label.text=key.capitalize(); label.custom_minimum_size.x=250; row.add_child(label)
+		var spin=SpinBox.new(); spin.min_value=ranges[key][0]; spin.max_value=ranges[key][1]; spin.step=ranges[key][2]; spin.value=settings[key]; spin.custom_minimum_size.x=180; row.add_child(spin)
+		spin.value_changed.connect(func(value): sky_change(key,value))
+	for key in ["cloud_motion","landscape_visible"]:
+		var check=CheckBox.new(); check.text=key.capitalize(); check.button_pressed=settings[key]; sky_fields.add_child(check)
+		check.toggled.connect(func(value): sky_change(key,value))
+	var kinds=OptionButton.new()
+	for name in ["Mountain ranges","Forest silhouettes","Desert mesas","Icy mountains"]: kinds.add_item(name)
+	kinds.selected=int(settings.landscape_kind); sky_fields.add_child(kinds); kinds.item_selected.connect(func(index): sky_change("landscape_kind",index))
+	var info=Label.new(); info.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; info.text="Panorama: "+(settings.panorama if not settings.panorama.is_empty() else "Procedural")+". Imported panoramas replace procedural clouds and landscapes; lighting/fog remain adjustable."; sky_fields.add_child(info)
+
+func refresh_custom_skies():
+	sky_preset_list.clear(); sky_preset_list.add_item("Saved presets…"); sky_preset_paths.clear()
+	var folder=content_directory().path_join("SkyPresets")
+	if not DirAccess.dir_exists_absolute(folder): return
+	var files=DirAccess.get_files_at(folder); files.sort()
+	for filename in files:
+		if not filename.ends_with(".json"): continue
+		var path=folder.path_join(filename); var raw=JSON.parse_string(FileAccess.get_file_as_string(path))
+		if raw is Dictionary and HabitatAtmosphere.validate(raw).is_empty():
+			sky_preset_paths.append(path); sky_preset_list.add_item(raw.get("name",filename))
+
+func save_sky_preset(duplicate: bool):
+	var settings=HabitatAtmosphere.resolved(document.data.get("environment",{}))
+	settings.name=sky_name.text.strip_edges()
+	if settings.name.is_empty(): settings.name="Custom sky"
+	if duplicate: settings.name+=" Copy"
+	var filename=settings.name.to_snake_case().validate_filename()
+	var folder=content_directory().path_join("SkyPresets"); DirAccess.make_dir_recursive_absolute(folder)
+	var path=folder.path_join(filename+("_"+HabitatDocument.new_id().left(6) if duplicate else "")+".json")
+	if FileAccess.file_exists(path):
+		var replace=ConfirmationDialog.new(); replace.title="Replace sky preset?"; replace.dialog_text="Replace the saved preset “%s” with these settings?" % settings.name; sky_window.add_child(replace)
+		replace.confirmed.connect(func(): write_sky_preset(settings,path); replace.queue_free())
+		replace.canceled.connect(func(): replace.queue_free()); replace.popup_centered(); return
+	write_sky_preset(settings,path)
+
+func write_sky_preset(settings: Dictionary, path: String):
+	var f=FileAccess.open(path+".tmp",FileAccess.WRITE)
+	if not f: set_status("Cannot save preset: "+path); return
+	f.store_string(JSON.stringify(settings,"\t")+"\n"); f.flush(); var result=f.get_error(); f.close()
+	if result!=OK or DirAccess.rename_absolute(path+".tmp",path)!=OK: set_status("Could not finish saving sky preset."); return
+	choose_sky(settings); refresh_custom_skies(); set_status("Saved sky preset: "+path)
+
+func import_panorama():
+	if not panorama_dialog:
+		panorama_dialog=FileDialog.new(); panorama_dialog.access=FileDialog.ACCESS_FILESYSTEM; panorama_dialog.file_mode=FileDialog.FILE_MODE_OPEN_FILE; panorama_dialog.filters=PackedStringArray(["*.png,*.jpg,*.jpeg,*.hdr,*.exr ; Equirectangular panorama"]); sky_window.add_child(panorama_dialog)
+		panorama_dialog.file_selected.connect(load_panorama)
+	panorama_dialog.popup_centered_ratio(.8)
+
+
+func load_panorama(path: String):
+	var image=Image.load_from_file(path)
+	if not image or image.is_empty(): set_status("Could not read panorama."); return
+	var digest=FileAccess.get_sha256(path).left(20)
+	var relative="SkyArt/"+digest+"."+path.get_extension().to_lower()
+	DirAccess.make_dir_recursive_absolute(content_directory().path_join("SkyArt"))
+	if DirAccess.copy_absolute(path,content_directory().path_join(relative))!=OK: set_status("Cannot copy panorama to habitat content."); return
+	sky_change("panorama",relative); refresh_sky_fields(); set_status("Panorama copied into Assets/Habitats; commit it with the layout.")

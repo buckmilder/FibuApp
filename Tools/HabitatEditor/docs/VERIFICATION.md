@@ -8,3 +8,11 @@ Environment: Linux cloud workspace, Godot 4.6.3 stable, Compatibility renderer. 
 - `bash -n scripts/habitat-editor.sh`: passed.
 
 Not verified here: native Mac/trackpad behavior, macOS exported app bundle, SceneKit layout loader, Swift gameplay parity, Xcode builds or iOS performance. No existing app, character, skin or animation files changed. The new native loader is documented as a separate local task, not claimed as delivered.
+
+
+## Sky & Atmosphere follow-up
+
+- Headless import and **118 checks, 0 failures** after adding the environment module. Added coverage includes all six presets and exported definitions/thumbnails, live light values, environment save/reload, undo/redo, optional cloud motion, Preview continuity, preset save/duplicate/revert, malformed sky settings, panorama copying/application and missing-image fallback.
+- All six actual backgrounds were rendered and visually inspected in the Compatibility renderer. Original procedural silhouettes, cloud gradients, night stars/moon, desert layers and icy peaks are visible from the default angled camera. Reference renders are `sky_*.png` in this folder.
+- The rendered editor's Sky & Atmosphere window and one-click Starry Night selection were exercised through mouse input; the scene background and lighting changed while construction remained in place. `atmosphere-panel.png` captures that panel.
+- No Forward+ volumetric features or distant collision geometry are used. This does not establish an iOS frame-rate/battery measurement, native Mac verification, SceneKit visual parity, or an automatic day/night clock.

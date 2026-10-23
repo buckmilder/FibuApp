@@ -68,12 +68,25 @@ python Tools/HabitatEditor/validate_assets.py
 
 The Blender converter needs the existing ignored HabitatWorlds generated JSON memberships. If absent, first run `FIBU_SKIP_RENDER=1 blender -t 4 --background --factory-startup --python Assets/Blender/HabitatWorlds/build.py`. Conversion scratch is ignored. USD tools need `usd-core`; Blender supplies its own Python. Original sources and runtime exports remain untouched.
 
+## Sky & Atmosphere
+
+Open **Sky & Atmosphere** from the toolbar. Six one-click thumbnail presets provide original procedural skies, clouds, layered distant landscapes and matching sun/ambient/fog settings: Sunny Highlands, Golden Sunset, Starry Night, Misty Forest, Desert Haze and Frozen Twilight.
+
+Edit sky/horizon/lower colors, sun heading/elevation/color/energy, ambient color/energy, clouds, fog, landscape type/tint/visibility, background rotation and horizon offset. Settings preview immediately and are stored in the habitat's `environment`; no second copy of habitat geometry is needed for a different mood. Color-picker edits form one undo entry; numeric changes are undoable. **Revert session changes** restores the environment present when the panel opened.
+
+Save or duplicate named custom presets under `Assets/Habitats/SkyPresets/`. Saving over an existing filename requests confirmation. Preset definitions are copied into habitats, so editing a saved preset does not unexpectedly alter other layouts. Commit custom presets if you want to share them.
+
+**Import panorama** copies your equirectangular PNG/JPEG/HDR/EXR into `Assets/Habitats/SkyArt/` with a content-derived filename. Commit the art with its habitat. Panorama mode replaces procedural clouds/landscapes while retaining coordinated lighting/fog; **Use procedural sky** restores procedural mode. Missing art falls back to procedural rendering and retains the original reference.
+
+Optional slow cloud movement is off by default. No automatic clock or day/night cycle is implemented. These are editable mood starting points; a future native cycle can interpolate environment values while keeping geometry unchanged. See [ATMOSPHERE.md](ATMOSPHERE.md) for the data contract and Swift integration limits.
+
 ## Data and architecture
 
 See [SCHEMA.md](SCHEMA.md) and [IOS_HANDOFF.md](IOS_HANDOFF.md). Authored content lives in `Assets/Habitats/`, separate from `user://` editor preferences and test files. Open/Save As use normal file dialogs, retain unknown fields/missing IDs, reject malformed and unsupported-version files, and write with a same-directory temporary file then atomic rename. Unsaved changes are guarded on New/Open/Close.
 
 - `scripts/document.gd`: portable data, validation, placement checks and serialization.
 - `scripts/registry.gd`: asset loading/material cache.
+- `scripts/atmosphere.gd` and `assets/skies/stylized.gdshader`: environment presets, background rendering and coordinated lighting.
 - `scripts/terrain.gd`: occupancy-driven exposed boundary, shared smoothing, normals and UVs.
 - `scripts/editor.gd`: desktop UI, commands/history, placement, camera and preview.
 - `tests/run.gd`: model/mesh checks and actual editor command/physics tests.

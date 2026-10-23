@@ -1142,5 +1142,36 @@
     1.03,
     0
   ],
-  "environment": {}
+  "environment": {
+    "ambient_color": "c4dce4",
+    "ambient_energy": 0.35,
+    "background_rotation": 0.0,
+    "cloud_color": "fff7e5",
+    "cloud_density": 0.55,
+    "cloud_motion": false,
+    "cloud_softness": 0.55,
+    "cloud_speed": 0.015,
+    "fog_color": "aecfc6",
+    "fog_density": 0.001,
+    "fog_height": 0.0,
+    "fog_height_density": 0.0,
+    "haze": 0.3,
+    "horizon": "bce3cf",
+    "horizon_offset": 0.55,
+    "landscape_kind": 0,
+    "landscape_tint": "326343",
+    "landscape_visible": true,
+    "lower_sky": "426b67",
+    "moon": 0.0,
+    "name": "Sunny Highlands",
+    "panorama": "",
+    "preset": "sunny_highlands",
+    "sky_top": "368ab1",
+    "stars": 0.0,
+    "sun_azimuth": -30,
+    "sun_color": "fff4d8",
+    "sun_elevation": 52,
+    "sun_energy": 0.65,
+    "version": 1
+  }
 }

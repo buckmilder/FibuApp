@@ -34,7 +34,7 @@ Blender conversion is `(x,y,z) -> (x,z,-y)`. The same conversion is used by exis
 }
 ```
 
-Example dimensions above are illustrative; the catalog is authoritative. `solid` and `dimensions` in instance records support editor occupancy checks and should agree with the registered asset. Gameplay should apply its own approved collision rules. Names and properties are optional. New IDs use random 96-bit hexadecimal strings; other stable strings are accepted.
+Example dimensions above are illustrative; the catalog is authoritative. `solid` and `dimensions` in instance records support editor occupancy checks and should agree with the registered asset. Gameplay should apply its own approved collision rules. Environment settings are documented in [ATMOSPHERE.md](ATMOSPHERE.md). They are a versioned primitive JSON dictionary, not a Godot resource. Empty legacy environment objects resolve to Sunny Highlands; the starter now stores explicit settings. Names and properties are optional. New IDs use random 96-bit hexadecimal strings; other stable strings are accepted.
 
 `spawn` is the suggested character **foot** position, before native character grounding adjustments. Width and depth are configurable in data; cell size is currently required to be 1 because the catalog has one-meter geometry. The editor rejects other cell sizes explicitly rather than silently mis-scaling assets.
 
