@@ -1,0 +1,179 @@
+{
+  "checksPassed": 41,
+  "checksFailed": 0,
+  "minGroundOffset": -0.0002861858520191163,
+  "maxStanceGroundError": 0.00023679680480636028,
+  "maxAnkleSlideError": 4.391489504040891e-05,
+  "maxEdgeStretchRatio": 2.4697272777557373,
+  "torsoConvexHullVolumeRatio": [
+    1.0184087125593768,
+    1.0342227798987942
+  ],
+  "packageSHA256": "f0c0294ed9d190e616e9319f403b25c238b2b226439d92ca20e1e66e6245b3ae",
+  "checks": [
+    {
+      "check": "approved input hash",
+      "pass": true
+    },
+    {
+      "check": "package hash",
+      "pass": true
+    },
+    {
+      "check": "resolved dependencies",
+      "pass": true
+    },
+    {
+      "check": "unchanged faceVertexCounts",
+      "pass": true
+    },
+    {
+      "check": "unchanged faceVertexIndices",
+      "pass": true
+    },
+    {
+      "check": "unchanged primvars:st",
+      "pass": true
+    },
+    {
+      "check": "unchanged primvars:skel:geomBindTransform",
+      "pass": true
+    },
+    {
+      "check": "unchanged skeleton joints",
+      "pass": true
+    },
+    {
+      "check": "unchanged skeleton bindTransforms",
+      "pass": true
+    },
+    {
+      "check": "unchanged skeleton restTransforms",
+      "pass": true
+    },
+    {
+      "check": "embedded artist texture bytes unchanged",
+      "pass": true
+    },
+    {
+      "check": "all 32 joint channels",
+      "pass": true
+    },
+    {
+      "check": "complete samples",
+      "pass": true
+    },
+    {
+      "check": "/Fibu3_HD_HandWave/Geom/Fibu3_HD_HandWave/Geom/Fibu3/Geom/RootNode/Armature/RigBone/Skeleton/Skeleton/WalkSquash finite offsets and normals",
+      "pass": true
+    },
+    {
+      "check": "/Fibu3_HD_HandWave/Geom/Fibu3_HD_HandWave/Geom/Fibu3/Geom/RootNode/Armature/RigBone/Skeleton/Skeleton/WalkStretch finite offsets and normals",
+      "pass": true
+    },
+    {
+      "check": "/Fibu3_HD_HandWave/Geom/Fibu3_HD_HandWave/Geom/Fibu3/Geom/RootNode/Armature/RigBone/Skeleton/Skeleton/WalkArmExtend_L finite offsets and normals",
+      "pass": true
+    },
+    {
+      "check": "/Fibu3_HD_HandWave/Geom/Fibu3_HD_HandWave/Geom/Fibu3/Geom/RootNode/Armature/RigBone/Skeleton/Skeleton/WalkArmRound_L finite offsets and normals",
+      "pass": true
+    },
+    {
+      "check": "/Fibu3_HD_HandWave/Geom/Fibu3_HD_HandWave/Geom/Fibu3/Geom/RootNode/Armature/RigBone/Skeleton/Skeleton/WalkArmExtend_R finite offsets and normals",
+      "pass": true
+    },
+    {
+      "check": "/Fibu3_HD_HandWave/Geom/Fibu3_HD_HandWave/Geom/Fibu3/Geom/RootNode/Armature/RigBone/Skeleton/Skeleton/WalkArmRound_R finite offsets and normals",
+      "pass": true
+    },
+    {
+      "check": "approved neutral silhouette after rebind",
+      "pass": true
+    },
+    {
+      "check": "normalized nonnegative support weights",
+      "pass": true
+    },
+    {
+      "check": "upper-body weights unchanged",
+      "pass": true
+    },
+    {
+      "check": "all samples and half samples finite",
+      "pass": true
+    },
+    {
+      "check": "closed mesh loop",
+      "pass": true
+    },
+    {
+      "check": "closed translations",
+      "pass": true
+    },
+    {
+      "check": "closed rotations",
+      "pass": true
+    },
+    {
+      "check": "closed scales",
+      "pass": true
+    },
+    {
+      "check": "closed blendShapeWeights",
+      "pass": true
+    },
+    {
+      "check": "no deep ground penetration",
+      "pass": true
+    },
+    {
+      "check": "stance soles remain near floor",
+      "pass": true
+    },
+    {
+      "check": "planted foot cancels actor travel",
+      "pass": true
+    },
+    {
+      "check": "swing feet visibly clear ground",
+      "pass": true
+    },
+    {
+      "check": "bounded deformation",
+      "pass": true
+    },
+    {
+      "check": "WalkArmExtend_L isolated and pinned",
+      "pass": true
+    },
+    {
+      "check": "WalkArmRound_L isolated and pinned",
+      "pass": true
+    },
+    {
+      "check": "WalkArmExtend_R isolated and pinned",
+      "pass": true
+    },
+    {
+      "check": "WalkArmRound_R isolated and pinned",
+      "pass": true
+    },
+    {
+      "check": "torso convex hull volume stays within five percent of neutral",
+      "pass": true
+    },
+    {
+      "check": "restrained torso shape targets",
+      "pass": true
+    },
+    {
+      "check": "exact requested cycle",
+      "pass": true
+    },
+    {
+      "check": "bounded arm swing and extension configured",
+      "pass": true
+    }
+  ]
+}

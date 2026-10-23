@@ -1,0 +1,11 @@
+{
+  "packageSHA256": "f0c0294ed9d190e616e9319f403b25c238b2b226439d92ca20e1e66e6245b3ae",
+  "previewDataSHA256": "7b04d4cac45fd7907142f4b947ff1085b195810c410be777417e502e875b6ddc",
+  "views": [
+    "front",
+    "side",
+    "angle"
+  ],
+  "framesPerView": 27,
+  "gifDurationMs": 900
+}

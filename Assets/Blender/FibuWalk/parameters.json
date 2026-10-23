@@ -1,0 +1,17 @@
+{
+  "cycle_seconds": 0.9,
+  "fps": 60,
+  "stance_fraction": 0.6,
+  "stride_stance_distance": 0.26,
+  "arm_swing_degrees": 20,
+  "arm_outward_arc_degrees": 5,
+  "arm_extension_fraction": 0.1,
+  "arm_return_compression_fraction": 0.035,
+  "arm_lag_radians": 0.16,
+  "body_bob_height_fraction": 0.015,
+  "body_lateral_tilt_degrees": 3,
+  "body_lateral_shift": 0.045,
+  "torso_deformation_fraction": 0.012,
+  "foot_lift_height_fraction": 0.04,
+  "transition_seconds": 0.2
+}

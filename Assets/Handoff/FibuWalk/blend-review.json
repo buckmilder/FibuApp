@@ -1,0 +1,33 @@
+{
+  "scope": "Offline sampled USD local-transform and morph blends; native SceneKit starts/stops/turns still require local visual checks. No package was modified.",
+  "blendSeconds": 0.2,
+  "startStopTrials": [
+    {
+      "speedFactor": 0.6,
+      "samples": 97,
+      "minGroundOffset": -0.004274989012628794,
+      "maxVertexStepAt60fps": 0.04847873002290726,
+      "endsAtExactNeutral": true
+    },
+    {
+      "speedFactor": 1,
+      "samples": 97,
+      "minGroundOffset": -0.004233406390994787,
+      "maxVertexStepAt60fps": 0.06582605838775635,
+      "endsAtExactNeutral": true
+    },
+    {
+      "speedFactor": 1.4,
+      "samples": 97,
+      "minGroundOffset": -0.0039171394892036915,
+      "maxVertexStepAt60fps": 0.08959802985191345,
+      "endsAtExactNeutral": true
+    }
+  ],
+  "distanceDrivenPhaseAcrossFrameSchedules": [
+    1.3333333333333317,
+    1.333333333333334,
+    1.3333333333333333
+  ],
+  "nativeTurnAndTerrainValidation": "pending local integration"
+}
