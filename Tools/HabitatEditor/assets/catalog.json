@@ -1,0 +1,559 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "foliage_round_tree",
+      "name": "Round Tree",
+      "category": "Nature",
+      "kind": "prop",
+      "godot": "res://assets/models/foliage_round_tree.glb",
+      "ios": "Assets/Models/EditorKit/foliage_round_tree.usdz",
+      "dimensions": [
+        1.8615450859069824,
+        2.661456346511841,
+        1.857100248336792
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "foliage_young_tree",
+      "name": "Young Tree",
+      "category": "Nature",
+      "kind": "prop",
+      "godot": "res://assets/models/foliage_young_tree.glb",
+      "ios": "Assets/Models/EditorKit/foliage_young_tree.usdz",
+      "dimensions": [
+        1.2059831619262695,
+        1.7299463748931885,
+        1.2016143798828125
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "foliage_shrub",
+      "name": "Shrub",
+      "category": "Nature",
+      "kind": "prop",
+      "godot": "res://assets/models/foliage_shrub.glb",
+      "ios": "Assets/Models/EditorKit/foliage_shrub.usdz",
+      "dimensions": [
+        1.0552421808242798,
+        0.7799999713897705,
+        0.9489682912826538
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "foliage_grass_small",
+      "name": "Grass Small",
+      "category": "Nature",
+      "kind": "prop",
+      "godot": "res://assets/models/foliage_grass_small.glb",
+      "ios": "Assets/Models/EditorKit/foliage_grass_small.usdz",
+      "dimensions": [
+        0.7771073579788208,
+        0.3393402099609375,
+        0.5809862017631531
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "foliage_grass_fluffy",
+      "name": "Grass Fluffy",
+      "category": "Nature",
+      "kind": "prop",
+      "godot": "res://assets/models/foliage_grass_fluffy.glb",
+      "ios": "Assets/Models/EditorKit/foliage_grass_fluffy.usdz",
+      "dimensions": [
+        0.8191715478897095,
+        0.5174212455749512,
+        0.7598601579666138
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "foliage_grass_tall",
+      "name": "Grass Tall",
+      "category": "Nature",
+      "kind": "prop",
+      "godot": "res://assets/models/foliage_grass_tall.glb",
+      "ios": "Assets/Models/EditorKit/foliage_grass_tall.usdz",
+      "dimensions": [
+        0.8055768013000488,
+        0.7469081878662109,
+        0.8091118335723877
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "bench",
+      "name": "Garden Bench",
+      "category": "Furniture",
+      "kind": "prop",
+      "godot": "res://assets/models/bench.glb",
+      "ios": "Assets/Models/EditorKit/bench.usdz",
+      "dimensions": [
+        1.6499998569488525,
+        1.2999999523162842,
+        0.690000057220459
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "pergola",
+      "name": "Vine Pergola",
+      "category": "Structures",
+      "kind": "prop",
+      "godot": "res://assets/models/pergola.glb",
+      "ios": "Assets/Models/EditorKit/pergola.usdz",
+      "dimensions": [
+        3.060000419616699,
+        2.6100001335144043,
+        2.9099998474121094
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "picnic",
+      "name": "Picnic & Fruit",
+      "category": "Furniture",
+      "kind": "prop",
+      "godot": "res://assets/models/picnic.glb",
+      "ios": "Assets/Models/EditorKit/picnic.usdz",
+      "dimensions": [
+        1.3000000715255737,
+        0.40000003576278687,
+        1.0999999046325684
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "fountain",
+      "name": "Stone Fountain",
+      "category": "Structures",
+      "kind": "prop",
+      "godot": "res://assets/models/fountain.glb",
+      "ios": "Assets/Models/EditorKit/fountain.usdz",
+      "dimensions": [
+        0.6999998092651367,
+        1.880000114440918,
+        0.6499996185302734
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "umbrella",
+      "name": "Sun Umbrella",
+      "category": "Furniture",
+      "kind": "prop",
+      "godot": "res://assets/models/umbrella.glb",
+      "ios": "Assets/Models/EditorKit/umbrella.usdz",
+      "dimensions": [
+        2.0999999046325684,
+        2.5,
+        2.1000001430511475
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "hearth",
+      "name": "Camp Hearth",
+      "category": "Furniture",
+      "kind": "prop",
+      "godot": "res://assets/models/hearth.glb",
+      "ios": "Assets/Models/EditorKit/hearth.usdz",
+      "dimensions": [
+        2.3000001907348633,
+        1.1500000953674316,
+        2.1999998092651367
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "supplies",
+      "name": "Stacked Supplies",
+      "category": "Furniture",
+      "kind": "prop",
+      "godot": "res://assets/models/supplies.glb",
+      "ios": "Assets/Models/EditorKit/supplies.usdz",
+      "dimensions": [
+        1.9000000953674316,
+        1.9099998474121094,
+        1.3874998092651367
+      ],
+      "solid": false,
+      "rotations": [],
+      "scale_range": [
+        0.25,
+        3
+      ],
+      "footprint": [],
+      "overhang": true
+    },
+    {
+      "id": "stairs",
+      "name": "Stone Stairs",
+      "category": "Structures",
+      "kind": "prop",
+      "godot": "res://assets/models/stairs.glb",
+      "ios": "Assets/Models/EditorKit/stairs.usdz",
+      "dimensions": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "solid": true,
+      "rotations": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "scale_range": [
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "overhang": false
+    },
+    {
+      "id": "terrain_golden",
+      "name": "Golden",
+      "category": "Terrain",
+      "kind": "terrain",
+      "theme": "golden",
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "rotations": [
+        0
+      ],
+      "connection_group": "terrain",
+      "ios": {
+        "generator": "fibu-rounded-boundary-v1",
+        "material": "golden"
+      },
+      "godot": {
+        "generator": "fibu-rounded-boundary-v1"
+      },
+      "solid": true
+    },
+    {
+      "id": "terrain_forest",
+      "name": "Forest",
+      "category": "Terrain",
+      "kind": "terrain",
+      "theme": "forest",
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "rotations": [
+        0
+      ],
+      "connection_group": "terrain",
+      "ios": {
+        "generator": "fibu-rounded-boundary-v1",
+        "material": "forest"
+      },
+      "godot": {
+        "generator": "fibu-rounded-boundary-v1"
+      },
+      "solid": true
+    },
+    {
+      "id": "terrain_lime",
+      "name": "Lime",
+      "category": "Terrain",
+      "kind": "terrain",
+      "theme": "lime",
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "rotations": [
+        0
+      ],
+      "connection_group": "terrain",
+      "ios": {
+        "generator": "fibu-rounded-boundary-v1",
+        "material": "lime"
+      },
+      "godot": {
+        "generator": "fibu-rounded-boundary-v1"
+      },
+      "solid": true
+    },
+    {
+      "id": "terrain_meadow",
+      "name": "Meadow",
+      "category": "Terrain",
+      "kind": "terrain",
+      "theme": "meadow",
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "rotations": [
+        0
+      ],
+      "connection_group": "terrain",
+      "ios": {
+        "generator": "fibu-rounded-boundary-v1",
+        "material": "meadow"
+      },
+      "godot": {
+        "generator": "fibu-rounded-boundary-v1"
+      },
+      "solid": true
+    },
+    {
+      "id": "terrain_sand",
+      "name": "Sand",
+      "category": "Terrain",
+      "kind": "terrain",
+      "theme": "sand",
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "rotations": [
+        0
+      ],
+      "connection_group": "terrain",
+      "ios": {
+        "generator": "fibu-rounded-boundary-v1",
+        "material": "sand"
+      },
+      "godot": {
+        "generator": "fibu-rounded-boundary-v1"
+      },
+      "solid": true
+    },
+    {
+      "id": "terrain_limestone",
+      "name": "Limestone",
+      "category": "Terrain",
+      "kind": "terrain",
+      "theme": "limestone",
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "rotations": [
+        0
+      ],
+      "connection_group": "terrain",
+      "ios": {
+        "generator": "fibu-rounded-boundary-v1",
+        "material": "limestone"
+      },
+      "godot": {
+        "generator": "fibu-rounded-boundary-v1"
+      },
+      "solid": true
+    },
+    {
+      "id": "terrain_cobble",
+      "name": "Cobble",
+      "category": "Terrain",
+      "kind": "terrain",
+      "theme": "cobble",
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "rotations": [
+        0
+      ],
+      "connection_group": "terrain",
+      "ios": {
+        "generator": "fibu-rounded-boundary-v1",
+        "material": "cobble"
+      },
+      "godot": {
+        "generator": "fibu-rounded-boundary-v1"
+      },
+      "solid": true
+    },
+    {
+      "id": "terrain_timber",
+      "name": "Timber",
+      "category": "Terrain",
+      "kind": "terrain",
+      "theme": "timber",
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "rotations": [
+        0
+      ],
+      "connection_group": "terrain",
+      "ios": {
+        "generator": "fibu-rounded-boundary-v1",
+        "material": "timber"
+      },
+      "godot": {
+        "generator": "fibu-rounded-boundary-v1"
+      },
+      "solid": true
+    },
+    {
+      "id": "terrain_volcanic",
+      "name": "Volcanic",
+      "category": "Terrain",
+      "kind": "terrain",
+      "theme": "volcanic",
+      "dimensions": [
+        1,
+        1,
+        1
+      ],
+      "footprint": [
+        1,
+        1
+      ],
+      "rotations": [
+        0
+      ],
+      "connection_group": "terrain",
+      "ios": {
+        "generator": "fibu-rounded-boundary-v1",
+        "material": "volcanic"
+      },
+      "godot": {
+        "generator": "fibu-rounded-boundary-v1"
+      },
+      "solid": true
+    }
+  ]
+}

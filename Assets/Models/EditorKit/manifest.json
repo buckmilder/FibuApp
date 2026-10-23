@@ -1,0 +1,100 @@
+[
+  {
+    "filename": "bench.usdz",
+    "meshes": 8,
+    "triangles": 1504,
+    "sha256": "6c797c41e7c2b0fa35231d707e9bc8a4af1cd48fd11e057cce04e3a82e733aca",
+    "godot_sha256": "77c2e171f36dea47382b6b80b5db8de7833888aa4a4fbea90b1e0aa8d9358706"
+  },
+  {
+    "filename": "foliage_grass_fluffy.usdz",
+    "meshes": 1,
+    "triangles": 1276,
+    "sha256": "08a18ff40bdd08b07b9ed66aed259b6d9d6648a1fe0ec05fb4e52f273ffb9b58",
+    "godot_sha256": "7a583385273763e3b58e83e5dd2361eb53cff028a42fa9d0bcfd88970efc7823"
+  },
+  {
+    "filename": "foliage_grass_small.usdz",
+    "meshes": 1,
+    "triangles": 696,
+    "sha256": "1e9b51eb1f95ff7826d29b4291a8b154d73d5fcd3e02a361d6961adc4a18af2e",
+    "godot_sha256": "cc20f9be02a8ea1042829b9284f5225404a9aa43b741d9736002e39ba2b25556"
+  },
+  {
+    "filename": "foliage_grass_tall.usdz",
+    "meshes": 1,
+    "triangles": 928,
+    "sha256": "d71a9d71f0ad4f5876af05236d0b5f3a0040b524a77ed730f8bb25d536d0ad0d",
+    "godot_sha256": "50e51c9a1f11478c79bd7af350210947d01c0704273739f882410c1ff27b0327"
+  },
+  {
+    "filename": "foliage_round_tree.usdz",
+    "meshes": 1,
+    "triangles": 4524,
+    "sha256": "98ac01dff0f69b21df9109390ac9a99df40cbd3499e4e9e6085b555b110273d2",
+    "godot_sha256": "66aaf08e52c86dfd63ee2259ccf53673fe000c6ec580874e4c78d58bf70ddf29"
+  },
+  {
+    "filename": "foliage_shrub.usdz",
+    "meshes": 1,
+    "triangles": 1344,
+    "sha256": "a0111caaafd4758de9b1a7eb513cc50558daa7636e60e775309d76c912418249",
+    "godot_sha256": "bb00d9a70403e6c087b53a32673d8870fab5c68067d7a8bd46cb4cb9afcb418c"
+  },
+  {
+    "filename": "foliage_young_tree.usdz",
+    "meshes": 1,
+    "triangles": 4524,
+    "sha256": "1d39799b5b11713058e3638204f5b787a5d9ebb28a6a6cfd65a2730fc57c0646",
+    "godot_sha256": "8f5a64268efe50fd11fe17521fbafc71f537ab52d12d07bebd07d8a7c4e2a7e0"
+  },
+  {
+    "filename": "fountain.usdz",
+    "meshes": 3,
+    "triangles": 312,
+    "sha256": "7a46f46279843c29b420fe023f1316c09ec2c5bb3e46e05e6666e37e7967b298",
+    "godot_sha256": "7def2c966504f4133336c6798e4ac27131048a6fecc522b826af244a90484e9a"
+  },
+  {
+    "filename": "hearth.usdz",
+    "meshes": 16,
+    "triangles": 1316,
+    "sha256": "f8d0dc4468c2bdf61e06cb4242d9fdbf4d8920daeb0cf7d8000cb6b7c21885fb",
+    "godot_sha256": "97907b8258fea492cf78958d954d1cff03e65da2855ad2c871318c278572ce23"
+  },
+  {
+    "filename": "pergola.usdz",
+    "meshes": 26,
+    "triangles": 3592,
+    "sha256": "bd3911c48c7dc9c705f5af72cd771c786bdeda2c9d73e28f1a08741254a2bf3a",
+    "godot_sha256": "42b7a438d98b61353bba684af0450bd962c89d5dba3606b587751c90d8499ac2"
+  },
+  {
+    "filename": "picnic.usdz",
+    "meshes": 4,
+    "triangles": 536,
+    "sha256": "c761bc5fc5506de1f7046224a04f33927835c1238e8704a67370548f19bdde6e",
+    "godot_sha256": "38a8762c0a60777d8024160067d295f8d02f198efdb602f434b78991679edf0c"
+  },
+  {
+    "filename": "stairs.usdz",
+    "meshes": 4,
+    "triangles": 48,
+    "sha256": "5cc8bede02b94aacda7ec12629ea17ff5fb3a8f9820332b41221a4588654344b",
+    "godot_sha256": "337ae1ececb264e0371b4349a1c27fedaa72c7deb7eda9bdb8c81d0eb884af97"
+  },
+  {
+    "filename": "supplies.usdz",
+    "meshes": 9,
+    "triangles": 1692,
+    "sha256": "a1895de12091e5af767dcd1d9671ef29ee0457e7252806f29ed0531ca92afd86",
+    "godot_sha256": "c43e735416f85a6ca2dd2cd67f02c285c36718b9699b9c715005940c7426f587"
+  },
+  {
+    "filename": "umbrella.usdz",
+    "meshes": 13,
+    "triangles": 56,
+    "sha256": "fc192c00c3d9b19744574b02b570cc3dcbb7fa2f66f84ba727041619bda25010",
+    "godot_sha256": "a8c6b7c010ca479844b8f90af54cd105ed8dc9b437589cae2fc68f95b416d4a6"
+  }
+]
