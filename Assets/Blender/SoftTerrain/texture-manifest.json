@@ -1,0 +1,82 @@
+{
+  "resolution": [
+    1024,
+    1024
+  ],
+  "leafStrokesPerTile": 32,
+  "soilBands": 3,
+  "maps": [
+    {
+      "file": "Tools/HabitatEditor/assets/textures/forest_top.png",
+      "sha256": "cd6551a1a80f3469a715d5df7560929ccbc2b078c3452f10b9dfffec4060a25e"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/forest_top_normal.png",
+      "sha256": "422fee28c52d917cc25787f0ca768110e468bfd9676b4dee94afa47884c9084c"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/forest_top_roughness.png",
+      "sha256": "fb2e4c910e651ca433341ff91b20d1cf397c821e33458beb6c27654567cb93fc"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/forest_side.png",
+      "sha256": "00db2af9ff0130e779605f09c9901af256cf4641b574a9c8e1a3ff47914d6ddb"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/forest_side_normal.png",
+      "sha256": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/forest_side_roughness.png",
+      "sha256": "fb2e4c910e651ca433341ff91b20d1cf397c821e33458beb6c27654567cb93fc"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/lime_top.png",
+      "sha256": "05b77dd3bdc8a40569990ffb50935bce3063e9f996be23b22e901546979125c6"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/lime_top_normal.png",
+      "sha256": "422fee28c52d917cc25787f0ca768110e468bfd9676b4dee94afa47884c9084c"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/lime_top_roughness.png",
+      "sha256": "fb2e4c910e651ca433341ff91b20d1cf397c821e33458beb6c27654567cb93fc"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/lime_side.png",
+      "sha256": "326ad987aee0c4cabbf009c4793bfba530a6e44237b0e3f41b24692cbe618d3e"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/lime_side_normal.png",
+      "sha256": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/lime_side_roughness.png",
+      "sha256": "fb2e4c910e651ca433341ff91b20d1cf397c821e33458beb6c27654567cb93fc"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/meadow_top.png",
+      "sha256": "b913ae505734bdc21dc515997910c2f70d5d563564a6577cd52f225ebfe6c408"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/meadow_top_normal.png",
+      "sha256": "422fee28c52d917cc25787f0ca768110e468bfd9676b4dee94afa47884c9084c"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/meadow_top_roughness.png",
+      "sha256": "fb2e4c910e651ca433341ff91b20d1cf397c821e33458beb6c27654567cb93fc"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/meadow_side.png",
+      "sha256": "bbe1d75f31446cef66703d3aabb3cb8a49ed5dd34e2c47ea8367ad3501e37a7f"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/meadow_side_normal.png",
+      "sha256": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b"
+    },
+    {
+      "file": "Tools/HabitatEditor/assets/textures/meadow_side_roughness.png",
+      "sha256": "fb2e4c910e651ca433341ff91b20d1cf397c821e33458beb6c27654567cb93fc"
+    }
+  ]
+}

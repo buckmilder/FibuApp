@@ -1,0 +1,829 @@
+{
+  "generator": "fibu-soft-turf-v2",
+  "checksPassed": 191,
+  "checksFailed": 0,
+  "modules": [
+    {
+      "id": "golden_single",
+      "triangles": 192,
+      "visualSurfaceCount": 2
+    },
+    {
+      "id": "forest_single",
+      "triangles": 256,
+      "visualSurfaceCount": 2
+    },
+    {
+      "id": "lime_single",
+      "triangles": 256,
+      "visualSurfaceCount": 2
+    },
+    {
+      "id": "meadow_single",
+      "triangles": 256,
+      "visualSurfaceCount": 2
+    },
+    {
+      "id": "sand_single",
+      "triangles": 192,
+      "visualSurfaceCount": 2
+    },
+    {
+      "id": "limestone_single",
+      "triangles": 192,
+      "visualSurfaceCount": 2
+    },
+    {
+      "id": "cobble_single",
+      "triangles": 192,
+      "visualSurfaceCount": 2
+    },
+    {
+      "id": "timber_single",
+      "triangles": 192,
+      "visualSurfaceCount": 2
+    },
+    {
+      "id": "volcanic_single",
+      "triangles": 192,
+      "visualSurfaceCount": 2
+    },
+    {
+      "id": "meadow_patch",
+      "triangles": 1152,
+      "visualSurfaceCount": 2
+    },
+    {
+      "id": "meadow_terrace",
+      "triangles": 1632,
+      "visualSurfaceCount": 2
+    }
+  ],
+  "checks": [
+    {
+      "check": "golden_single dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "golden_single packaged hash",
+      "pass": true
+    },
+    {
+      "check": "golden_single material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "golden_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "golden_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "golden_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "golden_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "golden_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "golden_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "golden_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "golden_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "golden_single triangle budget",
+      "pass": true
+    },
+    {
+      "check": "golden_single GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "golden_single GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "golden_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "golden_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "forest_single dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "forest_single packaged hash",
+      "pass": true
+    },
+    {
+      "check": "forest_single material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "forest_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "forest_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "forest_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "forest_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "forest_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "forest_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "forest_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "forest_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "forest_single triangle budget",
+      "pass": true
+    },
+    {
+      "check": "forest_single GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "forest_single GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "forest_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "forest_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "lime_single dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "lime_single packaged hash",
+      "pass": true
+    },
+    {
+      "check": "lime_single material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "lime_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "lime_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "lime_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "lime_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "lime_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "lime_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "lime_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "lime_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "lime_single triangle budget",
+      "pass": true
+    },
+    {
+      "check": "lime_single GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "lime_single GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "lime_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "lime_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "meadow_single dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "meadow_single packaged hash",
+      "pass": true
+    },
+    {
+      "check": "meadow_single material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "meadow_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "meadow_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "meadow_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "meadow_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "meadow_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "meadow_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "meadow_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "meadow_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "meadow_single triangle budget",
+      "pass": true
+    },
+    {
+      "check": "meadow_single GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "meadow_single GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "meadow_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "meadow_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "sand_single dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "sand_single packaged hash",
+      "pass": true
+    },
+    {
+      "check": "sand_single material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "sand_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "sand_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "sand_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "sand_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "sand_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "sand_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "sand_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "sand_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "sand_single triangle budget",
+      "pass": true
+    },
+    {
+      "check": "sand_single GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "sand_single GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "sand_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "sand_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "limestone_single dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "limestone_single packaged hash",
+      "pass": true
+    },
+    {
+      "check": "limestone_single material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "limestone_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "limestone_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "limestone_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "limestone_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "limestone_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "limestone_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "limestone_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "limestone_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "limestone_single triangle budget",
+      "pass": true
+    },
+    {
+      "check": "limestone_single GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "limestone_single GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "limestone_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "limestone_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "cobble_single dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "cobble_single packaged hash",
+      "pass": true
+    },
+    {
+      "check": "cobble_single material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "cobble_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "cobble_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "cobble_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "cobble_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "cobble_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "cobble_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "cobble_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "cobble_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "cobble_single triangle budget",
+      "pass": true
+    },
+    {
+      "check": "cobble_single GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "cobble_single GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "cobble_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "cobble_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "timber_single dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "timber_single packaged hash",
+      "pass": true
+    },
+    {
+      "check": "timber_single material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "timber_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "timber_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "timber_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "timber_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "timber_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "timber_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "timber_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "timber_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "timber_single triangle budget",
+      "pass": true
+    },
+    {
+      "check": "timber_single GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "timber_single GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "timber_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "timber_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single packaged hash",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single UV coverage",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single triangle budget",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "volcanic_single packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch packaged hash",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch UV coverage",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch UV coverage",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch triangle budget",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "meadow_patch packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace dependencies resolved",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace packaged hash",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace material surfaces match",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace UV coverage",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace source geometry exact",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace finite unit normals",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace UV coverage",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace nondegenerate outward winding",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace triangle budget",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace GLB paired triangle count",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace GLB embedded images",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "meadow_terrace packaged texture unchanged",
+      "pass": true
+    },
+    {
+      "check": "forest top horizontal texture seam",
+      "pass": true
+    },
+    {
+      "check": "forest top vertical texture seam",
+      "pass": true
+    },
+    {
+      "check": "forest top 1024 texture",
+      "pass": true
+    },
+    {
+      "check": "forest side horizontal texture seam",
+      "pass": true
+    },
+    {
+      "check": "forest side 1024 texture",
+      "pass": true
+    },
+    {
+      "check": "lime top horizontal texture seam",
+      "pass": true
+    },
+    {
+      "check": "lime top vertical texture seam",
+      "pass": true
+    },
+    {
+      "check": "lime top 1024 texture",
+      "pass": true
+    },
+    {
+      "check": "lime side horizontal texture seam",
+      "pass": true
+    },
+    {
+      "check": "lime side 1024 texture",
+      "pass": true
+    },
+    {
+      "check": "meadow top horizontal texture seam",
+      "pass": true
+    },
+    {
+      "check": "meadow top vertical texture seam",
+      "pass": true
+    },
+    {
+      "check": "meadow top 1024 texture",
+      "pass": true
+    },
+    {
+      "check": "meadow side horizontal texture seam",
+      "pass": true
+    },
+    {
+      "check": "meadow side 1024 texture",
+      "pass": true
+    }
+  ],
+  "nativeStatus": "SceneKit appearance/collision and both Xcode scheme builds pending local integration; original app unchanged."
+}

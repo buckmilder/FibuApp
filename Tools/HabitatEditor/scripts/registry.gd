@@ -27,7 +27,7 @@ func material_for(id: String, face: String) -> Material:
 	mat.albedo_texture = load("res://assets/textures/%s_%s.png" % [theme,face])
 	mat.normal_enabled = true
 	mat.normal_texture = load("res://assets/textures/%s_%s_normal.png" % [theme,face])
-	mat.normal_scale = .4
+	mat.normal_scale = .12 if theme in ["forest","lime","meadow"] else .4
 	mat.roughness_texture = load("res://assets/textures/%s_%s_roughness.png" % [theme,face])
 	mat.roughness = .9
 	mat.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS

@@ -1,0 +1,396 @@
+{
+  "generator": "fibu-soft-turf-v2",
+  "units": "meters; first tile bottom-center pivot; Y-up; row=-Z",
+  "staticReferenceOnly": true,
+  "collision": "Use solid cell boundary, not raised grass geometry. Source collision arrays are exported separately.",
+  "modules": [
+    {
+      "exposedSolidFaces": 6,
+      "grassRimEdges": 0,
+      "id": "golden_single",
+      "triangles": 192,
+      "cells": [
+        {
+          "asset": "terrain_golden",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/golden_single.usdz",
+      "sha256": "1fcb4984e2ea6123c6a3d5df536a6a5067e7368fbc9065c6160a6fb78203c7e8",
+      "glb": "Assets/Models/SoftTerrain/golden_single.glb",
+      "glbSHA256": "3948cf528d99e00d53c588fc4e956bf16db8867692ee8abd81e83bc7fe5107a2"
+    },
+    {
+      "exposedSolidFaces": 6,
+      "grassRimEdges": 4,
+      "id": "forest_single",
+      "triangles": 256,
+      "cells": [
+        {
+          "asset": "terrain_forest",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/forest_single.usdz",
+      "sha256": "db2803f7517eb24a8b7f14bd6c42860cfee1581b82f03ab171f23d963d0c0fa4",
+      "glb": "Assets/Models/SoftTerrain/forest_single.glb",
+      "glbSHA256": "d5f90f8d33c6eb9831e07049842325724ddc0ad5884b6dd4d66c39296a950219"
+    },
+    {
+      "exposedSolidFaces": 6,
+      "grassRimEdges": 4,
+      "id": "lime_single",
+      "triangles": 256,
+      "cells": [
+        {
+          "asset": "terrain_lime",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/lime_single.usdz",
+      "sha256": "6efec3f89551f08b9eac5c8a592e0828a4c5a861106727ff9afb60e5f4bbb827",
+      "glb": "Assets/Models/SoftTerrain/lime_single.glb",
+      "glbSHA256": "0906834c9c21a5dbb18679f5669e003ebbafbae76bfc6a1542fe57ff7895d032"
+    },
+    {
+      "exposedSolidFaces": 6,
+      "grassRimEdges": 4,
+      "id": "meadow_single",
+      "triangles": 256,
+      "cells": [
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/meadow_single.usdz",
+      "sha256": "4e9f241ea2c10539b0a0e6c587450cf89bfa48e5bd0a39ff55d8ce50b79ed048",
+      "glb": "Assets/Models/SoftTerrain/meadow_single.glb",
+      "glbSHA256": "23978f8b8030c69f5158c44eabc76295a65658432fdf9cdec5dcf53d498cab75"
+    },
+    {
+      "exposedSolidFaces": 6,
+      "grassRimEdges": 0,
+      "id": "sand_single",
+      "triangles": 192,
+      "cells": [
+        {
+          "asset": "terrain_sand",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/sand_single.usdz",
+      "sha256": "8804a2d3149d0a3c3a92d2c82ad627baf7ef7885257d1a361c3692c79b36abc2",
+      "glb": "Assets/Models/SoftTerrain/sand_single.glb",
+      "glbSHA256": "591ec3afe9ce09ebbb72a178a9e2491351c902a0d2e50bcb900ffc49d9dac7ac"
+    },
+    {
+      "exposedSolidFaces": 6,
+      "grassRimEdges": 0,
+      "id": "limestone_single",
+      "triangles": 192,
+      "cells": [
+        {
+          "asset": "terrain_limestone",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/limestone_single.usdz",
+      "sha256": "8c2c563a18aa1bb284c33abfbab3e7fefde62403cdd472487d8de07b8f0d969f",
+      "glb": "Assets/Models/SoftTerrain/limestone_single.glb",
+      "glbSHA256": "761d9cb65f242917c8b0d6715af608a2c147dbe18631c5d21b6565bb949e4ceb"
+    },
+    {
+      "exposedSolidFaces": 6,
+      "grassRimEdges": 0,
+      "id": "cobble_single",
+      "triangles": 192,
+      "cells": [
+        {
+          "asset": "terrain_cobble",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/cobble_single.usdz",
+      "sha256": "5d66045b4e595fb95579a180d35237cdd796a6d8c5f364bb8bac774de9cfb7c9",
+      "glb": "Assets/Models/SoftTerrain/cobble_single.glb",
+      "glbSHA256": "f966636333d57eaf32320d5c3b159dddbdb32700d4de9ba3087263a9b904241f"
+    },
+    {
+      "exposedSolidFaces": 6,
+      "grassRimEdges": 0,
+      "id": "timber_single",
+      "triangles": 192,
+      "cells": [
+        {
+          "asset": "terrain_timber",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/timber_single.usdz",
+      "sha256": "e48f4f9f76a96794e68444b53b51fbbcb84b16440868069ec841eba912eefec5",
+      "glb": "Assets/Models/SoftTerrain/timber_single.glb",
+      "glbSHA256": "ec5852926d8dce1c4b642d183e3411f381e654716caee5125dbc2d5697d8a5c6"
+    },
+    {
+      "exposedSolidFaces": 6,
+      "grassRimEdges": 0,
+      "id": "volcanic_single",
+      "triangles": 192,
+      "cells": [
+        {
+          "asset": "terrain_volcanic",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/volcanic_single.usdz",
+      "sha256": "0201a94c88cb53251b79440660b7b3e38db2d521dce552f2cd5fcf9a01f1c600",
+      "glb": "Assets/Models/SoftTerrain/volcanic_single.glb",
+      "glbSHA256": "c89381e75c71518730e996c13cc57431d39813f1d294754bf616c71f00e1b639"
+    },
+    {
+      "exposedSolidFaces": 30,
+      "grassRimEdges": 12,
+      "id": "meadow_patch",
+      "triangles": 1152,
+      "cells": [
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            1,
+            0,
+            2
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            2,
+            0,
+            2
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/meadow_patch.usdz",
+      "sha256": "b97631347f277f6875f30131f07f1c7daa78b6eb317a2092bb4c415c40cd9117",
+      "glb": "Assets/Models/SoftTerrain/meadow_patch.glb",
+      "glbSHA256": "9fa3fbc154dc316fa08d58811af950ce761dd246099f052a6d0a3146e14333fa"
+    },
+    {
+      "exposedSolidFaces": 42,
+      "grassRimEdges": 18,
+      "id": "meadow_terrace",
+      "triangles": 1632,
+      "cells": [
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            0,
+            0,
+            2
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            1,
+            0,
+            2
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            2,
+            0,
+            2
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            1,
+            1,
+            2
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            2,
+            1,
+            2
+          ]
+        },
+        {
+          "asset": "terrain_meadow",
+          "cell": [
+            2,
+            2,
+            2
+          ]
+        }
+      ],
+      "file": "Assets/Models/SoftTerrain/meadow_terrace.usdz",
+      "sha256": "aebce4b1c31bafa2fbe45a4b9eaf2b52c4506309fca6ee02fc599167bf920429",
+      "glb": "Assets/Models/SoftTerrain/meadow_terrace.glb",
+      "glbSHA256": "65ff96593bd9352c715980f1ab12aa0f287e54a070d034067cda5f243187ae94"
+    }
+  ]
+}

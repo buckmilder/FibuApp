@@ -469,11 +469,11 @@
       ],
       "connection_group": "terrain",
       "ios": {
-        "generator": "fibu-rounded-boundary-v1",
+        "generator": "fibu-soft-turf-v2",
         "material": "golden"
       },
       "godot": {
-        "generator": "fibu-rounded-boundary-v1"
+        "generator": "fibu-soft-turf-v2"
       },
       "solid": true
     },
@@ -497,11 +497,11 @@
       ],
       "connection_group": "terrain",
       "ios": {
-        "generator": "fibu-rounded-boundary-v1",
+        "generator": "fibu-soft-turf-v2",
         "material": "forest"
       },
       "godot": {
-        "generator": "fibu-rounded-boundary-v1"
+        "generator": "fibu-soft-turf-v2"
       },
       "solid": true
     },
@@ -525,11 +525,11 @@
       ],
       "connection_group": "terrain",
       "ios": {
-        "generator": "fibu-rounded-boundary-v1",
+        "generator": "fibu-soft-turf-v2",
         "material": "lime"
       },
       "godot": {
-        "generator": "fibu-rounded-boundary-v1"
+        "generator": "fibu-soft-turf-v2"
       },
       "solid": true
     },
@@ -553,11 +553,11 @@
       ],
       "connection_group": "terrain",
       "ios": {
-        "generator": "fibu-rounded-boundary-v1",
+        "generator": "fibu-soft-turf-v2",
         "material": "meadow"
       },
       "godot": {
-        "generator": "fibu-rounded-boundary-v1"
+        "generator": "fibu-soft-turf-v2"
       },
       "solid": true
     },
@@ -581,11 +581,11 @@
       ],
       "connection_group": "terrain",
       "ios": {
-        "generator": "fibu-rounded-boundary-v1",
+        "generator": "fibu-soft-turf-v2",
         "material": "sand"
       },
       "godot": {
-        "generator": "fibu-rounded-boundary-v1"
+        "generator": "fibu-soft-turf-v2"
       },
       "solid": true
     },
@@ -609,11 +609,11 @@
       ],
       "connection_group": "terrain",
       "ios": {
-        "generator": "fibu-rounded-boundary-v1",
+        "generator": "fibu-soft-turf-v2",
         "material": "limestone"
       },
       "godot": {
-        "generator": "fibu-rounded-boundary-v1"
+        "generator": "fibu-soft-turf-v2"
       },
       "solid": true
     },
@@ -637,11 +637,11 @@
       ],
       "connection_group": "terrain",
       "ios": {
-        "generator": "fibu-rounded-boundary-v1",
+        "generator": "fibu-soft-turf-v2",
         "material": "cobble"
       },
       "godot": {
-        "generator": "fibu-rounded-boundary-v1"
+        "generator": "fibu-soft-turf-v2"
       },
       "solid": true
     },
@@ -665,11 +665,11 @@
       ],
       "connection_group": "terrain",
       "ios": {
-        "generator": "fibu-rounded-boundary-v1",
+        "generator": "fibu-soft-turf-v2",
         "material": "timber"
       },
       "godot": {
-        "generator": "fibu-rounded-boundary-v1"
+        "generator": "fibu-soft-turf-v2"
       },
       "solid": true
     },
@@ -693,11 +693,11 @@
       ],
       "connection_group": "terrain",
       "ios": {
-        "generator": "fibu-rounded-boundary-v1",
+        "generator": "fibu-soft-turf-v2",
         "material": "volcanic"
       },
       "godot": {
-        "generator": "fibu-rounded-boundary-v1"
+        "generator": "fibu-soft-turf-v2"
       },
       "solid": true
     },
@@ -732,5 +732,6 @@
       }
     }
   ],
-  "prop_rules_version": 1
+  "prop_rules_version": 1,
+  "terrain_style_version": 2
 }

@@ -279,7 +279,7 @@ func rebuild():
 	if mesh.get_surface_count() > 0:
 		var terrain_instance = MeshInstance3D.new(); terrain_instance.mesh = mesh; terrain_root.add_child(terrain_instance)
 		var body = StaticBody3D.new(); body.collision_layer = 1; body.collision_mask = 0; terrain_instance.add_child(body)
-		var shape = CollisionShape3D.new(); shape.shape = mesh.create_trimesh_shape(); body.add_child(shape)
+		var shape = CollisionShape3D.new(); shape.shape = generator.collision_mesh.create_trimesh_shape(); body.add_child(shape)
 	if water_visible or previewing:
 		water_root=water_renderer.build(visible_data); world.add_child(water_root)
 	for obj in document.data.objects:

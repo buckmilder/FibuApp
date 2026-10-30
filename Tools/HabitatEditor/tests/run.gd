@@ -58,14 +58,14 @@ func run():
 	check(not doc.can_place(registry.assets.foliage_round_tree,Vector3.ZERO,0,Vector3.ONE).is_empty(),"tree footprint cannot be buried in terrain")
 	var terrain=HabitatTerrain.new(); var mesh=terrain.build(doc.data,registry)
 	check(terrain.exposed_faces==6,"single voxel six faces")
-	check(terrain.triangle_count==192,"single voxel subdivision count")
+	check(terrain.triangle_count==256,"single turf voxel includes simple exposed grass rim")
 	check(mesh.get_surface_count()==2,"top and side materials")
-	var bounds=mesh.get_aabb()
+	var bounds=terrain.collision_mesh.get_aabb()
 	check(bounds.position.is_equal_approx(Vector3(-.5,0,-.5)),"face centers retain cell extent")
 	doc.data.terrain.append({"cell":[1,0,0],"asset":"terrain_forest"})
 	mesh=terrain.build(doc.data,registry)
 	check(terrain.exposed_faces==10,"mixed material internal faces removed")
-	check(terrain.triangle_count==320,"no hidden triangles")
+	check(terrain.triangle_count==416,"no hidden solid faces or shared grass rims")
 	for surface in range(mesh.get_surface_count()):
 		var arrays=mesh.surface_get_arrays(surface)
 		for normal in arrays[Mesh.ARRAY_NORMAL]:
@@ -253,5 +253,6 @@ func run():
 	await load("res://tests/prop_checks.gd").run(editor,registry,check)
 	editor.queue_free()
 	await process_frame
+	load("res://tests/soft_terrain_checks.gd").run(registry,check)
 	print("Fibu editor: %d checks, %d failures" % [checks,failures])
 	quit(1 if failures else 0)

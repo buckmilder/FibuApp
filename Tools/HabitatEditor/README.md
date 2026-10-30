@@ -119,3 +119,8 @@ Run `./scripts/habitat-editor.sh check`. Linux headless tests and desktop render
 Trees and bushes use a 1×1 ground footprint; benches use 2×1 and rotate to 1×2. Catalog props snap to full terrain tiles, including correct half-cell centers for multi-tile objects. Scale is fixed and yaw uses quarter turns. Footprint outlines and inspector labels show placement size separately from passability. Trees and benches block the preview actor; bushes and grass remain walk-through. Tree canopies may overhang their occupied tile.
 
 Select older props and use **Align props** for an explicit, undoable conversion. Old files are preserved on load, and conflicting alignments are cancelled. Try `Assets/Habitats/tile-footprints-study.json`. Full rules and the local Swift navigation handoff are in [PROP_FOOTPRINTS.md](PROP_FOOTPRINTS.md).
+
+
+## Softer terrain materials and exposed edges
+
+Forest, Lime and Meadow now have broader painted leaf forms, three soil bands and a raised visual grass cap. Connected interiors stay flush; only exposed edges receive the rounded/scalloped overhang. Soil remains the movement/picking surface. Open `Assets/Habitats/soft-terrain-study.json`; see [SOFT_TERRAIN.md](SOFT_TERRAIN.md) for exports, counts, regeneration and native handoff. Existing layouts use the updated catalog rendering automatically after integrating this branch; static prebuilt habitats remain unchanged.

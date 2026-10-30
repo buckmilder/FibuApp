@@ -46,3 +46,8 @@ Read `WATER.md` before native layout work: water is classified by the asset regi
 ## Tile prop rules
 
 The catalog now carries `prop_rules_version: 1`, `placement_grid`, `footprint`, `occupies_grid`, and `blocks_movement`. Implement the placement/collision/navigation semantics in [PROP_FOOTPRINTS.md](PROP_FOOTPRINTS.md). These supersede the prior assumption that all foliage/decor props are nonblocking. Bushes remain traversable; trees and benches now block their logical ground footprints. Godot's preview behavior does not automatically update the native app.
+
+
+## Soft terrain update
+
+The current terrain profile is now `fibu-soft-turf-v2`. Read [SOFT_TERRAIN.md](SOFT_TERRAIN.md) before native renderer work; it supersedes the earlier v1-only visual instructions. The connected solid/collision boundary is still v1, while Forest/Lime/Meadow have raised, non-colliding grass caps and exposed rims. Do not auto-create collision from the visual mesh. Updated material maps and paired static references are included, with original exports preserved. No Swift or Watch resources were changed.

@@ -38,7 +38,9 @@ Example dimensions above are illustrative; the catalog is authoritative. `solid`
 
 `spawn` is the suggested character **foot** position, before native character grounding adjustments. Width and depth are configurable in data; cell size is currently required to be 1 because the catalog has one-meter geometry. The editor rejects other cell sizes explicitly rather than silently mis-scaling assets.
 
-## Terrain algorithm: fibu-rounded-boundary-v1
+## Terrain solid boundary: fibu-rounded-boundary-v1
+
+The current catalog uses `fibu-soft-turf-v2`, documented in [SOFT_TERRAIN.md](SOFT_TERRAIN.md). The v1 algorithm below remains its solid/collision basis. Its raised grass shell is visual only; use the retained solid mesh for support and picking.
 
 The registry selects a material theme per terrain ID. Terrain is logical occupancy, not an array of rounded model instances.
 
